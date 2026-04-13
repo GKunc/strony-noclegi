@@ -147,15 +147,15 @@
       }
 
       :root {
-        --color-primary: #1a73e8;
-        --color-primary-dark: #1558b0;
-        --color-primary-light: #e8f0fe;
+        --color-primary: #1558b0;
+        --color-primary-dark: #0d4a8f;
+        --color-primary-light: #dce8f7;
         --color-text: #1f2937;
-        --color-text-light: #6b7280;
+        --color-text-light: #4b5563;
         --color-bg: #ffffff;
         --color-bg-alt: #f9fafb;
         --color-border: #e5e7eb;
-        --color-success: #059669;
+        --color-success: #047857;
         --color-warning: #d97706;
         --color-danger: #dc2626;
         --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -192,12 +192,23 @@
 
       a {
         color: var(--color-primary);
-        text-decoration: none;
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 2px;
         transition: color var(--transition);
       }
 
       a:hover {
         color: var(--color-primary-dark);
+      }
+
+      /* Navigation and button links don't need underlines */
+      .nav-desktop a,
+      .mobile-nav a,
+      .footer-links a,
+      .logo,
+      .btn {
+        text-decoration: none;
       }
 
       ul {
@@ -321,6 +332,7 @@
       .nav-desktop a:hover,
       .nav-desktop a:focus-visible {
         color: var(--color-primary);
+        text-decoration: underline;
       }
 
       .header-cta {
@@ -395,7 +407,7 @@
         font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 0.08em;
-        color: var(--color-primary);
+        color: #0d4a8f;
         margin-bottom: 0.75rem;
       }
 
@@ -424,7 +436,7 @@
         align-items: center;
         gap: 0.5rem;
         background: var(--color-primary-light);
-        color: var(--color-primary);
+        color: #0d4080;
         padding: 0.375rem 1rem;
         border-radius: 50px;
         font-size: 0.8125rem;
@@ -944,7 +956,7 @@
       /* ===== FOOTER ===== */
       .site-footer {
         background: var(--color-text);
-        color: #d1d5db;
+        color: #e5e7eb;
         padding: 3rem 0 1.5rem;
       }
 
@@ -980,13 +992,14 @@
       }
 
       .footer-links a {
-        color: #9ca3af;
+        color: #d1d5db;
         font-size: 0.8125rem;
         transition: color var(--transition);
       }
 
       .footer-links a:hover {
         color: #fff;
+        text-decoration: underline;
       }
 
       .footer-bottom {
@@ -995,7 +1008,7 @@
         border-top: 1px solid #374151;
         text-align: center;
         font-size: 0.8125rem;
-        color: #6b7280;
+        color: #9ca3af;
       }
 
       /* ===== DESKTOP MEDIA QUERIES ===== */
@@ -1516,8 +1529,8 @@
             </p>
           </div>
 
-          <div class="faq-list" role="list">
-            <div class="faq-item" role="listitem">
+          <div class="faq-list">
+            <div class="faq-item">
               <button class="faq-question" aria-expanded="false">
                 <span>Czy potrzebuję strony jeśli mam Booking?</span>
                 <svg
@@ -1533,7 +1546,7 @@
                   <line x1="5" y1="12" x2="19" y2="12" />
                 </svg>
               </button>
-              <div class="faq-answer" role="region">
+              <div class="faq-answer">
                 <p>
                   Tak. Booking pobiera prowizję 15–20% od każdej rezerwacji.
                   Własna strona pozwala przyjmować rezerwacje bezpośrednio, bez
@@ -1543,7 +1556,7 @@
               </div>
             </div>
 
-            <div class="faq-item" role="listitem">
+            <div class="faq-item">
               <button class="faq-question" aria-expanded="false">
                 <span>Ile kosztuje strona dla noclegu?</span>
                 <svg
@@ -1559,7 +1572,7 @@
                   <line x1="5" y1="12" x2="19" y2="12" />
                 </svg>
               </button>
-              <div class="faq-answer" role="region">
+              <div class="faq-answer">
                 <p>
                   Strona kosztuje jednorazowo 1 500 zł netto. Nie ma żadnych
                   ukrytych opłat ani abonamentów. Opcjonalnie możesz wykupić
@@ -1568,7 +1581,7 @@
               </div>
             </div>
 
-            <div class="faq-item" role="listitem">
+            <div class="faq-item">
               <button class="faq-question" aria-expanded="false">
                 <span>Czy strona pomoże zdobyć więcej rezerwacji?</span>
                 <svg
@@ -1584,7 +1597,7 @@
                   <line x1="5" y1="12" x2="19" y2="12" />
                 </svg>
               </button>
-              <div class="faq-answer" role="region">
+              <div class="faq-answer">
                 <p>
                   Tak. Strona zoptymalizowana pod SEO pozwala dotrzeć do gości
                   szukających noclegu w Twojej okolicy w Google. Dodatkowo
@@ -1594,7 +1607,7 @@
               </div>
             </div>
 
-            <div class="faq-item" role="listitem">
+            <div class="faq-item">
               <button class="faq-question" aria-expanded="false">
                 <span>Jak długo trwa realizacja strony?</span>
                 <svg
@@ -1610,7 +1623,7 @@
                   <line x1="5" y1="12" x2="19" y2="12" />
                 </svg>
               </button>
-              <div class="faq-answer" role="region">
+              <div class="faq-answer">
                 <p>
                   Gotową stronę dostarczamy w ciągu 5–7 dni roboczych od momentu
                   otrzymania materiałów (zdjęcia, opisy, dane kontaktowe). Jeśli
@@ -1619,7 +1632,7 @@
               </div>
             </div>
 
-            <div class="faq-item" role="listitem">
+            <div class="faq-item">
               <button class="faq-question" aria-expanded="false">
                 <span>Czy mogę sam edytować stronę?</span>
                 <svg
@@ -1635,7 +1648,7 @@
                   <line x1="5" y1="12" x2="19" y2="12" />
                 </svg>
               </button>
-              <div class="faq-answer" role="region">
+              <div class="faq-answer">
                 <p>
                   Strona jest zaprojektowana tak, aby nie wymagała częstych
                   zmian. Jeśli jednak potrzebujesz aktualizacji (np. zmiana cen,
@@ -1645,7 +1658,7 @@
               </div>
             </div>
 
-            <div class="faq-item" role="listitem">
+            <div class="faq-item">
               <button class="faq-question" aria-expanded="false">
                 <span>Czy strona będzie widoczna w Google?</span>
                 <svg
@@ -1661,7 +1674,7 @@
                   <line x1="5" y1="12" x2="19" y2="12" />
                 </svg>
               </button>
-              <div class="faq-answer" role="region">
+              <div class="faq-answer">
                 <p>
                   Tak. Każda strona jest zoptymalizowana pod SEO – poprawna
                   struktura HTML, szybkie ładowanie, odpowiednie meta tagi i
@@ -1710,7 +1723,7 @@
                   placeholder="np. Jan Kowalski"
                   aria-required="true"
                 />
-                <span class="form-error" id="name-error" role="alert"
+                <span class="form-error" id="name-error" aria-live="polite"
                   >Podaj swoje imię i nazwisko</span
                 >
               </div>
@@ -1726,7 +1739,7 @@
                   placeholder="np. 600 123 456"
                   aria-required="true"
                 />
-                <span class="form-error" id="phone-error" role="alert"
+                <span class="form-error" id="phone-error" aria-live="polite"
                   >Podaj poprawny numer telefonu</span
                 >
               </div>
@@ -1759,7 +1772,7 @@
                   <a href="#" target="_blank">Polityka prywatności</a>.</label
                 >
               </div>
-              <span class="form-error" id="consent-error" role="alert"
+              <span class="form-error" id="consent-error" aria-live="polite"
                 >Zaznacz zgodę, aby wysłać formularz</span
               >
 
