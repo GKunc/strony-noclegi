@@ -1,0 +1,1981 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Strona internetowa dla noclegów – Więcej rezerwacji bez prowizji |
+      StronaNoclegi.pl
+    </title>
+    <meta
+      name="description"
+      content="Tworzymy proste strony internetowe dla właścicieli noclegów, apartamentów i domków. Jednorazowa opłata, bez abonamentu. Zdobądź więcej rezerwacji bez prowizji Booking i Airbnb."
+    />
+    <meta
+      name="keywords"
+      content="strona dla noclegów, strona dla apartamentów, więcej rezerwacji bez Booking, strona internetowa dla noclegu, strona www pokoje, strona pensjonat, rezerwacje bez prowizji"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="StronaNoclegi.pl" />
+    <link rel="canonical" href="https://stronanoclegi.pl/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pl_PL" />
+    <meta
+      property="og:title"
+      content="Strona internetowa dla noclegów – Więcej rezerwacji bez prowizji"
+    />
+    <meta
+      property="og:description"
+      content="Prosta strona internetowa dla Twojego noclegu – jednorazowo, bez abonamentu. Zdobądź więcej rezerwacji bez prowizji Booking i Airbnb."
+    />
+    <meta property="og:url" content="https://stronanoclegi.pl/" />
+    <meta property="og:site_name" content="StronaNoclegi.pl" />
+    <meta property="og:image" content="https://stronanoclegi.pl/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Strona internetowa dla noclegów – Więcej rezerwacji bez prowizji"
+    />
+    <meta
+      name="twitter:description"
+      content="Prosta strona dla właścicieli noclegów. Jednorazowa opłata, bez abonamentu."
+    />
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "StronaNoclegi.pl – Strony internetowe dla noclegów",
+        "description": "Tworzymy proste, skuteczne strony internetowe dla właścicieli noclegów, apartamentów i domków wypoczynkowych. Jednorazowa opłata, bez abonamentu.",
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "StronaNoclegi.pl",
+          "url": "https://stronanoclegi.pl",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "PL"
+          },
+          "priceRange": "$$"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "Polska"
+        },
+        "serviceType": "Tworzenie stron internetowych dla noclegów",
+        "offers": {
+          "@type": "Offer",
+          "price": "1500",
+          "priceCurrency": "PLN",
+          "description": "Jednorazowa opłata za stronę internetową dla noclegu"
+        }
+      }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Czy potrzebuję strony jeśli mam Booking?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tak. Booking pobiera prowizję 15–20% od każdej rezerwacji. Własna strona pozwala przyjmować rezerwacje bezpośrednio, bez prowizji. To nie zamiennik Booking, ale dodatkowy kanał, który zwiększa Twój zysk."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Ile kosztuje strona dla noclegu?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Strona kosztuje jednorazowo 1500 zł netto. Nie ma żadnych ukrytych opłat ani abonamentów. Opcjonalnie możesz wykupić pakiet utrzymania strony."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Czy strona pomoże zdobyć więcej rezerwacji?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tak. Strona zoptymalizowana pod SEO pozwala dotrzeć do gości szukających noclegu w Twojej okolicy w Google. Dodatkowo goście, którzy raz u Ciebie byli, mogą wracać bezpośrednio na Twoją stronę."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Jak długo trwa realizacja strony?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Gotową stronę dostarczamy w ciągu 5–7 dni roboczych od momentu otrzymania materiałów (zdjęcia, opisy, dane kontaktowe)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Czy mogę sam edytować stronę?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Strona jest zaprojektowana tak, aby nie wymagała częstych zmian. Jeśli jednak potrzebujesz aktualizacji, możesz skorzystać z naszego pakietu utrzymania lub zlecić jednorazową zmianę."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Czy strona będzie widoczna w Google?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tak. Każda strona jest zoptymalizowana pod SEO – poprawna struktura, szybkie ładowanie, odpowiednie meta tagi i treści dopasowane do fraz, których szukają Twoi potencjalni goście."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <style>
+      /* ===== RESET & BASE ===== */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --color-primary: #1a73e8;
+        --color-primary-dark: #1558b0;
+        --color-primary-light: #e8f0fe;
+        --color-text: #1f2937;
+        --color-text-light: #6b7280;
+        --color-bg: #ffffff;
+        --color-bg-alt: #f9fafb;
+        --color-border: #e5e7eb;
+        --color-success: #059669;
+        --color-warning: #d97706;
+        --color-danger: #dc2626;
+        --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+        --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+        --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
+        --radius: 8px;
+        --radius-lg: 12px;
+        --max-width: 1120px;
+        --transition: 0.2s ease;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        font-size: 1rem;
+        line-height: 1.7;
+        color: var(--color-text);
+        background: var(--color-bg);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      a {
+        color: var(--color-primary);
+        text-decoration: none;
+        transition: color var(--transition);
+      }
+
+      a:hover {
+        color: var(--color-primary-dark);
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      /* ===== UTILITY ===== */
+      .container {
+        width: 100%;
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 0 1.25rem;
+      }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      /* ===== BUTTONS ===== */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.875rem 2rem;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: var(--radius);
+        border: none;
+        cursor: pointer;
+        transition: all var(--transition);
+        text-decoration: none;
+        line-height: 1.4;
+      }
+
+      .btn-primary {
+        background: var(--color-primary);
+        color: #fff;
+        box-shadow: 0 2px 8px rgba(26, 115, 232, 0.3);
+      }
+
+      .btn-primary:hover,
+      .btn-primary:focus-visible {
+        background: var(--color-primary-dark);
+        color: #fff;
+        box-shadow: 0 4px 16px rgba(26, 115, 232, 0.4);
+        transform: translateY(-1px);
+      }
+
+      .btn-outline {
+        background: transparent;
+        color: var(--color-primary);
+        border: 2px solid var(--color-primary);
+      }
+
+      .btn-outline:hover,
+      .btn-outline:focus-visible {
+        background: var(--color-primary);
+        color: #fff;
+      }
+
+      .btn-large {
+        padding: 1rem 2.5rem;
+        font-size: 1.125rem;
+      }
+
+      /* ===== HEADER ===== */
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--color-border);
+        transition: box-shadow var(--transition);
+      }
+
+      .site-header.scrolled {
+        box-shadow: var(--shadow-md);
+      }
+
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 64px;
+      }
+
+      .logo {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--color-text);
+        letter-spacing: -0.02em;
+      }
+
+      .logo span {
+        color: var(--color-primary);
+      }
+
+      .nav-desktop {
+        display: none;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .nav-desktop a {
+        color: var(--color-text-light);
+        font-size: 0.9375rem;
+        font-weight: 500;
+        transition: color var(--transition);
+      }
+
+      .nav-desktop a:hover,
+      .nav-desktop a:focus-visible {
+        color: var(--color-primary);
+      }
+
+      .header-cta {
+        display: none;
+      }
+
+      .mobile-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--color-text);
+      }
+
+      .mobile-toggle svg {
+        width: 24px;
+        height: 24px;
+      }
+
+      .mobile-nav {
+        display: none;
+        position: fixed;
+        inset: 0;
+        top: 64px;
+        background: var(--color-bg);
+        z-index: 99;
+        padding: 1.5rem;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .mobile-nav.open {
+        display: flex;
+      }
+
+      .mobile-nav a {
+        display: block;
+        padding: 0.75rem 0;
+        font-size: 1.125rem;
+        font-weight: 500;
+        color: var(--color-text);
+        border-bottom: 1px solid var(--color-border);
+      }
+
+      .mobile-nav .btn {
+        margin-top: 1rem;
+        text-align: center;
+      }
+
+      /* ===== SECTION COMMON ===== */
+      .section {
+        padding: 4rem 0;
+      }
+
+      .section-alt {
+        background: var(--color-bg-alt);
+      }
+
+      .section-header {
+        text-align: center;
+        max-width: 680px;
+        margin: 0 auto 3rem;
+      }
+
+      .section-label {
+        display: inline-block;
+        font-size: 0.8125rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--color-primary);
+        margin-bottom: 0.75rem;
+      }
+
+      .section-title {
+        font-size: 1.75rem;
+        font-weight: 700;
+        line-height: 1.25;
+        letter-spacing: -0.02em;
+        margin-bottom: 1rem;
+      }
+
+      .section-subtitle {
+        font-size: 1.0625rem;
+        color: var(--color-text-light);
+        line-height: 1.65;
+      }
+
+      /* ===== HERO ===== */
+      .hero {
+        padding: 4rem 0 3rem;
+        text-align: center;
+      }
+
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--color-primary-light);
+        color: var(--color-primary);
+        padding: 0.375rem 1rem;
+        border-radius: 50px;
+        font-size: 0.8125rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+        font-weight: 800;
+        line-height: 1.2;
+        letter-spacing: -0.03em;
+        margin-bottom: 1.25rem;
+        max-width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-sub {
+        font-size: 1.125rem;
+        color: var(--color-text-light);
+        max-width: 560px;
+        margin: 0 auto 2rem;
+        line-height: 1.65;
+      }
+
+      .hero-ctas {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: center;
+      }
+
+      .hero-trust {
+        margin-top: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+        color: var(--color-text-light);
+        font-size: 0.875rem;
+      }
+
+      .hero-trust-icons {
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .hero-trust-icons span {
+        color: #facc15;
+        font-size: 1.125rem;
+      }
+
+      .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin-top: 3rem;
+        padding-top: 3rem;
+        border-top: 1px solid var(--color-border);
+      }
+
+      .hero-stat {
+        text-align: center;
+      }
+
+      .hero-stat-value {
+        font-size: 1.75rem;
+        font-weight: 800;
+        color: var(--color-primary);
+        letter-spacing: -0.02em;
+      }
+
+      .hero-stat-label {
+        font-size: 0.8125rem;
+        color: var(--color-text-light);
+        margin-top: 0.25rem;
+      }
+
+      /* ===== PROBLEM ===== */
+      .problems-grid {
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      .problem-card {
+        background: var(--color-bg);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-lg);
+        padding: 1.75rem;
+        transition: box-shadow var(--transition);
+      }
+
+      .problem-card:hover {
+        box-shadow: var(--shadow-md);
+      }
+
+      .problem-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: var(--radius);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        background: #fef2f2;
+      }
+
+      .problem-card h3 {
+        font-size: 1.125rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      .problem-card p {
+        color: var(--color-text-light);
+        font-size: 0.9375rem;
+        line-height: 1.65;
+      }
+
+      /* ===== SOLUTION ===== */
+      .solutions-grid {
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      .solution-card {
+        background: var(--color-bg);
+        border-radius: var(--radius-lg);
+        padding: 1.75rem;
+        border: 1px solid var(--color-border);
+        transition:
+          box-shadow var(--transition),
+          transform var(--transition);
+      }
+
+      .solution-card:hover {
+        box-shadow: var(--shadow-md);
+        transform: translateY(-2px);
+      }
+
+      .solution-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: var(--radius);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        background: #ecfdf5;
+      }
+
+      .solution-card h3 {
+        font-size: 1.125rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      .solution-card p {
+        color: var(--color-text-light);
+        font-size: 0.9375rem;
+        line-height: 1.65;
+      }
+
+      /* ===== STEPS ===== */
+      .steps-grid {
+        display: grid;
+        gap: 2rem;
+        position: relative;
+      }
+
+      .step {
+        text-align: center;
+        position: relative;
+      }
+
+      .step-number {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: var(--color-primary);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin: 0 auto 1rem;
+      }
+
+      .step h3 {
+        font-size: 1.125rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      .step p {
+        color: var(--color-text-light);
+        font-size: 0.9375rem;
+        max-width: 300px;
+        margin: 0 auto;
+        line-height: 1.65;
+      }
+
+      /* ===== AUDIENCE ===== */
+      .audience-content {
+        max-width: 720px;
+        margin: 0 auto;
+      }
+
+      .audience-list {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .audience-item {
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+        padding: 1.25rem;
+        background: var(--color-bg);
+        border-radius: var(--radius);
+        border: 1px solid var(--color-border);
+      }
+
+      .audience-check {
+        flex-shrink: 0;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: #ecfdf5;
+        color: var(--color-success);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 0.875rem;
+      }
+
+      .audience-item p {
+        font-size: 0.9375rem;
+        line-height: 1.6;
+      }
+
+      .audience-item strong {
+        font-weight: 600;
+      }
+
+      /* ===== PRICING ===== */
+      .pricing-card {
+        max-width: 480px;
+        margin: 0 auto;
+        background: var(--color-bg);
+        border: 2px solid var(--color-primary);
+        border-radius: var(--radius-lg);
+        padding: 2.5rem 2rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .pricing-badge {
+        position: absolute;
+        top: 1rem;
+        right: -2rem;
+        background: var(--color-primary);
+        color: #fff;
+        padding: 0.25rem 3rem;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        transform: rotate(45deg);
+      }
+
+      .pricing-label {
+        font-size: 0.875rem;
+        color: var(--color-text-light);
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+      }
+
+      .pricing-amount {
+        font-size: 3rem;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        color: var(--color-text);
+        line-height: 1.1;
+      }
+
+      .pricing-amount span {
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: var(--color-text-light);
+      }
+
+      .pricing-note {
+        font-size: 0.875rem;
+        color: var(--color-text-light);
+        margin-top: 0.25rem;
+        margin-bottom: 2rem;
+      }
+
+      .pricing-features {
+        text-align: left;
+        margin-bottom: 2rem;
+      }
+
+      .pricing-features li {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.625rem 0;
+        font-size: 0.9375rem;
+        border-bottom: 1px solid var(--color-border);
+      }
+
+      .pricing-features li:last-child {
+        border-bottom: none;
+      }
+
+      .pricing-features .check {
+        color: var(--color-success);
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+
+      .pricing-extra {
+        margin-top: 1.5rem;
+        padding: 1rem;
+        background: var(--color-bg-alt);
+        border-radius: var(--radius);
+        font-size: 0.875rem;
+        color: var(--color-text-light);
+      }
+
+      .pricing-extra strong {
+        color: var(--color-text);
+      }
+
+      /* ===== FAQ ===== */
+      .faq-list {
+        max-width: 720px;
+        margin: 0 auto;
+      }
+
+      .faq-item {
+        border-bottom: 1px solid var(--color-border);
+      }
+
+      .faq-question {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1.25rem 0;
+        background: none;
+        border: none;
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--color-text);
+        cursor: pointer;
+        text-align: left;
+        font-family: inherit;
+        line-height: 1.5;
+        transition: color var(--transition);
+      }
+
+      .faq-question:hover {
+        color: var(--color-primary);
+      }
+
+      .faq-icon {
+        flex-shrink: 0;
+        width: 24px;
+        height: 24px;
+        transition: transform 0.3s ease;
+      }
+
+      .faq-item.open .faq-icon {
+        transform: rotate(45deg);
+      }
+
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition:
+          max-height 0.3s ease,
+          padding 0.3s ease;
+      }
+
+      .faq-item.open .faq-answer {
+        max-height: 300px;
+      }
+
+      .faq-answer p {
+        padding-bottom: 1.25rem;
+        color: var(--color-text-light);
+        font-size: 0.9375rem;
+        line-height: 1.7;
+      }
+
+      /* ===== CONTACT ===== */
+      .contact-wrapper {
+        max-width: 560px;
+        margin: 0 auto;
+      }
+
+      .contact-form {
+        display: grid;
+        gap: 1.25rem;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.375rem;
+      }
+
+      .form-group label {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--color-text);
+      }
+
+      .form-group input,
+      .form-group textarea {
+        padding: 0.75rem 1rem;
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius);
+        font-size: 1rem;
+        font-family: inherit;
+        color: var(--color-text);
+        background: var(--color-bg);
+        transition:
+          border-color var(--transition),
+          box-shadow var(--transition);
+        width: 100%;
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: var(--color-primary);
+        box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.15);
+      }
+
+      .form-group input.error,
+      .form-group textarea.error {
+        border-color: var(--color-danger);
+      }
+
+      .form-error {
+        font-size: 0.8125rem;
+        color: var(--color-danger);
+        display: none;
+      }
+
+      .form-error.visible {
+        display: block;
+      }
+
+      .form-group textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+
+      .form-consent {
+        display: flex;
+        gap: 0.625rem;
+        align-items: flex-start;
+        font-size: 0.8125rem;
+        color: var(--color-text-light);
+        line-height: 1.5;
+      }
+
+      .form-consent input[type="checkbox"] {
+        margin-top: 0.2rem;
+        flex-shrink: 0;
+      }
+
+      .form-success {
+        display: none;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .form-success.visible {
+        display: block;
+      }
+
+      .form-success-icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background: #ecfdf5;
+        color: var(--color-success);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.75rem;
+        margin: 0 auto 1rem;
+      }
+
+      .form-success h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .form-success p {
+        color: var(--color-text-light);
+      }
+
+      /* ===== FOOTER ===== */
+      .site-footer {
+        background: var(--color-text);
+        color: #d1d5db;
+        padding: 3rem 0 1.5rem;
+      }
+
+      .footer-inner {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+        text-align: center;
+      }
+
+      .footer-logo {
+        font-size: 1.125rem;
+        font-weight: 700;
+        color: #fff;
+      }
+
+      .footer-logo span {
+        color: var(--color-primary);
+      }
+
+      .footer-text {
+        font-size: 0.875rem;
+        max-width: 400px;
+        line-height: 1.6;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .footer-links a {
+        color: #9ca3af;
+        font-size: 0.8125rem;
+        transition: color var(--transition);
+      }
+
+      .footer-links a:hover {
+        color: #fff;
+      }
+
+      .footer-bottom {
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid #374151;
+        text-align: center;
+        font-size: 0.8125rem;
+        color: #6b7280;
+      }
+
+      /* ===== DESKTOP MEDIA QUERIES ===== */
+      @media (min-width: 640px) {
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+
+        .hero-ctas {
+          flex-direction: row;
+          justify-content: center;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+
+        .problems-grid,
+        .solutions-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        .steps-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (min-width: 768px) {
+        .section {
+          padding: 5rem 0;
+        }
+
+        .hero {
+          padding: 5rem 0 4rem;
+        }
+
+        .hero h1 {
+          font-size: 2.75rem;
+        }
+
+        .hero-sub {
+          font-size: 1.1875rem;
+        }
+
+        .section-title {
+          font-size: 2.25rem;
+        }
+
+        .mobile-toggle {
+          display: none;
+        }
+
+        .nav-desktop {
+          display: flex;
+        }
+
+        .header-cta {
+          display: inline-flex;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .hero h1 {
+          font-size: 3.25rem;
+        }
+
+        .section-title {
+          font-size: 2.5rem;
+        }
+
+        .hero-stats {
+          max-width: 600px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
+      /* ===== ANIMATION (prefers-reduced-motion safe) ===== */
+      @media (prefers-reduced-motion: no-preference) {
+        .fade-in {
+          opacity: 0;
+          transform: translateY(20px);
+          transition:
+            opacity 0.5s ease,
+            transform 0.5s ease;
+        }
+
+        .fade-in.visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* ===== SKIP LINK ===== */
+      .skip-link {
+        position: absolute;
+        top: -100%;
+        left: 0;
+        background: var(--color-primary);
+        color: #fff;
+        padding: 0.5rem 1rem;
+        z-index: 200;
+        font-size: 0.875rem;
+      }
+
+      .skip-link:focus {
+        top: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Przejdź do treści</a>
+
+    <!-- ===== HEADER ===== -->
+    <header class="site-header" role="banner">
+      <div class="container header-inner">
+        <a href="/" class="logo" aria-label="StronaNoclegi.pl – Strona główna"
+          >Strona<span>Noclegi</span></a
+        >
+
+        <nav class="nav-desktop" aria-label="Nawigacja główna">
+          <a href="#problem">Dlaczego?</a>
+          <a href="#rozwiazanie">Rozwiązanie</a>
+          <a href="#jak-to-dziala">Jak to działa</a>
+          <a href="#cennik">Cennik</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+
+        <a href="#kontakt" class="btn btn-primary header-cta">Darmowa wycena</a>
+
+        <button
+          class="mobile-toggle"
+          aria-label="Otwórz menu"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            aria-hidden="true"
+          >
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </button>
+      </div>
+
+      <nav id="mobile-nav" class="mobile-nav" aria-label="Menu mobilne">
+        <a href="#problem">Dlaczego?</a>
+        <a href="#rozwiazanie">Rozwiązanie</a>
+        <a href="#jak-to-dziala">Jak to działa</a>
+        <a href="#cennik">Cennik</a>
+        <a href="#faq">FAQ</a>
+        <a href="#kontakt" class="btn btn-primary">Darmowa wycena</a>
+      </nav>
+    </header>
+
+    <!-- ===== MAIN ===== -->
+    <main id="main-content">
+      <!-- HERO -->
+      <section class="hero section" aria-labelledby="hero-heading">
+        <div class="container">
+          <div class="hero-badge" aria-hidden="true">
+            <span>🏡</span>
+            Dla właścicieli noclegów
+          </div>
+
+          <h1 id="hero-heading">
+            Więcej rezerwacji <br />bez prowizji Booking i&nbsp;Airbnb
+          </h1>
+
+          <p class="hero-sub">
+            Prosta strona internetowa dla Twojego noclegu&nbsp;– jednorazowo,
+            bez&nbsp;abonamentu. Zacznij przyjmować rezerwacje bezpośrednio od
+            gości.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="#kontakt" class="btn btn-primary btn-large"
+              >Darmowa wycena →</a
+            >
+            <a href="#jak-to-dziala" class="btn btn-outline">Jak to działa?</a>
+          </div>
+
+          <div class="hero-trust">
+            <div class="hero-trust-icons" aria-label="Ocena 5 na 5 gwiazdek">
+              <span aria-hidden="true">★</span>
+              <span aria-hidden="true">★</span>
+              <span aria-hidden="true">★</span>
+              <span aria-hidden="true">★</span>
+              <span aria-hidden="true">★</span>
+            </div>
+            <span
+              >Zaufali nam właściciele ponad
+              <strong>50 obiektów noclegowych</strong></span
+            >
+          </div>
+
+          <div class="hero-stats fade-in">
+            <div class="hero-stat">
+              <div class="hero-stat-value">15–20%</div>
+              <div class="hero-stat-label">tyle zabiera prowizja Booking</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-value">0 zł</div>
+              <div class="hero-stat-label">
+                prowizji za rezerwacje z własnej strony
+              </div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-value">5 dni</div>
+              <div class="hero-stat-label">czas realizacji strony</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROBLEM -->
+      <section
+        id="problem"
+        class="section section-alt"
+        aria-labelledby="problem-heading"
+      >
+        <div class="container">
+          <div class="section-header">
+            <span class="section-label">Problem</span>
+            <h2 id="problem-heading" class="section-title">
+              Booking i Airbnb zarabiają na&nbsp;Twoich gościach
+            </h2>
+            <p class="section-subtitle">
+              Portale rezerwacyjne są wygodne, ale ich prowizje zjadają Twój
+              zysk. Oto największe problemy, z którymi mierzą się właściciele
+              noclegów.
+            </p>
+          </div>
+
+          <div class="problems-grid">
+            <article class="problem-card fade-in">
+              <div class="problem-icon" aria-hidden="true">💸</div>
+              <h3>Wysoka prowizja za każdą rezerwację</h3>
+              <p>
+                Booking pobiera od 15% do 20% prowizji od każdej rezerwacji.
+                Przy 100&nbsp;000 zł obrotu rocznie tracisz nawet 20&nbsp;000 zł
+                na samych prowizjach.
+              </p>
+            </article>
+
+            <article class="problem-card fade-in">
+              <div class="problem-icon" aria-hidden="true">🔒</div>
+              <h3>Brak kontroli nad danymi gości</h3>
+              <p>
+                Portale nie udostępniają Ci pełnych danych kontaktowych gości.
+                Nie możesz budować relacji ani wysyłać ofert na kolejny sezon.
+              </p>
+            </article>
+
+            <article class="problem-card fade-in">
+              <div class="problem-icon" aria-hidden="true">🔄</div>
+              <h3>Brak powracających gości</h3>
+              <p>
+                Goście rezerwują przez Booking za każdym razem od nowa – a Ty za
+                każdym razem płacisz prowizję. Bez własnej strony nie masz jak
+                ich zatrzymać.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SOLUTION -->
+      <section
+        id="rozwiazanie"
+        class="section"
+        aria-labelledby="solution-heading"
+      >
+        <div class="container">
+          <div class="section-header">
+            <span class="section-label">Rozwiązanie</span>
+            <h2 id="solution-heading" class="section-title">
+              Własna strona to Twój kanał rezerwacji bez&nbsp;prowizji
+            </h2>
+            <p class="section-subtitle">
+              Nie musisz rezygnować z Booking. Wystarczy, że dodasz własną
+              stronę internetową jako dodatkowy kanał rezerwacji – i zaczniesz
+              zarabiać więcej.
+            </p>
+          </div>
+
+          <div class="solutions-grid">
+            <article class="solution-card fade-in">
+              <div class="solution-icon" aria-hidden="true">🌐</div>
+              <h3>Profesjonalna strona dla Twojego obiektu</h3>
+              <p>
+                Strona prezentuje Twój obiekt, zdjęcia, cennik i dane
+                kontaktowe. Goście mogą rezerwować bezpośrednio – bez
+                pośredników.
+              </p>
+            </article>
+
+            <article class="solution-card fade-in">
+              <div class="solution-icon" aria-hidden="true">📞</div>
+              <h3>Bezpośredni kontakt z gośćmi</h3>
+              <p>
+                Masz pełną kontrolę nad kontaktem. Telefon, e-mail, formularz –
+                gość pisze bezpośrednio do Ciebie. Budujesz relację na lata.
+              </p>
+            </article>
+
+            <article class="solution-card fade-in">
+              <div class="solution-icon" aria-hidden="true">📈</div>
+              <h3>Więcej zysku z każdej rezerwacji</h3>
+              <p>
+                Bez prowizji 15–20% zostawiasz więcej pieniędzy w kieszeni. Przy
+                50 rezerwacjach rocznie to dodatkowe kilka tysięcy złotych.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section
+        id="jak-to-dziala"
+        class="section section-alt"
+        aria-labelledby="steps-heading"
+      >
+        <div class="container">
+          <div class="section-header">
+            <span class="section-label">Jak to działa</span>
+            <h2 id="steps-heading" class="section-title">
+              3 proste kroki do własnej strony
+            </h2>
+            <p class="section-subtitle">
+              Nie musisz znać się na technologii. My zajmiemy się wszystkim – Ty
+              dostarczasz tylko materiały.
+            </p>
+          </div>
+
+          <div class="steps-grid">
+            <article class="step fade-in">
+              <div class="step-number" aria-hidden="true">1</div>
+              <h3>Napisz do nas</h3>
+              <p>
+                Wypełnij formularz lub zadzwoń. Porozmawiamy o Twoim obiekcie i
+                ustalmy, czego potrzebujesz.
+              </p>
+            </article>
+
+            <article class="step fade-in">
+              <div class="step-number" aria-hidden="true">2</div>
+              <h3>Budujemy Twoją stronę</h3>
+              <p>
+                Na podstawie zdjęć i opisów tworzymy profesjonalną, szybką
+                stronę zoptymalizowaną pod Google.
+              </p>
+            </article>
+
+            <article class="step fade-in">
+              <div class="step-number" aria-hidden="true">3</div>
+              <h3>Przyjmujesz rezerwacje</h3>
+              <p>
+                Twoja strona jest gotowa. Goście znajdują Cię w Google i
+                rezerwują bezpośrednio – bez prowizji.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- AUDIENCE -->
+      <section id="dla-kogo" class="section" aria-labelledby="audience-heading">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-label">Dla kogo</span>
+            <h2 id="audience-heading" class="section-title">
+              Dla małych właścicieli noclegów, którzy chcą zarabiać więcej
+            </h2>
+            <p class="section-subtitle">
+              Nasza oferta jest stworzona z myślą o właścicielach niewielkich
+              obiektów noclegowych w całej Polsce.
+            </p>
+          </div>
+
+          <div class="audience-content">
+            <div class="audience-list">
+              <div class="audience-item fade-in">
+                <div class="audience-check" aria-hidden="true">✓</div>
+                <p>
+                  <strong>Właściciele apartamentów</strong> – masz 2–5
+                  apartamentów i chcesz przyjmować gości bez prowizji Booking
+                </p>
+              </div>
+              <div class="audience-item fade-in">
+                <div class="audience-check" aria-hidden="true">✓</div>
+                <p>
+                  <strong>Właściciele domków letniskowych</strong> – Twoje domki
+                  są w atrakcyjnej lokalizacji, ale goście trafiają tylko przez
+                  pośredników
+                </p>
+              </div>
+              <div class="audience-item fade-in">
+                <div class="audience-check" aria-hidden="true">✓</div>
+                <p>
+                  <strong>Właściciele pensjonatów i pokoi</strong> – chcesz mieć
+                  profesjonalną prezentację obiektu w internecie
+                </p>
+              </div>
+              <div class="audience-item fade-in">
+                <div class="audience-check" aria-hidden="true">✓</div>
+                <p>
+                  <strong>Właściciele agroturystyk</strong> – Twoi goście
+                  wracają co roku, ale rezerwują przez Booking i płacisz
+                  prowizję od stałych klientów
+                </p>
+              </div>
+              <div class="audience-item fade-in">
+                <div class="audience-check" aria-hidden="true">✓</div>
+                <p>
+                  <strong>Każdy, kto chce być niezależny</strong> – nie chcesz
+                  zależeć od jednego portalu i jego zmiennych zasad
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRICING -->
+      <section
+        id="cennik"
+        class="section section-alt"
+        aria-labelledby="pricing-heading"
+      >
+        <div class="container">
+          <div class="section-header">
+            <span class="section-label">Cennik</span>
+            <h2 id="pricing-heading" class="section-title">
+              Prosta, uczciwa cena
+            </h2>
+            <p class="section-subtitle">
+              Jednorazowa opłata, bez ukrytych kosztów i abonamentów. Płacisz
+              raz – strona jest Twoja na zawsze.
+            </p>
+          </div>
+
+          <div class="pricing-card fade-in">
+            <div class="pricing-badge" aria-label="Popularne">Popularne</div>
+            <div class="pricing-label">Strona dla noclegu</div>
+            <div class="pricing-amount">1 500 <span>zł netto</span></div>
+            <div class="pricing-note">Jednorazowa opłata · bez abonamentu</div>
+
+            <ul class="pricing-features" role="list">
+              <li>
+                <span class="check" aria-hidden="true">✓</span> Profesjonalny
+                projekt strony
+              </li>
+              <li>
+                <span class="check" aria-hidden="true">✓</span> Responsywna
+                (mobilna) wersja
+              </li>
+              <li>
+                <span class="check" aria-hidden="true">✓</span> Optymalizacja
+                SEO pod Google
+              </li>
+              <li>
+                <span class="check" aria-hidden="true">✓</span> Formularz
+                kontaktowy
+              </li>
+              <li>
+                <span class="check" aria-hidden="true">✓</span> Galeria zdjęć
+                obiektu
+              </li>
+              <li>
+                <span class="check" aria-hidden="true">✓</span> Mapa dojazdu
+              </li>
+              <li>
+                <span class="check" aria-hidden="true">✓</span> Certyfikat SSL
+                (HTTPS)
+              </li>
+              <li>
+                <span class="check" aria-hidden="true">✓</span> Szybkie
+                ładowanie strony
+              </li>
+            </ul>
+
+            <a
+              href="#kontakt"
+              class="btn btn-primary btn-large"
+              style="width: 100%"
+              >Zamów darmową wycenę →</a
+            >
+
+            <div class="pricing-extra">
+              <strong>Opcjonalnie:</strong> Pakiet utrzymania strony
+              (aktualizacje, zmiany treści, hosting) – od
+              <strong>99 zł/mies.</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="section" aria-labelledby="faq-heading">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-label">FAQ</span>
+            <h2 id="faq-heading" class="section-title">
+              Najczęściej zadawane pytania
+            </h2>
+            <p class="section-subtitle">
+              Odpowiedzi na pytania, które najczęściej słyszymy od właścicieli
+              noclegów.
+            </p>
+          </div>
+
+          <div class="faq-list" role="list">
+            <div class="faq-item" role="listitem">
+              <button class="faq-question" aria-expanded="false">
+                <span>Czy potrzebuję strony jeśli mam Booking?</span>
+                <svg
+                  class="faq-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  aria-hidden="true"
+                >
+                  <line x1="12" y1="5" x2="12" y2="19" />
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                </svg>
+              </button>
+              <div class="faq-answer" role="region">
+                <p>
+                  Tak. Booking pobiera prowizję 15–20% od każdej rezerwacji.
+                  Własna strona pozwala przyjmować rezerwacje bezpośrednio, bez
+                  prowizji. To nie zamiennik Booking, ale dodatkowy kanał, który
+                  zwiększa Twój zysk.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item" role="listitem">
+              <button class="faq-question" aria-expanded="false">
+                <span>Ile kosztuje strona dla noclegu?</span>
+                <svg
+                  class="faq-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  aria-hidden="true"
+                >
+                  <line x1="12" y1="5" x2="12" y2="19" />
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                </svg>
+              </button>
+              <div class="faq-answer" role="region">
+                <p>
+                  Strona kosztuje jednorazowo 1 500 zł netto. Nie ma żadnych
+                  ukrytych opłat ani abonamentów. Opcjonalnie możesz wykupić
+                  pakiet utrzymania strony od 99 zł miesięcznie.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item" role="listitem">
+              <button class="faq-question" aria-expanded="false">
+                <span>Czy strona pomoże zdobyć więcej rezerwacji?</span>
+                <svg
+                  class="faq-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  aria-hidden="true"
+                >
+                  <line x1="12" y1="5" x2="12" y2="19" />
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                </svg>
+              </button>
+              <div class="faq-answer" role="region">
+                <p>
+                  Tak. Strona zoptymalizowana pod SEO pozwala dotrzeć do gości
+                  szukających noclegu w Twojej okolicy w Google. Dodatkowo
+                  goście, którzy raz u Ciebie byli, mogą wracać bezpośrednio na
+                  Twoją stronę zamiast rezerwować przez Booking.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item" role="listitem">
+              <button class="faq-question" aria-expanded="false">
+                <span>Jak długo trwa realizacja strony?</span>
+                <svg
+                  class="faq-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  aria-hidden="true"
+                >
+                  <line x1="12" y1="5" x2="12" y2="19" />
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                </svg>
+              </button>
+              <div class="faq-answer" role="region">
+                <p>
+                  Gotową stronę dostarczamy w ciągu 5–7 dni roboczych od momentu
+                  otrzymania materiałów (zdjęcia, opisy, dane kontaktowe). Jeśli
+                  masz wszystko przygotowane, może być jeszcze szybciej.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item" role="listitem">
+              <button class="faq-question" aria-expanded="false">
+                <span>Czy mogę sam edytować stronę?</span>
+                <svg
+                  class="faq-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  aria-hidden="true"
+                >
+                  <line x1="12" y1="5" x2="12" y2="19" />
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                </svg>
+              </button>
+              <div class="faq-answer" role="region">
+                <p>
+                  Strona jest zaprojektowana tak, aby nie wymagała częstych
+                  zmian. Jeśli jednak potrzebujesz aktualizacji (np. zmiana cen,
+                  dodanie zdjęć), możesz skorzystać z naszego pakietu utrzymania
+                  lub zlecić jednorazową zmianę.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item" role="listitem">
+              <button class="faq-question" aria-expanded="false">
+                <span>Czy strona będzie widoczna w Google?</span>
+                <svg
+                  class="faq-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  aria-hidden="true"
+                >
+                  <line x1="12" y1="5" x2="12" y2="19" />
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                </svg>
+              </button>
+              <div class="faq-answer" role="region">
+                <p>
+                  Tak. Każda strona jest zoptymalizowana pod SEO – poprawna
+                  struktura HTML, szybkie ładowanie, odpowiednie meta tagi i
+                  treści dopasowane do fraz, których szukają Twoi potencjalni
+                  goście w Google.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT / CTA -->
+      <section
+        id="kontakt"
+        class="section section-alt"
+        aria-labelledby="contact-heading"
+      >
+        <div class="container">
+          <div class="section-header">
+            <span class="section-label">Kontakt</span>
+            <h2 id="contact-heading" class="section-title">
+              Zamów darmową wycenę
+            </h2>
+            <p class="section-subtitle">
+              Wypełnij formularz, a odezwiemy się w ciągu 24 godzin. Bez
+              zobowiązań – porozmawiajmy o Twoim obiekcie.
+            </p>
+          </div>
+
+          <div class="contact-wrapper">
+            <form
+              class="contact-form"
+              id="contact-form"
+              novalidate
+              aria-label="Formularz kontaktowy"
+            >
+              <div class="form-group">
+                <label for="name">Imię i nazwisko</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  autocomplete="name"
+                  required
+                  placeholder="np. Jan Kowalski"
+                  aria-required="true"
+                />
+                <span class="form-error" id="name-error" role="alert"
+                  >Podaj swoje imię i nazwisko</span
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Numer telefonu</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  autocomplete="tel"
+                  required
+                  placeholder="np. 600 123 456"
+                  aria-required="true"
+                />
+                <span class="form-error" id="phone-error" role="alert"
+                  >Podaj poprawny numer telefonu</span
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="message"
+                  >Wiadomość
+                  <span style="font-weight: 400; color: var(--color-text-light)"
+                    >(opcjonalnie)</span
+                  ></label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Opisz swój obiekt – ile pokoi/apartamentów, lokalizacja, czego oczekujesz od strony..."
+                ></textarea>
+              </div>
+
+              <div class="form-consent">
+                <input
+                  type="checkbox"
+                  id="consent"
+                  name="consent"
+                  required
+                  aria-required="true"
+                />
+                <label for="consent"
+                  >Wyrażam zgodę na przetwarzanie moich danych osobowych w celu
+                  udzielenia odpowiedzi na zapytanie.
+                  <a href="#" target="_blank">Polityka prywatności</a>.</label
+                >
+              </div>
+              <span class="form-error" id="consent-error" role="alert"
+                >Zaznacz zgodę, aby wysłać formularz</span
+              >
+
+              <button type="submit" class="btn btn-primary btn-large">
+                Wyślij zapytanie →
+              </button>
+            </form>
+
+            <div class="form-success" id="form-success" role="status">
+              <div class="form-success-icon" aria-hidden="true">✓</div>
+              <h3>Dziękujemy za wiadomość!</h3>
+              <p>
+                Odezwiemy się w ciągu 24 godzin. W międzyczasie możesz
+                przygotować zdjęcia swojego obiektu.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-inner">
+          <div class="footer-logo">Strona<span>Noclegi</span></div>
+          <p class="footer-text">
+            Tworzymy proste, skuteczne strony internetowe dla właścicieli
+            noclegów w całej Polsce. Jednorazowa opłata, zero prowizji.
+          </p>
+          <nav class="footer-links" aria-label="Nawigacja stopki">
+            <a href="#problem">Dlaczego</a>
+            <a href="#rozwiazanie">Rozwiązanie</a>
+            <a href="#jak-to-dziala">Jak to działa</a>
+            <a href="#cennik">Cennik</a>
+            <a href="#faq">FAQ</a>
+            <a href="#kontakt">Kontakt</a>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 StronaNoclegi.pl. Wszelkie prawa zastrzeżone.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+      (function () {
+        "use strict";
+
+        // --- Sticky header shadow ---
+        var header = document.querySelector(".site-header");
+        var scrolled = false;
+        function onScroll() {
+          var shouldScroll = window.scrollY > 10;
+          if (shouldScroll !== scrolled) {
+            scrolled = shouldScroll;
+            header.classList.toggle("scrolled", scrolled);
+          }
+        }
+        window.addEventListener("scroll", onScroll, { passive: true });
+
+        // --- Mobile menu toggle ---
+        var mobileToggle = document.querySelector(".mobile-toggle");
+        var mobileNav = document.getElementById("mobile-nav");
+        var isOpen = false;
+
+        mobileToggle.addEventListener("click", function () {
+          isOpen = !isOpen;
+          mobileNav.classList.toggle("open", isOpen);
+          mobileToggle.setAttribute("aria-expanded", String(isOpen));
+          mobileToggle.setAttribute(
+            "aria-label",
+            isOpen ? "Zamknij menu" : "Otwórz menu",
+          );
+        });
+
+        // Close mobile nav on link click
+        var mobileLinks = mobileNav.querySelectorAll("a");
+        for (var i = 0; i < mobileLinks.length; i++) {
+          mobileLinks[i].addEventListener("click", function () {
+            isOpen = false;
+            mobileNav.classList.remove("open");
+            mobileToggle.setAttribute("aria-expanded", "false");
+            mobileToggle.setAttribute("aria-label", "Otwórz menu");
+          });
+        }
+
+        // --- FAQ accordion ---
+        var faqItems = document.querySelectorAll(".faq-item");
+        for (var j = 0; j < faqItems.length; j++) {
+          (function (item) {
+            var btn = item.querySelector(".faq-question");
+            btn.addEventListener("click", function () {
+              var isItemOpen = item.classList.contains("open");
+
+              // Close all
+              for (var k = 0; k < faqItems.length; k++) {
+                faqItems[k].classList.remove("open");
+                faqItems[k]
+                  .querySelector(".faq-question")
+                  .setAttribute("aria-expanded", "false");
+              }
+
+              // Toggle current
+              if (!isItemOpen) {
+                item.classList.add("open");
+                btn.setAttribute("aria-expanded", "true");
+              }
+            });
+          })(faqItems[j]);
+        }
+
+        // --- Form validation ---
+        var form = document.getElementById("contact-form");
+        var successMsg = document.getElementById("form-success");
+
+        function showError(id) {
+          var el = document.getElementById(id);
+          if (el) el.classList.add("visible");
+        }
+
+        function hideError(id) {
+          var el = document.getElementById(id);
+          if (el) el.classList.remove("visible");
+        }
+
+        function validatePhone(value) {
+          // Accept Polish phone numbers: optional +48, then 9 digits, spaces/dashes allowed
+          var cleaned = value.replace(/[\s\-\(\)]/g, "");
+          return /^(\+48)?[0-9]{9}$/.test(cleaned);
+        }
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          var valid = true;
+
+          var nameField = document.getElementById("name");
+          var phoneField = document.getElementById("phone");
+          var consentField = document.getElementById("consent");
+
+          // Reset
+          hideError("name-error");
+          hideError("phone-error");
+          hideError("consent-error");
+          nameField.classList.remove("error");
+          phoneField.classList.remove("error");
+
+          // Name
+          if (nameField.value.trim().length < 2) {
+            showError("name-error");
+            nameField.classList.add("error");
+            valid = false;
+          }
+
+          // Phone
+          if (!validatePhone(phoneField.value)) {
+            showError("phone-error");
+            phoneField.classList.add("error");
+            valid = false;
+          }
+
+          // Consent
+          if (!consentField.checked) {
+            showError("consent-error");
+            valid = false;
+          }
+
+          if (valid) {
+            // In production, send data to your backend here
+            form.style.display = "none";
+            successMsg.classList.add("visible");
+          }
+        });
+
+        // Live validation: hide error on input
+        document.getElementById("name").addEventListener("input", function () {
+          hideError("name-error");
+          this.classList.remove("error");
+        });
+        document.getElementById("phone").addEventListener("input", function () {
+          hideError("phone-error");
+          this.classList.remove("error");
+        });
+        document
+          .getElementById("consent")
+          .addEventListener("change", function () {
+            hideError("consent-error");
+          });
+
+        // --- Scroll animations (Intersection Observer) ---
+        if ("IntersectionObserver" in window) {
+          var fadeEls = document.querySelectorAll(".fade-in");
+          var observer = new IntersectionObserver(
+            function (entries) {
+              for (var m = 0; m < entries.length; m++) {
+                if (entries[m].isIntersecting) {
+                  entries[m].target.classList.add("visible");
+                  observer.unobserve(entries[m].target);
+                }
+              }
+            },
+            { threshold: 0.15, rootMargin: "0px 0px -40px 0px" },
+          );
+
+          for (var n = 0; n < fadeEls.length; n++) {
+            observer.observe(fadeEls[n]);
+          }
+        } else {
+          // Fallback: show everything
+          var allFade = document.querySelectorAll(".fade-in");
+          for (var p = 0; p < allFade.length; p++) {
+            allFade[p].classList.add("visible");
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>
