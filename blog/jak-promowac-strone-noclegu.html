@@ -33,6 +33,31 @@
       content="https://stronanoclegi.pl/blog/jak-promowac-strone-noclegu.html"
     />
     <meta property="og:site_name" content="StronaNoclegi.pl" />
+    <meta
+      property="og:image"
+      content="https://stronanoclegi.pl/og-image.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Poradnik: jak promować stronę noclegu w Google"
+    />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Jak promować stronę noclegu w Google i zdobywać rezerwacje bez prowizji?"
+    />
+    <meta
+      name="twitter:description"
+      content="Poznaj proste sposoby, jak promować stronę internetową noclegu w Google, na mapach i w social media, żeby zdobywać więcej rezerwacji bez prowizji."
+    />
+    <meta
+      name="twitter:image"
+      content="https://stronanoclegi.pl/og-image.jpg"
+    />
 
     <!-- Article Schema -->
     <script type="application/ld+json">
@@ -62,11 +87,73 @@
       }
     </script>
 
+    <!-- Breadcrumbs Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Strona główna",
+            "item": "https://stronanoclegi.pl/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Poradnik",
+            "item": "https://stronanoclegi.pl/#poradnik"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Jak promować stronę noclegu?",
+            "item": "https://stronanoclegi.pl/blog/jak-promowac-strone-noclegu.html"
+          }
+        ]
+      }
+    </script>
+
     <link rel="stylesheet" href="../css/main.css" />
 
     <style>
       main {
         margin-top: 1rem;
+      }
+
+      .breadcrumb {
+        font-size: 0.875rem;
+        margin-bottom: 0.75rem;
+        color: var(--color-text-light);
+      }
+
+      .breadcrumb ol {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.25rem;
+        padding: 0;
+        margin: 0;
+      }
+
+      .breadcrumb li::after {
+        content: "/";
+        margin: 0 0.25rem;
+        color: var(--color-border);
+      }
+
+      .breadcrumb li:last-child::after {
+        content: "";
+      }
+
+      .breadcrumb a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .breadcrumb a:hover {
+        text-decoration: underline;
       }
 
       .article-header {
@@ -265,6 +352,18 @@
   </nav>
 </header>
 <main id="main-content">
+      <nav class="breadcrumb" aria-label="Ścieżka nawigacji">
+        <div class="container">
+          <ol>
+            <li><a href="../index.html">Strona główna</a></li>
+            <li><a href="../index.html#poradnik">Poradnik</a></li>
+            <li aria-current="page">
+              Jak promować stronę noclegu w Google i zdobywać rezerwacje bez
+              prowizji?
+            </li>
+          </ol>
+        </div>
+      </nav>
       <div class="container">
         <header class="article-header">
           <span class="article-label">Poradnik</span>
@@ -353,6 +452,23 @@
             działanie. Lepiej robić małe kroki regularnie (np. raz w tygodniu),
             niż raz na rok wrzucić większą kampanię i o niej zapomnieć.
           </div>
+
+          <h2>Co dalej przeczytać o stronie noclegu?</h2>
+          <p>
+            Jeśli chcesz podejść do promocji kompleksowo, sprawdź też:
+          </p>
+          <ul>
+            <li>
+              <a href="jak-przygotowac-zdjecia-noclegu.html">
+                jak przygotować dobre zdjęcia noclegu na stronę i portale
+              </a>
+            </li>
+            <li>
+              <a href="ile-kosztuje-strona-dla-noclegu.html">
+                ile kosztuje strona dla noclegu i kiedy inwestycja się zwraca
+              </a>
+            </li>
+          </ul>
 
           <div class="cta-box">
             <h2>Chcesz, żebyśmy pomogli w promocji Twojej strony?</h2>

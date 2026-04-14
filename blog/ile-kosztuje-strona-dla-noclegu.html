@@ -34,6 +34,31 @@
       content="https://stronanoclegi.pl/blog/ile-kosztuje-strona-dla-noclegu.html"
     />
     <meta property="og:site_name" content="StronaNoclegi.pl" />
+    <meta
+      property="og:image"
+      content="https://stronanoclegi.pl/og-image.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Poradnik: ile kosztuje strona internetowa dla noclegu"
+    />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Ile kosztuje strona dla noclegu? Praktyczny przewodnik"
+    />
+    <meta
+      name="twitter:description"
+      content="Dowiedz się, ile realnie kosztuje strona internetowa dla noclegu, od czego zależy cena i kiedy inwestycja 1 500 zł szybko się zwraca. Konkretne przykłady i wyliczenia dla właścicieli apartamentów, domków i pensjonatów."
+    />
+    <meta
+      name="twitter:image"
+      content="https://stronanoclegi.pl/og-image.jpg"
+    />
 
     <!-- Article Schema -->
     <script type="application/ld+json">
@@ -63,11 +88,73 @@
       }
     </script>
 
+    <!-- Breadcrumbs Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Strona główna",
+            "item": "https://stronanoclegi.pl/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Poradnik",
+            "item": "https://stronanoclegi.pl/#poradnik"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Ile kosztuje strona dla noclegu?",
+            "item": "https://stronanoclegi.pl/blog/ile-kosztuje-strona-dla-noclegu.html"
+          }
+        ]
+      }
+    </script>
+
     <link rel="stylesheet" href="../css/main.css" />
 
     <style>
       main {
         margin-top: 1rem;
+      }
+
+      .breadcrumb {
+        font-size: 0.875rem;
+        margin-bottom: 0.75rem;
+        color: var(--color-text-light);
+      }
+
+      .breadcrumb ol {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.25rem;
+        padding: 0;
+        margin: 0;
+      }
+
+      .breadcrumb li::after {
+        content: "/";
+        margin: 0 0.25rem;
+        color: var(--color-border);
+      }
+
+      .breadcrumb li:last-child::after {
+        content: "";
+      }
+
+      .breadcrumb a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .breadcrumb a:hover {
+        text-decoration: underline;
       }
 
       .article-header {
@@ -266,6 +353,15 @@
   </nav>
 </header>
 <main id="main-content">
+      <nav class="breadcrumb" aria-label="Ścieżka nawigacji">
+        <div class="container">
+          <ol>
+            <li><a href="../index.html">Strona główna</a></li>
+            <li><a href="../index.html#poradnik">Poradnik</a></li>
+            <li aria-current="page">Ile kosztuje strona dla noclegu?</li>
+          </ol>
+        </div>
+      </nav>
       <div class="container">
         <header class="article-header">
           <span class="article-label">Poradnik</span>
@@ -452,6 +548,25 @@
             kolejnych latach po prostu pracuje na Ciebie, nie generując
             prowizji.
           </p>
+
+          <h2>Co jeszcze warto przeczytać?</h2>
+          <p>
+            Jeśli myślisz o własnej stronie dla noclegu, zobacz też te
+            poradniki:
+          </p>
+          <ul>
+            <li>
+              <a href="jak-opisac-nocleg-na-stronie.html">
+                jak opisać nocleg na stronie, żeby goście chcieli rezerwować
+              </a>
+            </li>
+            <li>
+              <a href="jak-promowac-strone-noclegu.html">
+                jak promować stronę noclegu, żeby przynosiła rezerwacje bez
+                prowizji
+              </a>
+            </li>
+          </ul>
 
           <div class="cta-box">
             <h2>Chcesz policzyć, czy strona się opłaci w Twoim przypadku?</h2>
