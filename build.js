@@ -5,38 +5,36 @@
 const fs = require("fs");
 const path = require("path");
 
-function replaceSection(filePath, startMarker, endTag, replacementHtml) {
+// Podmienia całe tagi <header>...</header> lub <footer>...</footer>
+// na zawartość z partiali, bez szukania znaczników komentarza.
+function replaceTagInFile(filePath, tagName, replacementHtml) {
   let content = fs.readFileSync(filePath, "utf8");
 
-  const startIndex = content.indexOf(startMarker);
-  if (startIndex === -1) {
+  // Obejmuje również białe znaki wokół tagu, żeby kolejne uruchomienia
+  // nie dokładały kolejnych pustych linii.
+  const pattern = new RegExp(
+    `\\s*<${tagName}[^>]*>[\\s\\S]*?<\\/${tagName}>\\s*`,
+    "i",
+  );
+
+  if (!pattern.test(content)) {
     throw new Error(
-      `Nie znaleziono znacznika startowego w ${filePath}: ${startMarker}`,
+      `Nie znaleziono tagu <${tagName}> w pliku ${filePath}. Upewnij się, że plik zawiera poprawny tag <${tagName}>...</${tagName}>.`,
     );
   }
 
-  const endIndex = content.indexOf(endTag, startIndex);
-  if (endIndex === -1) {
-    throw new Error(
-      `Nie znaleziono znacznika końcowego w ${filePath}: ${endTag}`,
-    );
-  }
+  const newContent = content.replace(
+    pattern,
+    "\n" + replacementHtml.trim() + "\n",
+  );
 
-  const afterEnd = endIndex + endTag.length;
-
-  const before = content.slice(0, startIndex + startMarker.length);
-  const after = content.slice(afterEnd);
-
-  const newSection = "\n" + replacementHtml.trimEnd() + "\n";
-
-  const newContent = before + newSection + after;
   fs.writeFileSync(filePath, newContent, "utf8");
 }
 
 function main() {
   const projectRoot = __dirname;
 
-  // Wczytaj wspólne partiale
+  // Wczytaj wspólne partiale (z pełnymi tagami <header> i <footer>)
   const header = fs.readFileSync(
     path.join(projectRoot, "partials/header.html"),
     "utf8",
@@ -46,38 +44,21 @@ function main() {
     "utf8",
   );
 
-  // index.html
-  const indexPath = path.join(projectRoot, "index.html");
-  replaceSection(
-    indexPath,
-    "    <!-- ===== HEADER ===== -->",
-    "    </header>",
-    header,
-  );
-  replaceSection(
-    indexPath,
-    "    <!-- ===== FOOTER ===== -->",
-    "    </footer>",
-    footer,
-  );
-
-  // blog/ile-kosztuje-strona-dla-noclegu.html
-  const blogPath = path.join(
-    projectRoot,
+  // Wszystkie strony, na których podmieniamy nagłówek i stopkę
+  const pages = [
+    "index.html",
     "blog/ile-kosztuje-strona-dla-noclegu.html",
-  );
-  replaceSection(
-    blogPath,
-    "    <!-- ===== HEADER (jak na stronie głównej, z linkami na ../index.html#sekcja) ===== -->",
-    "    </header>",
-    header,
-  );
-  replaceSection(
-    blogPath,
-    "    <!-- ===== FOOTER (jak na stronie głównej, z linkami na ../index.html#sekcja) ===== -->",
-    "    </footer>",
-    footer,
-  );
+    "blog/jak-opisac-nocleg-na-stronie.html",
+    "blog/jak-przygotowac-zdjecia-noclegu.html",
+    "blog/jak-promowac-strone-noclegu.html",
+  ];
+
+  for (const relativePath of pages) {
+    const filePath = path.join(projectRoot, relativePath);
+
+    replaceTagInFile(filePath, "header", header);
+    replaceTagInFile(filePath, "footer", footer);
+  }
 
   console.log("Build zakończony: nagłówki i stopki zostały zaktualizowane.");
 }
