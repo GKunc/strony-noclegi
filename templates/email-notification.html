@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <title>Nowe zapytanie z formularza StronaNoclegi.pl</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #f5f7fb;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial,
+          sans-serif;
+        color: #111827;
+      }
+      .wrapper {
+        padding: 24px 12px;
+      }
+      .container {
+        max-width: 700px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        border-radius: 12px;
+        padding: 24px 24px 28px;
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+      }
+      .logo {
+        font-weight: 800;
+        font-size: 20px;
+        letter-spacing: -0.03em;
+        color: #111827;
+        margin: 0 0 12px;
+      }
+      .logo span {
+        color: #1a73e8;
+      }
+      .badge {
+        display: inline-block;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        padding: 4px 10px;
+        border-radius: 999px;
+        background-color: #ecfdf5;
+        color: #047857;
+        margin-bottom: 4px;
+      }
+      h1 {
+        font-size: 20px;
+        margin: 12px 0 8px;
+      }
+      p {
+        font-size: 14px;
+        line-height: 1.6;
+        margin: 0 0 10px;
+        color: #4b5563;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 16px;
+        font-size: 13px;
+      }
+      th,
+      td {
+        padding: 8px 10px;
+        border-bottom: 1px solid #e5e7eb;
+        vertical-align: top;
+      }
+      th {
+        width: 160px;
+        text-align: left;
+        font-weight: 600;
+        color: #111827;
+        background-color: #f9fafb;
+      }
+      td {
+        color: #374151;
+      }
+      .small {
+        font-size: 12px;
+        color: #6b7280;
+        margin-top: 16px;
+      }
+      .small a {
+        color: #1a73e8;
+        text-decoration: none;
+      }
+      .footer {
+        max-width: 700px;
+        margin: 12px auto 0;
+        font-size: 11px;
+        color: #9ca3af;
+        text-align: center;
+      }
+      .mono {
+        font-family:
+          SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+          "Courier New", monospace;
+        font-size: 12px;
+        white-space: pre-wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <div class="logo">Strona<span>Noclegi</span></div>
+        <div class="badge">Nowe zapytanie z formularza</div>
+
+        <h1>Nowa wiadomość z formularza na StronaNoclegi.pl</h1>
+
+        <p>
+          Oto szczegóły zapytania przesłanego przez użytkownika ze strony
+          głównej.
+        </p>
+
+        <table role="presentation">
+          <tr>
+            <th>Imię i nazwisko</th>
+            <td>{{name}}</td>
+          </tr>
+          <tr>
+            <th>Adres e-mail</th>
+            <td>{{email}}</td>
+          </tr>
+          <tr>
+            <th>Numer telefonu</th>
+            <td>{{phone}}</td>
+          </tr>
+          <tr>
+            <th>Zgoda RODO</th>
+            <td>{{consent}}</td>
+          </tr>
+          <tr>
+            <th>Strona / formularz</th>
+            <td>{{page}}</td>
+          </tr>
+          <tr>
+            <th>Treść wiadomości</th>
+            <td class="mono">{{message}}</td>
+          </tr>
+        </table>
+
+        <p class="small">
+          Jeśli chcesz szybko odpowiedzieć, kliknij:
+          <a
+            href="mailto:{{email}}?subject=Odpowied%C5%BA%20na%20zapytanie%20ze%20StronaNoclegi.pl"
+          >
+            Odpowiedz na tę wiadomość
+          </a>
+        </p>
+
+        <p class="small">
+          Ten e‑mail jest wewnętrznym powiadomieniem o nowym zgłoszeniu z
+          formularza na StronaNoclegi.pl.
+        </p>
+      </div>
+
+      <div class="footer">
+        &copy; 2026 StronaNoclegi.pl – proste strony internetowe dla właścicieli
+        noclegów.
+      </div>
+    </div>
+  </body>
+</html>

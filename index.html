@@ -808,62 +808,62 @@
     <a href="#main-content" class="skip-link">Przejdź do treści</a>
 
     <!-- ===== HEADER ===== -->
-<header class="site-header" role="banner">
-  <div class="container header-inner">
-    <a
-      href="/strony-noclegi/"
-      class="logo"
-      aria-label="StronaNoclegi.pl – Strona główna"
-      >Strona<span>Noclegi</span></a
-    >
+    <header class="site-header" role="banner">
+      <div class="container header-inner">
+        <a
+          href="/strony-noclegi/"
+          class="logo"
+          aria-label="StronaNoclegi.pl – Strona główna"
+          >Strona<span>Noclegi</span></a
+        >
 
-    <nav class="nav-desktop" aria-label="Nawigacja główna">
-      <a href="/strony-noclegi/#problem">Dlaczego?</a>
-      <a href="/strony-noclegi/#rozwiazanie">Rozwiązanie</a>
-      <a href="/strony-noclegi/#jak-to-dziala">Jak to działa</a>
-      <a href="/strony-noclegi/#cennik">Cennik</a>
-      <a href="/strony-noclegi/#poradnik">Poradnik</a>
-      <a href="/strony-noclegi/#faq">FAQ</a>
-    </nav>
+        <nav class="nav-desktop" aria-label="Nawigacja główna">
+          <a href="/strony-noclegi/#problem">Dlaczego?</a>
+          <a href="/strony-noclegi/#rozwiazanie">Rozwiązanie</a>
+          <a href="/strony-noclegi/#jak-to-dziala">Jak to działa</a>
+          <a href="/strony-noclegi/#cennik">Cennik</a>
+          <a href="/strony-noclegi/#poradnik">Poradnik</a>
+          <a href="/strony-noclegi/#faq">FAQ</a>
+        </nav>
 
-    <a href="/strony-noclegi/#kontakt" class="btn btn-primary header-cta"
-      >Darmowa wycena</a
-    >
+        <a href="/strony-noclegi/#kontakt" class="btn btn-primary header-cta"
+          >Darmowa wycena</a
+        >
 
-    <button
-      class="mobile-toggle"
-      aria-label="Otwórz menu"
-      aria-expanded="false"
-      aria-controls="mobile-nav"
-    >
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        aria-hidden="true"
-      >
-        <line x1="3" y1="6" x2="21" y2="6" />
-        <line x1="3" y1="12" x2="21" y2="12" />
-        <line x1="3" y1="18" x2="21" y2="18" />
-      </svg>
-    </button>
-  </div>
+        <button
+          class="mobile-toggle"
+          aria-label="Otwórz menu"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            aria-hidden="true"
+          >
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </button>
+      </div>
 
-  <nav id="mobile-nav" class="mobile-nav" aria-label="Menu mobilne">
-    <a href="/strony-noclegi/#problem">Dlaczego?</a>
-    <a href="/strony-noclegi/#rozwiazanie">Rozwiązanie</a>
-    <a href="/strony-noclegi/#jak-to-dziala">Jak to działa</a>
-    <a href="/strony-noclegi/#cennik">Cennik</a>
-    <a href="/strony-noclegi/#poradnik">Poradnik</a>
-    <a href="/strony-noclegi/#faq">FAQ</a>
-    <a href="/strony-noclegi/#kontakt" class="btn btn-primary"
-      >Darmowa wycena</a
-    >
-  </nav>
-</header>
-<!-- ===== MAIN ===== -->
+      <nav id="mobile-nav" class="mobile-nav" aria-label="Menu mobilne">
+        <a href="/strony-noclegi/#problem">Dlaczego?</a>
+        <a href="/strony-noclegi/#rozwiazanie">Rozwiązanie</a>
+        <a href="/strony-noclegi/#jak-to-dziala">Jak to działa</a>
+        <a href="/strony-noclegi/#cennik">Cennik</a>
+        <a href="/strony-noclegi/#poradnik">Poradnik</a>
+        <a href="/strony-noclegi/#faq">FAQ</a>
+        <a href="/strony-noclegi/#kontakt" class="btn btn-primary"
+          >Darmowa wycena</a
+        >
+      </nav>
+    </header>
+    <!-- ===== MAIN ===== -->
     <main id="main-content">
       <!-- HERO -->
       <section class="hero section" aria-labelledby="hero-heading">
@@ -1610,6 +1610,8 @@
               id="contact-form"
               novalidate
               aria-label="Formularz kontaktowy"
+              method="POST"
+              action="https://n8n.osktailor.pl/webhook/5acdfb83-0b31-4228-90ff-cc1e3222250c"
             >
               <div class="form-group">
                 <label for="name">Imię i nazwisko</label>
@@ -1624,6 +1626,22 @@
                 />
                 <span class="form-error" id="name-error" aria-live="polite"
                   >Podaj swoje imię i nazwisko</span
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="email">Adres e-mail</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  autocomplete="email"
+                  required
+                  placeholder="np. jan.kowalski@example.com"
+                  aria-required="true"
+                />
+                <span class="form-error" id="email-error" aria-live="polite"
+                  >Podaj poprawny adres e-mail</span
                 >
               </div>
 
@@ -1675,10 +1693,32 @@
                 >Zaznacz zgodę, aby wysłać formularz</span
               >
 
+              <!-- Dodatkowe informacje dla serwisu obsługującego formularz -->
+              <input
+                type="hidden"
+                name="_subject"
+                value="Nowe zapytanie ze StronaNoclegi.pl"
+              />
+              <input
+                type="hidden"
+                name="_page"
+                value="Formularz na stronie głównej"
+              />
+
               <button type="submit" class="btn btn-primary btn-large">
                 Wyślij zapytanie →
               </button>
             </form>
+
+            <div
+              class="form-error form-global-error"
+              id="form-global-error"
+              aria-live="polite"
+            >
+              Wystąpił błąd podczas wysyłki formularza. Spróbuj ponownie za
+              chwilę lub napisz bezpośrednio na adres
+              <a href="mailto:grzeg.kunc@gmail.com">grzeg.kunc@gmail.com</a>.
+            </div>
 
             <div class="form-success" id="form-success" role="status">
               <div class="form-success-icon" aria-hidden="true">✓</div>
@@ -1694,34 +1734,34 @@
     </main>
 
     <!-- ===== FOOTER ===== -->
-<footer class="site-footer" role="contentinfo">
-  <div class="container">
-    <div class="footer-inner">
-      <div class="footer-logo">Strona<span>Noclegi</span></div>
-      <p class="footer-text">
-        Tworzymy proste, skuteczne strony internetowe dla właścicieli noclegów w
-        całej Polsce. Jednorazowa opłata, zero prowizji.
-      </p>
-      <p class="footer-text">
-        Kontakt: <a href="tel:+48782312090">+48 782 312 090</a>,
-        <a href="mailto:grzeg.kunc@gmail.com">grzeg.kunc@gmail.com</a>
-      </p>
-      <nav class="footer-links" aria-label="Nawigacja stopki">
-        <a href="/strony-noclegi/#problem">Dlaczego</a>
-        <a href="/strony-noclegi/#rozwiazanie">Rozwiązanie</a>
-        <a href="/strony-noclegi/#jak-to-dziala">Jak to działa</a>
-        <a href="/strony-noclegi/#cennik">Cennik</a>
-        <a href="/strony-noclegi/#poradnik">Poradnik</a>
-        <a href="/strony-noclegi/#faq">FAQ</a>
-        <a href="/strony-noclegi/#kontakt">Kontakt</a>
-      </nav>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 StronaNoclegi.pl. Wszelkie prawa zastrzeżone.</p>
-    </div>
-  </div>
-</footer>
-<!-- ===== JAVASCRIPT ===== -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-inner">
+          <div class="footer-logo">Strona<span>Noclegi</span></div>
+          <p class="footer-text">
+            Tworzymy proste, skuteczne strony internetowe dla właścicieli
+            noclegów w całej Polsce. Jednorazowa opłata, zero prowizji.
+          </p>
+          <p class="footer-text">
+            Kontakt: <a href="tel:+48782312090">+48 782 312 090</a>,
+            <a href="mailto:grzeg.kunc@gmail.com">grzeg.kunc@gmail.com</a>
+          </p>
+          <nav class="footer-links" aria-label="Nawigacja stopki">
+            <a href="/strony-noclegi/#problem">Dlaczego</a>
+            <a href="/strony-noclegi/#rozwiazanie">Rozwiązanie</a>
+            <a href="/strony-noclegi/#jak-to-dziala">Jak to działa</a>
+            <a href="/strony-noclegi/#cennik">Cennik</a>
+            <a href="/strony-noclegi/#poradnik">Poradnik</a>
+            <a href="/strony-noclegi/#faq">FAQ</a>
+            <a href="/strony-noclegi/#kontakt">Kontakt</a>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 StronaNoclegi.pl. Wszelkie prawa zastrzeżone.</p>
+        </div>
+      </div>
+    </footer>
+    <!-- ===== JAVASCRIPT ===== -->
     <script>
       (function () {
         "use strict";
@@ -1792,6 +1832,7 @@
         // --- Form validation ---
         var form = document.getElementById("contact-form");
         var successMsg = document.getElementById("form-success");
+        var globalError = document.getElementById("form-global-error");
 
         function showError(id) {
           var el = document.getElementById(id);
@@ -1809,25 +1850,42 @@
           return /^(\+48)?[0-9]{9}$/.test(cleaned);
         }
 
+        function validateEmail(value) {
+          // Prosta walidacja adresu e-mail
+          var trimmed = value.trim();
+          if (!trimmed) return false;
+          return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed);
+        }
+
         form.addEventListener("submit", function (e) {
           e.preventDefault();
           var valid = true;
 
           var nameField = document.getElementById("name");
+          var emailField = document.getElementById("email");
           var phoneField = document.getElementById("phone");
           var consentField = document.getElementById("consent");
 
           // Reset
           hideError("name-error");
+          hideError("email-error");
           hideError("phone-error");
           hideError("consent-error");
           nameField.classList.remove("error");
+          emailField.classList.remove("error");
           phoneField.classList.remove("error");
 
           // Name
           if (nameField.value.trim().length < 2) {
             showError("name-error");
             nameField.classList.add("error");
+            valid = false;
+          }
+
+          // Email
+          if (!validateEmail(emailField.value)) {
+            showError("email-error");
+            emailField.classList.add("error");
             valid = false;
           }
 
@@ -1845,15 +1903,46 @@
           }
 
           if (valid) {
-            // In production, send data to your backend here
-            form.style.display = "none";
-            successMsg.classList.add("visible");
+            if (globalError) {
+              globalError.classList.remove("visible");
+            }
+
+            // Wysyłka danych formularza do zewnętrznego serwisu (np. Formspree)
+            var formData = new FormData(form);
+
+            fetch(form.action, {
+              method: form.method || "POST",
+              body: formData,
+              headers: {
+                Accept: "application/json",
+              },
+            })
+              .then(function (response) {
+                if (response.ok) {
+                  form.reset();
+                  form.style.display = "none";
+                  successMsg.classList.add("visible");
+                } else {
+                  if (globalError) {
+                    globalError.classList.add("visible");
+                  }
+                }
+              })
+              .catch(function () {
+                if (globalError) {
+                  globalError.classList.add("visible");
+                }
+              });
           }
         });
 
         // Live validation: hide error on input
         document.getElementById("name").addEventListener("input", function () {
           hideError("name-error");
+          this.classList.remove("error");
+        });
+        document.getElementById("email").addEventListener("input", function () {
+          hideError("email-error");
           this.classList.remove("error");
         });
         document.getElementById("phone").addEventListener("input", function () {
