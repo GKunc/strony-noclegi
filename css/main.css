@@ -278,6 +278,16 @@ ul {
   line-height: 1.6;
 }
 
+.footer-text a {
+  color: #e5e7eb;
+  text-decoration: underline;
+}
+
+.footer-text a:hover,
+.footer-text a:focus-visible {
+  color: #ffffff;
+}
+
 .footer-links {
   display: flex;
   gap: 1.5rem;
