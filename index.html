@@ -441,13 +441,18 @@
       }
 
       /* ===== PRICING ===== */
+      .pricing-grid {
+        display: grid;
+        gap: 1.5rem;
+      }
+
       .pricing-card {
         max-width: 480px;
         margin: 0 auto;
         background: var(--color-bg);
         border: 2px solid var(--color-primary);
         border-radius: var(--radius-lg);
-        padding: 2.5rem 2rem;
+        padding: 2.8rem 2rem 2.5rem;
         text-align: center;
         position: relative;
         overflow: hidden;
@@ -455,8 +460,8 @@
 
       .pricing-badge {
         position: absolute;
-        top: 1rem;
-        right: -2rem;
+        top: 3rem;
+        right: -4rem;
         background: var(--color-primary);
         color: #fff;
         padding: 0.25rem 3rem;
@@ -1154,58 +1159,160 @@
             </p>
           </div>
 
-          <div class="pricing-card fade-in">
-            <div class="pricing-badge" aria-label="Popularne">Popularne</div>
-            <div class="pricing-label">Strona dla noclegu</div>
-            <div class="pricing-amount">1 500 <span>zł netto</span></div>
-            <div class="pricing-note">Jednorazowa opłata · bez abonamentu</div>
+          <div class="pricing-grid">
+            <!-- Pakiet Start -->
+            <article class="pricing-card fade-in">
+              <div class="pricing-label">Pakiet Start</div>
+              <div class="pricing-amount">2 000 <span>zł netto</span></div>
+              <div class="pricing-note">
+                Dla małych obiektów, które potrzebują prostej, ale
+                profesjonalnej strony wizytówki
+              </div>
 
-            <ul class="pricing-features" role="list">
-              <li>
-                <span class="check" aria-hidden="true">✓</span> Profesjonalny
-                projekt strony
-              </li>
-              <li>
-                <span class="check" aria-hidden="true">✓</span> Responsywna
-                (mobilna) wersja
-              </li>
-              <li>
-                <span class="check" aria-hidden="true">✓</span> Optymalizacja
-                SEO pod Google
-              </li>
-              <li>
-                <span class="check" aria-hidden="true">✓</span> Formularz
-                kontaktowy
-              </li>
-              <li>
-                <span class="check" aria-hidden="true">✓</span> Galeria zdjęć
-                obiektu
-              </li>
-              <li>
-                <span class="check" aria-hidden="true">✓</span> Mapa dojazdu
-              </li>
-              <li>
-                <span class="check" aria-hidden="true">✓</span> Certyfikat SSL
-                (HTTPS)
-              </li>
-              <li>
-                <span class="check" aria-hidden="true">✓</span> Szybkie
-                ładowanie strony
-              </li>
-            </ul>
+              <ul class="pricing-features" role="list">
+                <li>
+                  <span class="check" aria-hidden="true">✓</span> Prosta strona
+                  wizytówka dla jednego obiektu (opis, zdjęcia, podstawowy
+                  cennik)
+                </li>
+                <li>
+                  <span class="check" aria-hidden="true">✓</span> Responsywna
+                  (mobilna) wersja
+                </li>
+                <li>
+                  <span class="check" aria-hidden="true">✓</span> Podstawowa
+                  optymalizacja SEO pod Google (tytuły, meta opisy, nagłówki)
+                </li>
+                <li>
+                  <span class="check" aria-hidden="true">✓</span> Formularz
+                  kontaktowy i dane kontaktowe
+                </li>
+                <li>
+                  <span class="check" aria-hidden="true">✓</span> Mapa dojazdu i
+                  opis lokalizacji
+                </li>
+              </ul>
 
-            <a
-              href="#kontakt"
-              class="btn btn-primary btn-large"
-              style="width: 100%"
-              >Zamów darmową wycenę →</a
-            >
+              <a
+                href="#kontakt"
+                class="btn btn-outline btn-large"
+                style="width: 100%"
+                >Wybierz pakiet Start →</a
+              >
+            </article>
 
-            <div class="pricing-extra">
-              <strong>Opcjonalnie:</strong> Pakiet utrzymania strony
-              (aktualizacje, zmiany treści, hosting) – od
-              <strong>99 zł/mies.</strong>
-            </div>
+            <!-- Pakiet Plus (popularny) -->
+            <article class="pricing-card fade-in">
+              <div class="pricing-badge" aria-label="Najczęściej wybierany">
+                Najczęściej wybierany
+              </div>
+              <div class="pricing-label">Pakiet Plus</div>
+              <div class="pricing-amount">2 900 <span>zł netto</span></div>
+              <div class="pricing-note">
+                Najlepszy stosunek ceny do wartości dla apartamentów, domków i
+                pensjonatów
+              </div>
+
+              <ul class="pricing-features" role="list">
+                <li>
+                  <span class="check" aria-hidden="true">✓</span> Wszystko z
+                  pakietu Start
+                </li>
+                <li>
+                  <span class="check" aria-hidden="true">✓</span> Rozszerzona
+                  liczba sekcji/podstron (np. osobne sekcje dla
+                  pokoi/apartamentów i atrakcji w okolicy)
+                </li>
+                <li>
+                  <span class="check" aria-hidden="true">✓</span> Pełniejsza
+                  optymalizacja SEO pod Google (struktura strony, treści pod
+                  lokalne frazy)
+                </li>
+                <li>
+                  <span class="check" aria-hidden="true">✓</span> Propozycja
+                  tekstów pod SEO dla Twojej lokalizacji
+                </li>
+                <li>
+                  <span class="check" aria-hidden="true">✓</span> Prosta sekcja
+                  z opiniami gości lub atrakcjami w okolicy
+                </li>
+                <li>
+                  <span class="check" aria-hidden="true">✓</span> Integracja
+                  kalendarza dostępności z Booking.com i Airbnb (synchronizacja
+                  iCal)
+                </li>
+              </ul>
+
+              <a
+                href="#kontakt"
+                class="btn btn-primary btn-large"
+                style="width: 100%"
+                >Wybierz pakiet Plus →</a
+              >
+
+              <div class="pricing-extra">
+                <strong>Opcjonalnie:</strong> Pakiet utrzymania strony
+                (aktualizacje, zmiany treści, hosting) – od
+                <strong>99 zł/mies.</strong>
+              </div>
+            </article>
+
+            <!-- Pakiet Premium (z rezerwacjami online) -->
+            <article class="pricing-card fade-in">
+              <div class="pricing-label">Pakiet Premium</div>
+              <div class="pricing-amount">4 900 <span>zł netto</span></div>
+              <div class="pricing-note">
+                Dla obiektów, które chcą pełen system rezerwacji online i
+                integrację z Booking.com oraz Airbnb
+              </div>
+
+              <ul class="pricing-features" role="list">
+                <li>
+                  <span class="check" aria-hidden="true">✓</span> Wszystko z
+                  pakietu Plus
+                </li>
+                <li>
+                  <span class="check" aria-hidden="true">✓</span> Moduł
+                  rezerwacji online z kalendarzem dostępności na stronie
+                </li>
+                <li>
+                  <span class="check" aria-hidden="true">✓</span> Integracja z
+                  bramką płatności (zaliczki online, płatność kartą/BLIK)
+                </li>
+                <li>
+                  <span class="check" aria-hidden="true">✓</span> Konfiguracja
+                  Google Analytics 4 i podstawowych zdarzeń (wysłanie
+                  formularza, kliknięcia w kontakt)
+                </li>
+                <li>
+                  <span class="check" aria-hidden="true">✓</span> Rozbudowany
+                  formularz kontaktowy/rezerwacyjny (np. liczba osób, termin,
+                  dodatkowe pytania)
+                </li>
+                <li>
+                  <span class="check" aria-hidden="true">✓</span> Własny e-mail
+                  w Twojej domenie (np. rezerwacje@twojadomena.pl) i
+                  konfiguracja skrzynki
+                </li>
+                <li>
+                  <span class="check" aria-hidden="true">✓</span> Konsultacja
+                  jak samodzielnie zlecać lub wprowadzać zmiany na stronie
+                  (omówienie krok po kroku, co i jak przekazywać)
+                </li>
+                <li>
+                  <span class="check" aria-hidden="true">✓</span> Pakiet
+                  drobnych zmian po starcie (np. korekty treści/zdjęć w ciągu 30
+                  dni)
+                </li>
+              </ul>
+
+              <a
+                href="#kontakt"
+                class="btn btn-outline btn-large"
+                style="width: 100%"
+                >Porozmawiaj o pakiecie Premium →</a
+              >
+            </article>
           </div>
         </div>
       </section>
