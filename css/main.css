@@ -29,6 +29,7 @@
   --transition: 0.2s ease;
   --header-bg: rgba(255, 255, 255, 0.95);
   --header-bg-solid: #ffffff;
+  --footer-bg: #111827;
 }
 
 :root[data-theme="dark"] {
@@ -49,6 +50,7 @@
   --shadow-lg: 0 12px 30px rgba(0, 0, 0, 0.45);
   --header-bg: rgba(10, 17, 30, 0.92);
   --header-bg-solid: #0b1220;
+  --footer-bg: #060c17;
 }
 
 html {
@@ -306,7 +308,7 @@ ul {
 
 /* ===== FOOTER (wspólny) ===== */
 .site-footer {
-  background: var(--color-text);
+  background: var(--footer-bg);
   color: #e5e7eb;
   padding: 3rem 0 1.5rem;
 }
