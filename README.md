@@ -1,6 +1,6 @@
 # strony-noclegi
 
-Statyczna strona ofertowa dla właścicieli noclegów (StronaNoclegi.pl) + prosty poradnik w katalogu `blog/`.
+Statyczna strona ofertowa dla właścicieli noclegów (TwojApartamentOnline.pl) + prosty poradnik w katalogu `blog/`.
 
 ## Struktura nagłówka i stopki
 
