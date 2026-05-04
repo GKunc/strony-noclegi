@@ -8,6 +8,7 @@
 }
 
 :root {
+  color-scheme: light;
   --color-primary: #1558b0;
   --color-primary-dark: #0d4a8f;
   --color-primary-light: #dce8f7;
@@ -26,6 +27,28 @@
   --radius-lg: 12px;
   --max-width: 1120px;
   --transition: 0.2s ease;
+  --header-bg: rgba(255, 255, 255, 0.95);
+  --header-bg-solid: #ffffff;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-primary: #60a5fa;
+  --color-primary-dark: #3b82f6;
+  --color-primary-light: rgba(59, 130, 246, 0.18);
+  --color-text: #f3f4f6;
+  --color-text-light: #cbd5e1;
+  --color-bg: #0b1220;
+  --color-bg-alt: #111a2d;
+  --color-border: #243247;
+  --color-success: #34d399;
+  --color-warning: #f59e0b;
+  --color-danger: #f87171;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 4px 18px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 12px 30px rgba(0, 0, 0, 0.45);
+  --header-bg: rgba(10, 17, 30, 0.92);
+  --header-bg-solid: #0b1220;
 }
 
 html {
@@ -148,7 +171,7 @@ ul {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--header-bg);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--color-border);
@@ -198,6 +221,40 @@ ul {
 
 .header-cta {
   display: none;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  cursor: pointer;
+  color: var(--color-text);
+  transition:
+    background-color var(--transition),
+    border-color var(--transition),
+    transform var(--transition);
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  background: var(--color-bg-alt);
+  border-color: var(--color-primary);
+  transform: translateY(-1px);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.theme-toggle-icon {
+  font-size: 1.05rem;
+  line-height: 1;
 }
 
 .mobile-toggle {
@@ -336,7 +393,7 @@ ul {
   /* Na mobile nagłówek ma być w pełni nieprzezroczysty,
      żeby menu nie było "prześwitujące" nad treścią */
   .site-header {
-    background: #ffffff;
+    background: var(--header-bg-solid);
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
   }
