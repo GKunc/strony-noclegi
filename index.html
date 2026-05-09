@@ -909,6 +909,7 @@
     "use strict";
 
     var storageKey = "tao-theme";
+    var sessionStorageKey = "tao-theme-session";
     var consentKey = "tao-cookie-consent";
     var root = document.documentElement;
 
@@ -938,6 +939,54 @@
       return Boolean(consent && consent.preferences === true);
     }
 
+    function getFromLocalStorage(key) {
+      try {
+        return localStorage.getItem(key);
+      } catch (err) {
+        return null;
+      }
+    }
+
+    function setInLocalStorage(key, value) {
+      try {
+        localStorage.setItem(key, value);
+      } catch (err) {
+        // Intentionally empty (np. tryb prywatny)
+      }
+    }
+
+    function removeFromLocalStorage(key) {
+      try {
+        localStorage.removeItem(key);
+      } catch (err) {
+        // Intentionally empty
+      }
+    }
+
+    function getFromSessionStorage(key) {
+      try {
+        return sessionStorage.getItem(key);
+      } catch (err) {
+        return null;
+      }
+    }
+
+    function setInSessionStorage(key, value) {
+      try {
+        sessionStorage.setItem(key, value);
+      } catch (err) {
+        // Intentionally empty (np. tryb prywatny)
+      }
+    }
+
+    function removeFromSessionStorage(key) {
+      try {
+        sessionStorage.removeItem(key);
+      } catch (err) {
+        // Intentionally empty
+      }
+    }
+
     function getPreferredTheme() {
       return window.matchMedia &&
         window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -946,26 +995,25 @@
     }
 
     function getStoredTheme() {
-      if (!hasPreferenceConsent()) {
-        return null;
+      if (hasPreferenceConsent()) {
+        return getFromLocalStorage(storageKey);
       }
 
-      try {
-        return localStorage.getItem(storageKey);
-      } catch (err) {
-        return null;
-      }
+      return getFromSessionStorage(sessionStorageKey);
     }
 
     function storeTheme(theme) {
-      if (!hasPreferenceConsent()) {
+      if (theme !== "dark" && theme !== "light") {
         return;
       }
 
-      try {
-        localStorage.setItem(storageKey, theme);
-      } catch (err) {
-        // Intentionally empty (np. tryb prywatny)
+      if (hasPreferenceConsent()) {
+        setInLocalStorage(storageKey, theme);
+        removeFromSessionStorage(sessionStorageKey);
+      } else {
+        // Fallback bez trwałego zapisu: motyw utrzymuje się między podstronami
+        // tylko w ramach aktualnej sesji przeglądarki.
+        setInSessionStorage(sessionStorageKey, theme);
       }
     }
 
@@ -1029,12 +1077,26 @@
     window.addEventListener("tao:consent-updated", function (event) {
       var consent = event && event.detail ? event.detail : null;
 
-      if (!consent || consent.preferences !== true) {
-        try {
-          localStorage.removeItem(storageKey);
-        } catch (err) {
-          // Intentionally empty
+      if (consent && consent.preferences === true) {
+        var sessionTheme = getFromSessionStorage(sessionStorageKey);
+        var activeTheme = root.getAttribute("data-theme");
+        var themeToStore =
+          sessionTheme === "dark" || sessionTheme === "light"
+            ? sessionTheme
+            : activeTheme;
+
+        if (themeToStore === "dark" || themeToStore === "light") {
+          setInLocalStorage(storageKey, themeToStore);
+          applyTheme(themeToStore);
         }
+
+        removeFromSessionStorage(sessionStorageKey);
+        return;
+      }
+
+      if (!consent || consent.preferences !== true) {
+        removeFromLocalStorage(storageKey);
+        removeFromSessionStorage(sessionStorageKey);
         applyTheme(getPreferredTheme());
       }
     });
