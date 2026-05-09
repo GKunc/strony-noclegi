@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">TwojApartamentOnline.pl — Strony internetowe dla noclegów</title>
+  <desc id="desc">Grafika Open Graph dla strony TwojApartamentOnline.pl</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a73e8" />
+      <stop offset="100%" stop-color="#0d4a8f" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)" rx="28" />
+
+  <g opacity="0.16" fill="#ffffff">
+    <circle cx="1080" cy="80" r="180" />
+    <circle cx="170" cy="580" r="160" />
+  </g>
+
+  <g fill="#ffffff">
+    <text x="110" y="230" font-size="38" font-family="Inter, Arial, sans-serif" font-weight="600">
+      TwojApartamentOnline.pl
+    </text>
+    <text x="110" y="315" font-size="66" font-family="Inter, Arial, sans-serif" font-weight="800">
+      Strony internetowe
+    </text>
+    <text x="110" y="390" font-size="66" font-family="Inter, Arial, sans-serif" font-weight="800">
+      dla noclegów
+    </text>
+    <text x="110" y="465" font-size="34" font-family="Inter, Arial, sans-serif" font-weight="500" opacity="0.95">
+      Więcej rezerwacji bez prowizji Booking i Airbnb
+    </text>
+  </g>
+</svg>

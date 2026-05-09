@@ -30,3 +30,25 @@ Skrypt:
 - podmieni odpowiednie sekcje w `index.html` oraz w `blog/ile-kosztuje-strona-dla-noclegu.html`.
 
 Po zmianie któregokolwiek z plików w `partials/` pamiętaj, aby ponownie uruchomić `node build.js` przed wypchnięciem zmian lub deployem.
+
+## Smoke-check przed wysyłką do klienta
+
+Dodany jest szybki test sanity (`scripts/smoke-check.js`), który sprawdza:
+
+- obecność krytycznych plików (`favicon.svg`, `og-image.svg`, `logo.svg`, `robots.txt`, `sitemap.xml`),
+- brak starych, nieistniejących referencji (`og-image.jpg`, `logo.png`) w kluczowych stronach HTML.
+
+Uruchomienie:
+
+```bash
+node scripts/smoke-check.js
+```
+
+## Krótka checklista release
+
+Przed wysłaniem strony do klienta wykonaj:
+
+1. `node build.js`
+2. `node scripts/smoke-check.js`
+3. Szybki klik przez stronę główną i blog (menu mobilne, formularz, cookies)
+4. Test wysyłki formularza kontaktowego (czy lead wpada do webhooka)
