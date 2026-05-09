@@ -4,6 +4,66 @@
 
 const fs = require("fs");
 const path = require("path");
+const { spawnSync } = require("child_process");
+
+function fileExists(projectRoot, relativePath) {
+  return fs.existsSync(path.join(projectRoot, relativePath));
+}
+
+function runCommand(command, args, cwd) {
+  const result = spawnSync(command, args, {
+    cwd,
+    stdio: "inherit",
+    shell: true,
+  });
+
+  return result.status === 0;
+}
+
+function runPrettierFix(projectRoot) {
+  console.log("\n[build] Uruchamiam Prettier --write...");
+
+  const success = runCommand("npx", ["prettier", ".", "--write"], projectRoot);
+
+  if (!success) {
+    console.warn(
+      "[build] Pominięto Prettier fix (narzędzie niedostępne lub błąd wykonania).",
+    );
+  }
+}
+
+function runLintFix(projectRoot) {
+  const hasEslintConfig =
+    fileExists(projectRoot, "eslint.config.js") ||
+    fileExists(projectRoot, "eslint.config.cjs") ||
+    fileExists(projectRoot, "eslint.config.mjs") ||
+    fileExists(projectRoot, ".eslintrc") ||
+    fileExists(projectRoot, ".eslintrc.js") ||
+    fileExists(projectRoot, ".eslintrc.cjs") ||
+    fileExists(projectRoot, ".eslintrc.json") ||
+    fileExists(projectRoot, ".eslintrc.yaml") ||
+    fileExists(projectRoot, ".eslintrc.yml");
+
+  if (!hasEslintConfig) {
+    console.log(
+      "\n[build] Pominięto ESLint --fix (brak konfiguracji ESLint w repo).",
+    );
+    return;
+  }
+
+  console.log("\n[build] Uruchamiam ESLint --fix...");
+  const success = runCommand(
+    "npx",
+    ["eslint", "build.js", "--fix"],
+    projectRoot,
+  );
+
+  if (!success) {
+    console.warn(
+      "[build] Pominięto ESLint fix (narzędzie niedostępne lub błąd wykonania).",
+    );
+  }
+}
 
 // Podmienia całe tagi <header>...</header> lub <footer>...</footer>
 // na zawartość z partiali, bez szukania znaczników komentarza.
@@ -39,6 +99,9 @@ function replaceTagInFile(filePath, tagName, replacementHtml) {
 
 function main() {
   const projectRoot = __dirname;
+
+  runPrettierFix(projectRoot);
+  runLintFix(projectRoot);
 
   // Wczytaj wspólne partiale (z pełnymi tagami <header> i <footer>)
   const header = fs.readFileSync(
