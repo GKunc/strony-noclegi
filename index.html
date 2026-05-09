@@ -950,7 +950,8 @@
     }
 
     function toggleTheme() {
-      var current = root.getAttribute("data-theme") === "dark" ? "dark" : "light";
+      var current =
+        root.getAttribute("data-theme") === "dark" ? "dark" : "light";
       var next = current === "dark" ? "light" : "dark";
       applyTheme(next);
       storeTheme(next);
@@ -1817,7 +1818,9 @@
                 <label for="consent"
                   >Wyrażam zgodę na przetwarzanie moich danych osobowych w celu
                   udzielenia odpowiedzi na zapytanie.
-                  <a href="#" target="_blank">Polityka prywatności</a>.</label
+                  <a href="/polityka-prywatnosci.html" target="_blank"
+                    >Polityka prywatności</a
+                  >.</label
                 >
               </div>
               <span class="form-error" id="consent-error" aria-live="polite"
@@ -1889,6 +1892,7 @@
         <a href="/#poradnik">Poradnik</a>
         <a href="/#faq">FAQ</a>
         <a href="/#kontakt">Kontakt</a>
+        <a href="/polityka-prywatnosci.html">Polityka prywatności</a>
       </nav>
     </div>
     <div class="footer-bottom">

@@ -12,10 +12,13 @@ function replaceTagInFile(filePath, tagName, replacementHtml) {
 
   // Obejmuje również białe znaki wokół tagu, żeby kolejne uruchomienia
   // nie dokładały kolejnych pustych linii.
-  const pattern = new RegExp(
-    `\\s*<${tagName}[^>]*>[\\s\\S]*?<\\/${tagName}>\\s*`,
-    "i",
-  );
+  const pattern =
+    tagName === "header"
+      ? new RegExp(
+          `\\s*<${tagName}[^>]*>[\\s\\S]*?<\\/${tagName}>\\s*(?:<script>[\\s\\S]*?var storageKey\\s*=\\s*["']tao-theme["'][\\s\\S]*?<\\/script>\\s*)*`,
+          "i",
+        )
+      : new RegExp(`\\s*<${tagName}[^>]*>[\\s\\S]*?<\\/${tagName}>\\s*`, "i");
 
   if (!pattern.test(content)) {
     throw new Error(
@@ -47,6 +50,7 @@ function main() {
   // Wszystkie strony, na których podmieniamy nagłówek i stopkę
   const pages = [
     "index.html",
+    "polityka-prywatnosci.html",
     "blog/ile-kosztuje-strona-dla-noclegu.html",
     "blog/jak-opisac-nocleg-na-stronie.html",
     "blog/jak-przygotowac-zdjecia-noclegu.html",
