@@ -900,7 +900,34 @@
     "use strict";
 
     var storageKey = "tao-theme";
+    var consentKey = "tao-cookie-consent";
     var root = document.documentElement;
+
+    function getStoredConsent() {
+      try {
+        var raw = localStorage.getItem(consentKey);
+        if (!raw) return null;
+        var parsed = JSON.parse(raw);
+
+        if (!parsed || typeof parsed !== "object") {
+          return null;
+        }
+
+        if (parsed.expiresAt && Number(parsed.expiresAt) < Date.now()) {
+          localStorage.removeItem(consentKey);
+          return null;
+        }
+
+        return parsed;
+      } catch (err) {
+        return null;
+      }
+    }
+
+    function hasPreferenceConsent() {
+      var consent = getStoredConsent();
+      return Boolean(consent && consent.preferences === true);
+    }
 
     function getPreferredTheme() {
       return window.matchMedia &&
@@ -910,6 +937,10 @@
     }
 
     function getStoredTheme() {
+      if (!hasPreferenceConsent()) {
+        return null;
+      }
+
       try {
         return localStorage.getItem(storageKey);
       } catch (err) {
@@ -918,6 +949,10 @@
     }
 
     function storeTheme(theme) {
+      if (!hasPreferenceConsent()) {
+        return;
+      }
+
       try {
         localStorage.setItem(storageKey, theme);
       } catch (err) {
@@ -981,6 +1016,19 @@
         media.addListener(onChange);
       }
     }
+
+    window.addEventListener("tao:consent-updated", function (event) {
+      var consent = event && event.detail ? event.detail : null;
+
+      if (!consent || consent.preferences !== true) {
+        try {
+          localStorage.removeItem(storageKey);
+        } catch (err) {
+          // Intentionally empty
+        }
+        applyTheme(getPreferredTheme());
+      }
+    });
   })();
 </script>
 <!-- ===== MAIN ===== -->
@@ -1893,13 +1941,453 @@
         <a href="/#faq">FAQ</a>
         <a href="/#kontakt">Kontakt</a>
         <a href="/polityka-prywatnosci.html">Polityka prywatności</a>
+        <button type="button" class="footer-link-button js-cookie-settings">
+          Ustawienia cookies
+        </button>
       </nav>
     </div>
     <div class="footer-bottom">
       <p>&copy; 2026 TwojApartamentOnline.pl. Wszelkie prawa zastrzeżone.</p>
     </div>
+
+    <section
+      id="cookie-consent"
+      class="cookie-consent"
+      aria-label="Ustawienia plików cookies"
+      hidden
+    >
+      <div class="cookie-consent-inner">
+        <h2 class="cookie-consent-title">Ustawienia prywatności</h2>
+        <p class="cookie-consent-text">
+          Używamy niezbędnych technologii do działania strony oraz opcjonalnej
+          pamięci preferencji (motyw jasny/ciemny). Możesz zaakceptować
+          wszystkie lub zapisać własne ustawienia.
+        </p>
+
+        <div class="cookie-option">
+          <label>
+            <input type="checkbox" checked disabled />
+            <span>
+              <strong>Niezbędne</strong> – wymagane do zapisu decyzji o cookies
+              i bezpieczeństwa działania strony.
+            </span>
+          </label>
+        </div>
+
+        <div class="cookie-option">
+          <label for="cookie-pref-preferences">
+            <input type="checkbox" id="cookie-pref-preferences" />
+            <span>
+              <strong>Preferencje</strong> – zapis wybranego motywu
+              (jasny/ciemny) w localStorage.
+            </span>
+          </label>
+        </div>
+
+        <div class="cookie-consent-footer">
+          <p class="cookie-consent-meta">
+            Szczegóły znajdziesz w
+            <a href="/polityka-prywatnosci.html">Polityce prywatności</a>.
+          </p>
+
+          <div class="cookie-actions">
+            <button
+              type="button"
+              class="btn btn-outline cookie-btn"
+              id="cookie-reject"
+            >
+              Odrzuć opcjonalne
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline cookie-btn"
+              id="cookie-save"
+            >
+              Zapisz ustawienia
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary cookie-btn"
+              id="cookie-accept-all"
+            >
+              Akceptuj wszystkie
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </footer>
+
+<script>
+  (function () {
+    "use strict";
+
+    var consentKey = "tao-cookie-consent";
+    var themeKey = "tao-theme";
+    var consentTtlMs = 365 * 24 * 60 * 60 * 1000;
+
+    var banner = document.getElementById("cookie-consent");
+    var preferencesInput = document.getElementById("cookie-pref-preferences");
+    var acceptAllBtn = document.getElementById("cookie-accept-all");
+    var rejectBtn = document.getElementById("cookie-reject");
+    var saveBtn = document.getElementById("cookie-save");
+    var settingsBtns = document.querySelectorAll(".js-cookie-settings");
+
+    if (!banner || !preferencesInput || !acceptAllBtn || !rejectBtn || !saveBtn) {
+      return;
+    }
+
+    function safeGet(key) {
+      try {
+        return localStorage.getItem(key);
+      } catch (err) {
+        return null;
+      }
+    }
+
+    function safeSet(key, value) {
+      try {
+        localStorage.setItem(key, value);
+      } catch (err) {
+        // Intentionally empty
+      }
+    }
+
+    function safeRemove(key) {
+      try {
+        localStorage.removeItem(key);
+      } catch (err) {
+        // Intentionally empty
+      }
+    }
+
+    function readConsent() {
+      var raw = safeGet(consentKey);
+      if (!raw) return null;
+
+      try {
+        var parsed = JSON.parse(raw);
+        if (!parsed || typeof parsed !== "object") {
+          return null;
+        }
+
+        if (parsed.expiresAt && Number(parsed.expiresAt) < Date.now()) {
+          safeRemove(consentKey);
+          return null;
+        }
+
+        return parsed;
+      } catch (err) {
+        return null;
+      }
+    }
+
+    function buildConsent(preferencesEnabled) {
+      return {
+        necessary: true,
+        preferences: Boolean(preferencesEnabled),
+        updatedAt: new Date().toISOString(),
+        expiresAt: Date.now() + consentTtlMs,
+      };
+    }
+
+    function applyConsent(consent) {
+      safeSet(consentKey, JSON.stringify(consent));
+
+      if (!consent.preferences) {
+        safeRemove(themeKey);
+      }
+
+      banner.hidden = true;
+      banner.classList.remove("visible");
+
+      window.dispatchEvent(
+        new CustomEvent("tao:consent-updated", {
+          detail: consent,
+        }),
+      );
+    }
+
+    function openBanner() {
+      var existing = readConsent();
+      preferencesInput.checked = Boolean(existing && existing.preferences);
+      banner.hidden = false;
+      banner.classList.add("visible");
+    }
+
+    var consent = readConsent();
+    if (!consent) {
+      openBanner();
+    }
+
+    acceptAllBtn.addEventListener("click", function () {
+      preferencesInput.checked = true;
+      applyConsent(buildConsent(true));
+    });
+
+    rejectBtn.addEventListener("click", function () {
+      preferencesInput.checked = false;
+      applyConsent(buildConsent(false));
+    });
+
+    saveBtn.addEventListener("click", function () {
+      applyConsent(buildConsent(preferencesInput.checked));
+    });
+
+    for (var i = 0; i < settingsBtns.length; i++) {
+      settingsBtns[i].addEventListener("click", function () {
+        openBanner();
+      });
+    }
+  })();
+</script>
+<script>
+  (function () {
+    "use strict";
+
+    var consentKey = "tao-cookie-consent";
+    var themeKey = "tao-theme";
+    var consentTtlMs = 365 * 24 * 60 * 60 * 1000;
+
+    var banner = document.getElementById("cookie-consent");
+    var preferencesInput = document.getElementById("cookie-pref-preferences");
+    var acceptAllBtn = document.getElementById("cookie-accept-all");
+    var rejectBtn = document.getElementById("cookie-reject");
+    var saveBtn = document.getElementById("cookie-save");
+    var settingsBtns = document.querySelectorAll(".js-cookie-settings");
+
+    if (!banner || !preferencesInput || !acceptAllBtn || !rejectBtn || !saveBtn) {
+      return;
+    }
+
+    function safeGet(key) {
+      try {
+        return localStorage.getItem(key);
+      } catch (err) {
+        return null;
+      }
+    }
+
+    function safeSet(key, value) {
+      try {
+        localStorage.setItem(key, value);
+      } catch (err) {
+        // Intentionally empty
+      }
+    }
+
+    function safeRemove(key) {
+      try {
+        localStorage.removeItem(key);
+      } catch (err) {
+        // Intentionally empty
+      }
+    }
+
+    function readConsent() {
+      var raw = safeGet(consentKey);
+      if (!raw) return null;
+
+      try {
+        var parsed = JSON.parse(raw);
+        if (!parsed || typeof parsed !== "object") {
+          return null;
+        }
+
+        if (parsed.expiresAt && Number(parsed.expiresAt) < Date.now()) {
+          safeRemove(consentKey);
+          return null;
+        }
+
+        return parsed;
+      } catch (err) {
+        return null;
+      }
+    }
+
+    function buildConsent(preferencesEnabled) {
+      return {
+        necessary: true,
+        preferences: Boolean(preferencesEnabled),
+        updatedAt: new Date().toISOString(),
+        expiresAt: Date.now() + consentTtlMs,
+      };
+    }
+
+    function applyConsent(consent) {
+      safeSet(consentKey, JSON.stringify(consent));
+
+      if (!consent.preferences) {
+        safeRemove(themeKey);
+      }
+
+      banner.hidden = true;
+      banner.classList.remove("visible");
+
+      window.dispatchEvent(
+        new CustomEvent("tao:consent-updated", {
+          detail: consent,
+        }),
+      );
+    }
+
+    function openBanner() {
+      var existing = readConsent();
+      preferencesInput.checked = Boolean(existing && existing.preferences);
+      banner.hidden = false;
+      banner.classList.add("visible");
+    }
+
+    var consent = readConsent();
+    if (!consent) {
+      openBanner();
+    }
+
+    acceptAllBtn.addEventListener("click", function () {
+      preferencesInput.checked = true;
+      applyConsent(buildConsent(true));
+    });
+
+    rejectBtn.addEventListener("click", function () {
+      preferencesInput.checked = false;
+      applyConsent(buildConsent(false));
+    });
+
+    saveBtn.addEventListener("click", function () {
+      applyConsent(buildConsent(preferencesInput.checked));
+    });
+
+    for (var i = 0; i < settingsBtns.length; i++) {
+      settingsBtns[i].addEventListener("click", function () {
+        openBanner();
+      });
+    }
+  })();
+</script>
+<script>
+  (function () {
+    "use strict";
+
+    var consentKey = "tao-cookie-consent";
+    var themeKey = "tao-theme";
+    var consentTtlMs = 365 * 24 * 60 * 60 * 1000;
+
+    var banner = document.getElementById("cookie-consent");
+    var preferencesInput = document.getElementById("cookie-pref-preferences");
+    var acceptAllBtn = document.getElementById("cookie-accept-all");
+    var rejectBtn = document.getElementById("cookie-reject");
+    var saveBtn = document.getElementById("cookie-save");
+    var settingsBtns = document.querySelectorAll(".js-cookie-settings");
+
+    if (!banner || !preferencesInput || !acceptAllBtn || !rejectBtn || !saveBtn) {
+      return;
+    }
+
+    function safeGet(key) {
+      try {
+        return localStorage.getItem(key);
+      } catch (err) {
+        return null;
+      }
+    }
+
+    function safeSet(key, value) {
+      try {
+        localStorage.setItem(key, value);
+      } catch (err) {
+        // Intentionally empty
+      }
+    }
+
+    function safeRemove(key) {
+      try {
+        localStorage.removeItem(key);
+      } catch (err) {
+        // Intentionally empty
+      }
+    }
+
+    function readConsent() {
+      var raw = safeGet(consentKey);
+      if (!raw) return null;
+
+      try {
+        var parsed = JSON.parse(raw);
+        if (!parsed || typeof parsed !== "object") {
+          return null;
+        }
+
+        if (parsed.expiresAt && Number(parsed.expiresAt) < Date.now()) {
+          safeRemove(consentKey);
+          return null;
+        }
+
+        return parsed;
+      } catch (err) {
+        return null;
+      }
+    }
+
+    function buildConsent(preferencesEnabled) {
+      return {
+        necessary: true,
+        preferences: Boolean(preferencesEnabled),
+        updatedAt: new Date().toISOString(),
+        expiresAt: Date.now() + consentTtlMs,
+      };
+    }
+
+    function applyConsent(consent) {
+      safeSet(consentKey, JSON.stringify(consent));
+
+      if (!consent.preferences) {
+        safeRemove(themeKey);
+      }
+
+      banner.hidden = true;
+      banner.classList.remove("visible");
+
+      window.dispatchEvent(
+        new CustomEvent("tao:consent-updated", {
+          detail: consent,
+        }),
+      );
+    }
+
+    function openBanner() {
+      var existing = readConsent();
+      preferencesInput.checked = Boolean(existing && existing.preferences);
+      banner.hidden = false;
+      banner.classList.add("visible");
+    }
+
+    var consent = readConsent();
+    if (!consent) {
+      openBanner();
+    }
+
+    acceptAllBtn.addEventListener("click", function () {
+      preferencesInput.checked = true;
+      applyConsent(buildConsent(true));
+    });
+
+    rejectBtn.addEventListener("click", function () {
+      preferencesInput.checked = false;
+      applyConsent(buildConsent(false));
+    });
+
+    saveBtn.addEventListener("click", function () {
+      applyConsent(buildConsent(preferencesInput.checked));
+    });
+
+    for (var i = 0; i < settingsBtns.length; i++) {
+      settingsBtns[i].addEventListener("click", function () {
+        openBanner();
+      });
+    }
+  })();
+</script>
 <!-- ===== JAVASCRIPT ===== -->
     <script>
       (function () {

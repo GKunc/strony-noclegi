@@ -66,7 +66,34 @@
     "use strict";
 
     var storageKey = "tao-theme";
+    var consentKey = "tao-cookie-consent";
     var root = document.documentElement;
+
+    function getStoredConsent() {
+      try {
+        var raw = localStorage.getItem(consentKey);
+        if (!raw) return null;
+        var parsed = JSON.parse(raw);
+
+        if (!parsed || typeof parsed !== "object") {
+          return null;
+        }
+
+        if (parsed.expiresAt && Number(parsed.expiresAt) < Date.now()) {
+          localStorage.removeItem(consentKey);
+          return null;
+        }
+
+        return parsed;
+      } catch (err) {
+        return null;
+      }
+    }
+
+    function hasPreferenceConsent() {
+      var consent = getStoredConsent();
+      return Boolean(consent && consent.preferences === true);
+    }
 
     function getPreferredTheme() {
       return window.matchMedia &&
@@ -76,6 +103,10 @@
     }
 
     function getStoredTheme() {
+      if (!hasPreferenceConsent()) {
+        return null;
+      }
+
       try {
         return localStorage.getItem(storageKey);
       } catch (err) {
@@ -84,6 +115,10 @@
     }
 
     function storeTheme(theme) {
+      if (!hasPreferenceConsent()) {
+        return;
+      }
+
       try {
         localStorage.setItem(storageKey, theme);
       } catch (err) {
@@ -147,5 +182,18 @@
         media.addListener(onChange);
       }
     }
+
+    window.addEventListener("tao:consent-updated", function (event) {
+      var consent = event && event.detail ? event.detail : null;
+
+      if (!consent || consent.preferences !== true) {
+        try {
+          localStorage.removeItem(storageKey);
+        } catch (err) {
+          // Intentionally empty
+        }
+        applyTheme(getPreferredTheme());
+      }
+    });
   })();
 </script>

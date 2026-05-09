@@ -360,9 +360,33 @@ ul {
   transition: color var(--transition);
 }
 
+.footer-link-button {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: #d1d5db;
+  font-size: 0.8125rem;
+  cursor: pointer;
+  font-family: inherit;
+  line-height: inherit;
+  transition: color var(--transition);
+}
+
 .footer-links a:hover {
   color: #fff;
   text-decoration: underline;
+}
+
+.footer-link-button:hover,
+.footer-link-button:focus-visible {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.footer-link-button:focus-visible {
+  outline: 2px solid #93c5fd;
+  outline-offset: 2px;
 }
 
 .footer-bottom {
@@ -388,6 +412,117 @@ ul {
 
 .skip-link:focus {
   top: 0;
+}
+
+/* ===== COOKIE CONSENT (wspólny) ===== */
+.cookie-consent {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 120;
+}
+
+.cookie-consent-inner {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 0;
+  box-shadow: var(--shadow-lg);
+  padding: 1rem;
+  color: var(--color-text);
+}
+
+.cookie-consent-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.35rem;
+}
+
+.cookie-consent-text,
+.cookie-consent-meta {
+  color: var(--color-text-light);
+  font-size: 0.92rem;
+}
+
+.cookie-consent-text {
+  margin-bottom: 0.85rem;
+}
+
+.cookie-option {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 0.65rem 0.75rem;
+}
+
+.cookie-option + .cookie-option {
+  margin-top: 0.5rem;
+}
+
+.cookie-option label {
+  display: flex;
+  gap: 0.65rem;
+  align-items: flex-start;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.cookie-option input[type="checkbox"] {
+  margin-top: 0.2rem;
+}
+
+.cookie-consent-meta {
+  margin-top: 0.75rem;
+}
+
+.cookie-consent-footer {
+  margin-top: 0.75rem;
+}
+
+.cookie-consent-footer .cookie-consent-meta {
+  margin-top: 0;
+}
+
+.cookie-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.55rem;
+  margin-top: 0.75rem;
+}
+
+.cookie-btn {
+  min-height: 42px;
+  width: 100%;
+  max-width: none;
+}
+
+@media (min-width: 768px) {
+  .cookie-consent-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .cookie-consent-footer .cookie-consent-meta {
+    margin: 0;
+  }
+
+  .cookie-actions {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 0;
+    flex-shrink: 0;
+  }
+
+  .cookie-btn {
+    width: auto;
+    max-width: none;
+  }
 }
 
 /* ===== MOBILE MEDIA QUERIES (nagłówek) ===== */
