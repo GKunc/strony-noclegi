@@ -18,7 +18,10 @@ function replaceTagInFile(filePath, tagName, replacementHtml) {
           `\\s*<${tagName}[^>]*>[\\s\\S]*?<\\/${tagName}>\\s*(?:<script>[\\s\\S]*?var storageKey\\s*=\\s*["']tao-theme["'][\\s\\S]*?<\\/script>\\s*)*`,
           "i",
         )
-      : new RegExp(`\\s*<${tagName}[^>]*>[\\s\\S]*?<\\/${tagName}>\\s*`, "i");
+      : new RegExp(
+          `\\s*<${tagName}[^>]*>[\\s\\S]*?<\\/${tagName}>\\s*(?:<script>[\\s\\S]*?var consentKey\\s*=\\s*["']tao-cookie-consent["'][\\s\\S]*?<\\/script>\\s*)*`,
+          "i",
+        );
 
   if (!pattern.test(content)) {
     throw new Error(
@@ -51,6 +54,7 @@ function main() {
   const pages = [
     "index.html",
     "polityka-prywatnosci.html",
+    "wzor-umowy.html",
     "blog/ile-kosztuje-strona-dla-noclegu.html",
     "blog/jak-opisac-nocleg-na-stronie.html",
     "blog/jak-przygotowac-zdjecia-noclegu.html",

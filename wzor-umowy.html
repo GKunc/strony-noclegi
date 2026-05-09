@@ -1,0 +1,967 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wzór umowy na stronę internetową | TwojApartamentOnline.pl</title>
+    <meta
+      name="description"
+      content="Gotowy wzór umowy na wykonanie strony internetowej dla apartamentu i noclegu z pakietami, prawami i obowiązkami stron."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="TwojApartamentOnline.pl" />
+    <link
+      rel="canonical"
+      href="https://twojapartamentonline.pl/wzor-umowy.html"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pl_PL" />
+    <meta
+      property="og:title"
+      content="Wzór umowy na stronę internetową | TwojApartamentOnline.pl"
+    />
+    <meta
+      property="og:description"
+      content="Pobierz i dopasuj wzór umowy na wykonanie strony internetowej dla apartamentu, z podziałem na pakiety."
+    />
+    <meta
+      property="og:url"
+      content="https://twojapartamentonline.pl/wzor-umowy.html"
+    />
+    <meta property="og:site_name" content="TwojApartamentOnline.pl" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="Wzór umowy na stronę internetową | TwojApartamentOnline.pl"
+    />
+    <meta
+      name="twitter:description"
+      content="Wzór umowy na wykonanie strony dla apartamentu z pakietami i czytelnymi zasadami współpracy."
+    />
+
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+    <style>
+      .pdf-export-controls {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.65rem;
+        margin-top: 1rem;
+      }
+
+      @media print {
+        @page {
+          size: A4;
+          margin: 14mm;
+        }
+
+        body {
+          background: #fff;
+          color: #000;
+        }
+
+        .site-header,
+        .site-footer,
+        .cookie-consent,
+        .pdf-export-controls,
+        .breadcrumb {
+          display: none !important;
+        }
+
+        .legal-page {
+          margin-top: 0;
+        }
+
+        .legal-wrap {
+          max-width: none;
+          padding: 0;
+        }
+
+        .legal-card {
+          background: #fff;
+          box-shadow: none;
+          border: 0;
+          padding: 0;
+        }
+
+        .legal-card p,
+        .legal-card li,
+        .legal-meta,
+        .contract-note {
+          color: #000;
+        }
+
+        .contract-packages th,
+        .contract-packages td {
+          border-color: #cfcfcf;
+        }
+
+        .contract-packages th {
+          background: #f3f4f6;
+          color: #000;
+        }
+
+        .contract-packages tr,
+        .contract-highlight,
+        .contract-note,
+        h2,
+        h3 {
+          break-inside: avoid;
+          page-break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header" role="banner">
+      <div class="container header-inner">
+        <a
+          href="/"
+          class="logo"
+          aria-label="TwojApartamentOnline.pl – Strona główna"
+          >TwojApartament<span>Online</span></a
+        >
+
+        <nav class="nav-desktop" aria-label="Nawigacja główna">
+          <a href="/#problem">Dlaczego?</a>
+          <a href="/#rozwiazanie">Rozwiązanie</a>
+          <a href="/#jak-to-dziala">Jak to działa</a>
+          <a href="/#cennik">Cennik</a>
+          <a href="/#poradnik">Poradnik</a>
+          <a href="/#faq">FAQ</a>
+        </nav>
+
+        <a href="/#kontakt" class="btn btn-primary header-cta"
+          >Darmowa wycena</a
+        >
+
+        <button
+          class="theme-toggle"
+          type="button"
+          aria-label="Włącz tryb ciemny"
+          aria-pressed="false"
+          title="Włącz tryb ciemny"
+        >
+          <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+          <span class="sr-only">Przełącz tryb jasny i ciemny</span>
+        </button>
+
+        <button
+          class="mobile-toggle"
+          aria-label="Otwórz menu"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            aria-hidden="true"
+          >
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </button>
+      </div>
+
+      <nav id="mobile-nav" class="mobile-nav" aria-label="Menu mobilne">
+        <a href="/#problem">Dlaczego?</a>
+        <a href="/#rozwiazanie">Rozwiązanie</a>
+        <a href="/#jak-to-dziala">Jak to działa</a>
+        <a href="/#cennik">Cennik</a>
+        <a href="/#poradnik">Poradnik</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/#kontakt" class="btn btn-primary">Darmowa wycena</a>
+      </nav>
+    </header>
+
+    <script>
+      (function () {
+        "use strict";
+
+        var storageKey = "tao-theme";
+        var consentKey = "tao-cookie-consent";
+        var root = document.documentElement;
+
+        function getStoredConsent() {
+          try {
+            var raw = localStorage.getItem(consentKey);
+            if (!raw) return null;
+            var parsed = JSON.parse(raw);
+
+            if (!parsed || typeof parsed !== "object") {
+              return null;
+            }
+
+            if (parsed.expiresAt && Number(parsed.expiresAt) < Date.now()) {
+              localStorage.removeItem(consentKey);
+              return null;
+            }
+
+            return parsed;
+          } catch (err) {
+            return null;
+          }
+        }
+
+        function hasPreferenceConsent() {
+          var consent = getStoredConsent();
+          return Boolean(consent && consent.preferences === true);
+        }
+
+        function getPreferredTheme() {
+          return window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        }
+
+        function getStoredTheme() {
+          if (!hasPreferenceConsent()) {
+            return null;
+          }
+
+          try {
+            return localStorage.getItem(storageKey);
+          } catch (err) {
+            return null;
+          }
+        }
+
+        function storeTheme(theme) {
+          if (!hasPreferenceConsent()) {
+            return;
+          }
+
+          try {
+            localStorage.setItem(storageKey, theme);
+          } catch (err) {
+            // Intentionally empty (np. tryb prywatny)
+          }
+        }
+
+        function updateToggleUi(theme) {
+          var isDark = theme === "dark";
+          var toggles = document.querySelectorAll(".theme-toggle");
+
+          for (var i = 0; i < toggles.length; i++) {
+            var btn = toggles[i];
+            var icon = btn.querySelector(".theme-toggle-icon");
+            var label = isDark ? "Włącz tryb jasny" : "Włącz tryb ciemny";
+
+            btn.setAttribute("aria-pressed", String(isDark));
+            btn.setAttribute("aria-label", label);
+            btn.setAttribute("title", label);
+
+            if (icon) {
+              icon.textContent = isDark ? "☀️" : "🌙";
+            }
+          }
+        }
+
+        function applyTheme(theme) {
+          root.setAttribute("data-theme", theme);
+          updateToggleUi(theme);
+        }
+
+        function toggleTheme() {
+          var current =
+            root.getAttribute("data-theme") === "dark" ? "dark" : "light";
+          var next = current === "dark" ? "light" : "dark";
+          applyTheme(next);
+          storeTheme(next);
+        }
+
+        var initialTheme = getStoredTheme() || getPreferredTheme();
+        applyTheme(initialTheme);
+
+        document.addEventListener("DOMContentLoaded", function () {
+          var toggles = document.querySelectorAll(".theme-toggle");
+          for (var i = 0; i < toggles.length; i++) {
+            toggles[i].addEventListener("click", toggleTheme);
+          }
+        });
+
+        if (window.matchMedia) {
+          var media = window.matchMedia("(prefers-color-scheme: dark)");
+          var onChange = function (event) {
+            if (!getStoredTheme()) {
+              applyTheme(event.matches ? "dark" : "light");
+            }
+          };
+
+          if (typeof media.addEventListener === "function") {
+            media.addEventListener("change", onChange);
+          } else if (typeof media.addListener === "function") {
+            media.addListener(onChange);
+          }
+        }
+
+        window.addEventListener("tao:consent-updated", function (event) {
+          var consent = event && event.detail ? event.detail : null;
+
+          if (!consent || consent.preferences !== true) {
+            try {
+              localStorage.removeItem(storageKey);
+            } catch (err) {
+              // Intentionally empty
+            }
+            applyTheme(getPreferredTheme());
+          }
+        });
+      })();
+    </script>
+    <main id="main-content" class="legal-page" role="main">
+      <div class="legal-wrap">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="/">Strona główna</a></li>
+            <li aria-current="page">Wzór umowy</li>
+          </ol>
+        </nav>
+
+        <header class="legal-header">
+          <span class="legal-label">Dokument</span>
+          <h1 class="legal-title">
+            Wzór umowy na stworzenie strony internetowej
+          </h1>
+          <p class="legal-meta">
+            Aktualizacja: 9 maja 2026 r. • Dokument informacyjny do dalszego
+            dopasowania pod Twoją działalność.
+          </p>
+          <div class="pdf-export-controls">
+            <button type="button" class="btn btn-outline js-export-pdf-clean">
+              Eksportuj PDF
+            </button>
+          </div>
+        </header>
+
+        <article class="legal-card" aria-labelledby="main-content">
+          <h2>1. Dane stron</h2>
+          <p>
+            Umowa zawarta w dniu <strong>[data]</strong> w
+            <strong>[miejscowość]</strong> pomiędzy:
+          </p>
+          <ul>
+            <li>
+              <strong>Wykonawcą:</strong> [nazwa / imię i nazwisko, adres, NIP,
+              e-mail],
+            </li>
+            <li>
+              <strong>Klientem:</strong> [nazwa / imię i nazwisko, adres,
+              NIP/PESEL, e-mail].
+            </li>
+          </ul>
+
+          <h2>2. Przedmiot umowy i pakiety</h2>
+          <p>
+            Wykonawca zobowiązuje się do wykonania strony internetowej dla
+            apartamentu/noclegu zgodnie z wybranym pakietem.
+          </p>
+
+          <h3>Co dokładnie zostanie dostarczone</h3>
+          <ul>
+            <li>
+              gotowa, działająca strona internetowa w zakresie funkcji z
+              wybranego pakietu,
+            </li>
+            <li>responsywna wersja mobilna (RWD) oraz wersja desktop,</li>
+            <li>
+              konfiguracja podstawowych elementów SEO (meta title, meta
+              description, nagłówki i struktura treści),
+            </li>
+            <li>formularz kontaktowy/rezerwacyjny zgodnie z pakietem,</li>
+            <li>
+              wdrożenie na hostingu Klienta lub przekazanie paczki produkcyjnej
+              (pliki HTML/CSS/JS) — zgodnie z ustaleniem,
+            </li>
+            <li>
+              przekazanie listy dostępowej i instrukcji podstawowej obsługi
+              (krótkie podsumowanie e-mail).
+            </li>
+          </ul>
+
+          <p>
+            Zakres nie obejmuje stałej opieki technicznej, prowadzenia kampanii
+            reklamowych, tworzenia treści marketingowych i usług prawnych, chyba
+            że Strony wpiszą je wprost do pakietu lub aneksu.
+          </p>
+
+          <table class="contract-packages" aria-label="Pakiety usług">
+            <thead>
+              <tr>
+                <th>Zakres</th>
+                <th>Start</th>
+                <th>Standard</th>
+                <th>Premium</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Liczba podstron</td>
+                <td>do 3</td>
+                <td>do 7</td>
+                <td>do 12</td>
+              </tr>
+              <tr>
+                <td>Rundy poprawek</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>Podstawowe SEO</td>
+                <td>tak</td>
+                <td>tak</td>
+                <td>tak + schema</td>
+              </tr>
+              <tr>
+                <td>Czas realizacji</td>
+                <td>[x dni]</td>
+                <td>[x dni]</td>
+                <td>[x dni]</td>
+              </tr>
+              <tr>
+                <td>Cena</td>
+                <td>[kwota]</td>
+                <td>[kwota]</td>
+                <td>[kwota]</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            Zmiany wykraczające poza pakiet są wyceniane osobno i realizowane po
+            akceptacji (e-mail wystarczy).
+          </p>
+
+          <h2>3. Prawa i obowiązki Klienta</h2>
+          <h3>Prawa Klienta</h3>
+          <ul>
+            <li>prawo do informacji o postępie prac,</li>
+            <li>prawo do zgłaszania poprawek w limicie pakietu,</li>
+            <li>prawo do odbioru gotowej strony po wykonaniu zakresu umowy,</li>
+            <li>
+              prawo do otrzymania praw/licencji do strony po opłaceniu całości
+              wynagrodzenia.
+            </li>
+          </ul>
+
+          <h3>Obowiązki Klienta</h3>
+          <ul>
+            <li>
+              dostarczenie materiałów (teksty, zdjęcia, dane kontaktowe,
+              regulaminy),
+            </li>
+            <li>posiadanie praw do przekazanych treści i grafik,</li>
+            <li>terminowa akceptacja etapów i terminowe płatności,</li>
+            <li>współpraca techniczna (dostępy do hostingu/domeny).</li>
+          </ul>
+
+          <div class="contract-highlight" role="note">
+            <p>
+              <strong>Ważne:</strong> Opóźnienie Klienta w przekazaniu
+              materiałów lub akceptacji automatycznie przesuwa termin
+              realizacji.
+            </p>
+          </div>
+
+          <h2>4. Prawa i obowiązki Wykonawcy</h2>
+          <ul>
+            <li>realizacja strony zgodnie z zakresem i terminami umownymi,</li>
+            <li>zachowanie należytej staranności i bezpieczeństwa danych,</li>
+            <li>usunięcie błędów objętych gwarancją,</li>
+            <li>
+              prawo do wstrzymania prac przy opóźnieniach płatniczych lub braku
+              współpracy po stronie Klienta.
+            </li>
+          </ul>
+
+          <h2>5. Wynagrodzenie i odbiory</h2>
+          <ol>
+            <li>
+              Wynagrodzenie: <strong>[kwota netto/brutto]</strong>, płatne w
+              transzach: <strong>[np. 40% + 60%]</strong>.
+            </li>
+            <li>
+              Termin płatności faktury: <strong>[7 dni]</strong> od daty
+              wystawienia.
+            </li>
+            <li>
+              Brak uwag do etapu w ciągu <strong>3 dni roboczych</strong>
+              oznacza odbiór bez zastrzeżeń.
+            </li>
+          </ol>
+
+          <h3>Kryteria odbioru</h3>
+          <ul>
+            <li>za odebrane uznaje się elementy zgodne z zakresem pakietu,</li>
+            <li>
+              uwagi dotyczące nowych funkcji, które nie były uzgodnione, są
+              traktowane jako dodatkowe zlecenie,
+            </li>
+            <li>
+              drobne różnice estetyczne niewpływające na działanie strony nie
+              stanowią wady istotnej,
+            </li>
+            <li>
+              po odbiorze końcowym Wykonawca przekazuje finalne dane i/lub
+              materiały określone w tej umowie.
+            </li>
+          </ul>
+
+          <h2>6. Prawa autorskie i licencje</h2>
+          <p>
+            Prawa majątkowe do indywidualnie wykonanej strony przechodzą na
+            Klienta z chwilą zapłaty pełnego wynagrodzenia. Do tego czasu Klient
+            otrzymuje licencję testową do odbioru projektu.
+          </p>
+          <p>
+            Wykonawca zachowuje prawa do własnych narzędzi, bibliotek i
+            elementów wielokrotnego użytku.
+          </p>
+
+          <h2>7. Odpowiedzialność i reklamacje</h2>
+          <ul>
+            <li>
+              Klient odpowiada za legalność przekazanych materiałów i treści.
+            </li>
+            <li>
+              Wykonawca nie odpowiada za awarie usług podmiotów trzecich
+              (hosting, domena, API).
+            </li>
+            <li>
+              Gwarancja na błędy istotne: <strong>[30/60/90 dni]</strong> od
+              odbioru.
+            </li>
+            <li>
+              Reklamacje są przyjmowane mailowo na:
+              <strong>[adres e-mail]</strong>.
+            </li>
+          </ul>
+
+          <h3>Jak złożyć reklamację (procedura)</h3>
+          <ol>
+            <li>
+              Klient wysyła zgłoszenie na adres reklamacyjny z tematem:
+              <strong>"Reklamacja – [nazwa projektu]"</strong>.
+            </li>
+            <li>
+              Zgłoszenie musi zawierać: opis problemu, adres URL, datę wykrycia,
+              zrzuty ekranu, kroki odtworzenia oraz dane kontaktowe osoby
+              zgłaszającej.
+            </li>
+            <li>
+              Wykonawca potwierdza przyjęcie reklamacji w terminie
+              <strong>[2 dni roboczych]</strong>.
+            </li>
+            <li>
+              Wstępna decyzja (uznanie/odmowa z uzasadnieniem) następuje w
+              terminie <strong>[7 dni roboczych]</strong> od kompletnego
+              zgłoszenia.
+            </li>
+            <li>
+              W przypadku uznania reklamacji Wykonawca usuwa wadę w terminie
+              adekwatnym do jej rodzaju:
+              <ul>
+                <li>
+                  błąd krytyczny (brak działania kluczowej funkcji): do [3] dni
+                  roboczych,
+                </li>
+                <li>
+                  błąd istotny (utrudnione korzystanie): do [7] dni roboczych,
+                </li>
+                <li>błąd drobny (kosmetyczny): do [14] dni roboczych.</li>
+              </ul>
+            </li>
+            <li>
+              Termin usunięcia wady może zostać wydłużony, gdy naprawa wymaga
+              działań po stronie Klienta lub podmiotów trzecich (hosting,
+              domena, operator API) — o czym Klient zostanie poinformowany
+              e-mailowo.
+            </li>
+          </ol>
+
+          <p>
+            Reklamacje nie obejmują zmian funkcjonalnych, modyfikacji po
+            odbiorze, błędów wynikłych z ingerencji osób trzecich oraz
+            niekompatybilności spowodowanej zmianami usług zewnętrznych.
+          </p>
+
+          <h2>8. Czas trwania i rozwiązanie umowy</h2>
+          <p>
+            Umowa obowiązuje do chwili wykonania i rozliczenia prac. W razie
+            istotnego naruszenia umowy przez Klienta (np. brak płatności, brak
+            współpracy), Wykonawca może wstrzymać prace lub rozwiązać umowę ze
+            skutkiem natychmiastowym.
+          </p>
+
+          <h2>9. Postanowienia końcowe</h2>
+          <ul>
+            <li>
+              W sprawach nieuregulowanych stosuje się przepisy prawa polskiego.
+            </li>
+            <li>
+              Zmiany umowy wymagają formy dokumentowej (co najmniej e-mail).
+            </li>
+            <li>
+              Spory Strony rozwiązują polubownie, a następnie przed sądem
+              właściwym zgodnie z przepisami.
+            </li>
+          </ul>
+
+          <p class="contract-note">
+            Ten wzór ma charakter informacyjny i powinien zostać dopasowany do
+            Twojej działalności (szczególnie gdy obsługujesz konsumentów lub
+            klientów zagranicznych).
+          </p>
+        </article>
+      </div>
+    </main>
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-inner">
+          <div class="footer-logo">TwojApartament<span>Online</span></div>
+          <p class="footer-text">
+            Tworzymy proste, skuteczne strony internetowe dla właścicieli
+            noclegów w całej Polsce. Jednorazowa opłata, zero prowizji.
+          </p>
+          <p class="footer-text">
+            Kontakt: <a href="tel:+48782312090">+48 782 312 090</a>,
+            <a href="mailto:biuro@twojapartamentonline.pl"
+              >biuro@twojapartamentonline.pl</a
+            >
+          </p>
+          <nav class="footer-links" aria-label="Nawigacja stopki">
+            <a href="/#problem">Dlaczego</a>
+            <a href="/#rozwiazanie">Rozwiązanie</a>
+            <a href="/#jak-to-dziala">Jak to działa</a>
+            <a href="/#cennik">Cennik</a>
+            <a href="/#poradnik">Poradnik</a>
+            <a href="/#faq">FAQ</a>
+            <a href="/#kontakt">Kontakt</a>
+            <a href="/wzor-umowy.html">Wzór umowy</a>
+            <a href="/polityka-prywatnosci.html">Polityka prywatności</a>
+            <button type="button" class="footer-link-button js-cookie-settings">
+              Ustawienia cookies
+            </button>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2026 TwojApartamentOnline.pl. Wszelkie prawa zastrzeżone.
+          </p>
+        </div>
+
+        <section
+          id="cookie-consent"
+          class="cookie-consent"
+          aria-label="Ustawienia plików cookies"
+          hidden
+        >
+          <div class="cookie-consent-inner">
+            <h2 class="cookie-consent-title">Ustawienia prywatności</h2>
+            <p class="cookie-consent-text">
+              Używamy niezbędnych technologii do działania strony oraz
+              opcjonalnej pamięci preferencji (motyw jasny/ciemny). Możesz
+              zaakceptować wszystkie lub zapisać własne ustawienia.
+            </p>
+
+            <div class="cookie-option">
+              <label>
+                <input type="checkbox" checked disabled />
+                <span>
+                  <strong>Niezbędne</strong> – wymagane do zapisu decyzji o
+                  cookies i bezpieczeństwa działania strony.
+                </span>
+              </label>
+            </div>
+
+            <div class="cookie-option">
+              <label for="cookie-pref-preferences">
+                <input type="checkbox" id="cookie-pref-preferences" />
+                <span>
+                  <strong>Preferencje</strong> – zapis wybranego motywu
+                  (jasny/ciemny) w localStorage.
+                </span>
+              </label>
+            </div>
+
+            <div class="cookie-consent-footer">
+              <p class="cookie-consent-meta">
+                Szczegóły znajdziesz w
+                <a href="/polityka-prywatnosci.html">Polityce prywatności</a>.
+              </p>
+
+              <div class="cookie-actions">
+                <button
+                  type="button"
+                  class="btn btn-outline cookie-btn"
+                  id="cookie-reject"
+                >
+                  Odrzuć opcjonalne
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-outline cookie-btn"
+                  id="cookie-save"
+                >
+                  Zapisz ustawienia
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary cookie-btn"
+                  id="cookie-accept-all"
+                >
+                  Akceptuj wszystkie
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        "use strict";
+
+        var consentKey = "tao-cookie-consent";
+        var themeKey = "tao-theme";
+        var consentTtlMs = 365 * 24 * 60 * 60 * 1000;
+
+        var banner = document.getElementById("cookie-consent");
+        var preferencesInput = document.getElementById(
+          "cookie-pref-preferences",
+        );
+        var acceptAllBtn = document.getElementById("cookie-accept-all");
+        var rejectBtn = document.getElementById("cookie-reject");
+        var saveBtn = document.getElementById("cookie-save");
+        var settingsBtns = document.querySelectorAll(".js-cookie-settings");
+
+        if (
+          !banner ||
+          !preferencesInput ||
+          !acceptAllBtn ||
+          !rejectBtn ||
+          !saveBtn
+        ) {
+          return;
+        }
+
+        function safeGet(key) {
+          try {
+            return localStorage.getItem(key);
+          } catch (err) {
+            return null;
+          }
+        }
+
+        function safeSet(key, value) {
+          try {
+            localStorage.setItem(key, value);
+          } catch (err) {
+            // Intentionally empty
+          }
+        }
+
+        function safeRemove(key) {
+          try {
+            localStorage.removeItem(key);
+          } catch (err) {
+            // Intentionally empty
+          }
+        }
+
+        function readConsent() {
+          var raw = safeGet(consentKey);
+          if (!raw) return null;
+
+          try {
+            var parsed = JSON.parse(raw);
+            if (!parsed || typeof parsed !== "object") {
+              return null;
+            }
+
+            if (parsed.expiresAt && Number(parsed.expiresAt) < Date.now()) {
+              safeRemove(consentKey);
+              return null;
+            }
+
+            return parsed;
+          } catch (err) {
+            return null;
+          }
+        }
+
+        function buildConsent(preferencesEnabled) {
+          return {
+            necessary: true,
+            preferences: Boolean(preferencesEnabled),
+            updatedAt: new Date().toISOString(),
+            expiresAt: Date.now() + consentTtlMs,
+          };
+        }
+
+        function applyConsent(consent) {
+          safeSet(consentKey, JSON.stringify(consent));
+
+          if (!consent.preferences) {
+            safeRemove(themeKey);
+          }
+
+          banner.hidden = true;
+          banner.classList.remove("visible");
+
+          window.dispatchEvent(
+            new CustomEvent("tao:consent-updated", {
+              detail: consent,
+            }),
+          );
+        }
+
+        function openBanner() {
+          var existing = readConsent();
+          preferencesInput.checked = Boolean(existing && existing.preferences);
+          banner.hidden = false;
+          banner.classList.add("visible");
+        }
+
+        var consent = readConsent();
+        if (!consent) {
+          openBanner();
+        }
+
+        acceptAllBtn.addEventListener("click", function () {
+          preferencesInput.checked = true;
+          applyConsent(buildConsent(true));
+        });
+
+        rejectBtn.addEventListener("click", function () {
+          preferencesInput.checked = false;
+          applyConsent(buildConsent(false));
+        });
+
+        saveBtn.addEventListener("click", function () {
+          applyConsent(buildConsent(preferencesInput.checked));
+        });
+
+        for (var i = 0; i < settingsBtns.length; i++) {
+          settingsBtns[i].addEventListener("click", function () {
+            openBanner();
+          });
+        }
+      })();
+    </script>
+    <script>
+      (function () {
+        var exportPdfCleanBtn = document.querySelector(".js-export-pdf-clean");
+        var placeholderPattern = /\[[^\]]+\]/g;
+
+        function replacePlaceholdersForPrint() {
+          var contractCard = document.querySelector(".legal-card");
+          if (!contractCard) {
+            return function () {};
+          }
+
+          var changedNodes = [];
+          var walker = document.createTreeWalker(
+            contractCard,
+            NodeFilter.SHOW_TEXT,
+            null,
+          );
+
+          while (walker.nextNode()) {
+            var node = walker.currentNode;
+            var originalText = node.nodeValue;
+
+            if (!originalText || !placeholderPattern.test(originalText)) {
+              placeholderPattern.lastIndex = 0;
+              continue;
+            }
+
+            placeholderPattern.lastIndex = 0;
+            changedNodes.push([node, originalText]);
+            node.nodeValue = originalText.replace(
+              placeholderPattern,
+              "________",
+            );
+          }
+
+          return function restoreOriginalText() {
+            for (var i = 0; i < changedNodes.length; i++) {
+              changedNodes[i][0].nodeValue = changedNodes[i][1];
+            }
+          };
+        }
+
+        function printDocument() {
+          var restore = function () {};
+          restore = replacePlaceholdersForPrint();
+
+          var restored = false;
+          function restoreOnce() {
+            if (restored) {
+              return;
+            }
+            restored = true;
+            restore();
+          }
+
+          window.addEventListener("afterprint", restoreOnce, { once: true });
+          window.print();
+          window.setTimeout(restoreOnce, 1500);
+        }
+
+        if (exportPdfCleanBtn) {
+          exportPdfCleanBtn.addEventListener("click", function () {
+            printDocument();
+          });
+        }
+
+        var mobileToggle = document.querySelector(".mobile-toggle");
+        var mobileNav = document.getElementById("mobile-nav");
+        var header = document.querySelector(".site-header");
+
+        if (mobileToggle && mobileNav) {
+          mobileToggle.addEventListener("click", function () {
+            var isOpen = mobileNav.classList.toggle("open");
+            mobileToggle.setAttribute("aria-expanded", isOpen);
+            mobileToggle.setAttribute(
+              "aria-label",
+              isOpen ? "Zamknij menu" : "Otwórz menu",
+            );
+          });
+
+          mobileNav.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+              mobileNav.classList.remove("open");
+              mobileToggle.setAttribute("aria-expanded", "false");
+              mobileToggle.setAttribute("aria-label", "Otwórz menu");
+            });
+          });
+        }
+
+        if (header) {
+          function onScroll() {
+            if (window.scrollY > 8) {
+              header.classList.add("scrolled");
+            } else {
+              header.classList.remove("scrolled");
+            }
+          }
+
+          onScroll();
+          window.addEventListener("scroll", onScroll, { passive: true });
+        }
+      })();
+    </script>
+  </body>
+</html>
