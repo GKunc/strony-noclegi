@@ -688,6 +688,16 @@
         min-height: 120px;
       }
 
+      .form-honeypot {
+        position: absolute;
+        left: -9999px;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        opacity: 0;
+        pointer-events: none;
+      }
+
       .form-consent {
         display: flex;
         gap: 0.625rem;
@@ -841,268 +851,270 @@
     <a href="#main-content" class="skip-link">Przejdź do treści</a>
 
     <!-- ===== HEADER ===== -->
-<header class="site-header" role="banner">
-  <div class="container header-inner">
-    <a
-      href="/"
-      class="logo"
-      aria-label="TwojApartamentOnline.pl – Strona główna"
-      >TwojApartament<span>Online</span></a
-    >
+    <header class="site-header" role="banner">
+      <div class="container header-inner">
+        <a
+          href="/"
+          class="logo"
+          aria-label="TwojApartamentOnline.pl – Strona główna"
+          >TwojApartament<span>Online</span></a
+        >
 
-    <nav class="nav-desktop" aria-label="Nawigacja główna">
-      <a href="/#problem">Dlaczego?</a>
-      <a href="/#rozwiazanie">Rozwiązanie</a>
-      <a href="/#jak-to-dziala">Jak to działa</a>
-      <a href="/#cennik">Cennik</a>
-      <a href="/#poradnik">Poradnik</a>
-      <a href="/#faq">FAQ</a>
-    </nav>
+        <nav class="nav-desktop" aria-label="Nawigacja główna">
+          <a href="/#problem">Dlaczego?</a>
+          <a href="/#rozwiazanie">Rozwiązanie</a>
+          <a href="/#jak-to-dziala">Jak to działa</a>
+          <a href="/#cennik">Cennik</a>
+          <a href="/#poradnik">Poradnik</a>
+          <a href="/#faq">FAQ</a>
+        </nav>
 
-    <a href="/#kontakt" class="btn btn-primary header-cta">Darmowa wycena</a>
+        <a href="/#kontakt" class="btn btn-primary header-cta"
+          >Darmowa wycena</a
+        >
 
-    <button
-      class="theme-toggle"
-      type="button"
-      aria-label="Włącz tryb ciemny"
-      aria-pressed="false"
-      title="Włącz tryb ciemny"
-    >
-      <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
-      <span class="sr-only">Przełącz tryb jasny i ciemny</span>
-    </button>
+        <button
+          class="theme-toggle"
+          type="button"
+          aria-label="Włącz tryb ciemny"
+          aria-pressed="false"
+          title="Włącz tryb ciemny"
+        >
+          <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+          <span class="sr-only">Przełącz tryb jasny i ciemny</span>
+        </button>
 
-    <button
-      class="mobile-toggle"
-      aria-label="Otwórz menu"
-      aria-expanded="false"
-      aria-controls="mobile-nav"
-    >
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        aria-hidden="true"
-      >
-        <line x1="3" y1="6" x2="21" y2="6" />
-        <line x1="3" y1="12" x2="21" y2="12" />
-        <line x1="3" y1="18" x2="21" y2="18" />
-      </svg>
-    </button>
-  </div>
+        <button
+          class="mobile-toggle"
+          aria-label="Otwórz menu"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            aria-hidden="true"
+          >
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </button>
+      </div>
 
-  <nav id="mobile-nav" class="mobile-nav" aria-label="Menu mobilne">
-    <a href="/#problem">Dlaczego?</a>
-    <a href="/#rozwiazanie">Rozwiązanie</a>
-    <a href="/#jak-to-dziala">Jak to działa</a>
-    <a href="/#cennik">Cennik</a>
-    <a href="/#poradnik">Poradnik</a>
-    <a href="/#faq">FAQ</a>
-    <a href="/#kontakt" class="btn btn-primary">Darmowa wycena</a>
-  </nav>
-</header>
+      <nav id="mobile-nav" class="mobile-nav" aria-label="Menu mobilne">
+        <a href="/#problem">Dlaczego?</a>
+        <a href="/#rozwiazanie">Rozwiązanie</a>
+        <a href="/#jak-to-dziala">Jak to działa</a>
+        <a href="/#cennik">Cennik</a>
+        <a href="/#poradnik">Poradnik</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/#kontakt" class="btn btn-primary">Darmowa wycena</a>
+      </nav>
+    </header>
 
-<script>
-  (function () {
-    "use strict";
+    <script>
+      (function () {
+        "use strict";
 
-    var storageKey = "tao-theme";
-    var sessionStorageKey = "tao-theme-session";
-    var consentKey = "tao-cookie-consent";
-    var root = document.documentElement;
+        var storageKey = "tao-theme";
+        var sessionStorageKey = "tao-theme-session";
+        var consentKey = "tao-cookie-consent";
+        var root = document.documentElement;
 
-    function getStoredConsent() {
-      try {
-        var raw = localStorage.getItem(consentKey);
-        if (!raw) return null;
-        var parsed = JSON.parse(raw);
+        function getStoredConsent() {
+          try {
+            var raw = localStorage.getItem(consentKey);
+            if (!raw) return null;
+            var parsed = JSON.parse(raw);
 
-        if (!parsed || typeof parsed !== "object") {
-          return null;
+            if (!parsed || typeof parsed !== "object") {
+              return null;
+            }
+
+            if (parsed.expiresAt && Number(parsed.expiresAt) < Date.now()) {
+              localStorage.removeItem(consentKey);
+              return null;
+            }
+
+            return parsed;
+          } catch (err) {
+            return null;
+          }
         }
 
-        if (parsed.expiresAt && Number(parsed.expiresAt) < Date.now()) {
-          localStorage.removeItem(consentKey);
-          return null;
+        function hasPreferenceConsent() {
+          var consent = getStoredConsent();
+          return Boolean(consent && consent.preferences === true);
         }
 
-        return parsed;
-      } catch (err) {
-        return null;
-      }
-    }
-
-    function hasPreferenceConsent() {
-      var consent = getStoredConsent();
-      return Boolean(consent && consent.preferences === true);
-    }
-
-    function getFromLocalStorage(key) {
-      try {
-        return localStorage.getItem(key);
-      } catch (err) {
-        return null;
-      }
-    }
-
-    function setInLocalStorage(key, value) {
-      try {
-        localStorage.setItem(key, value);
-      } catch (err) {
-        // Intentionally empty (np. tryb prywatny)
-      }
-    }
-
-    function removeFromLocalStorage(key) {
-      try {
-        localStorage.removeItem(key);
-      } catch (err) {
-        // Intentionally empty
-      }
-    }
-
-    function getFromSessionStorage(key) {
-      try {
-        return sessionStorage.getItem(key);
-      } catch (err) {
-        return null;
-      }
-    }
-
-    function setInSessionStorage(key, value) {
-      try {
-        sessionStorage.setItem(key, value);
-      } catch (err) {
-        // Intentionally empty (np. tryb prywatny)
-      }
-    }
-
-    function removeFromSessionStorage(key) {
-      try {
-        sessionStorage.removeItem(key);
-      } catch (err) {
-        // Intentionally empty
-      }
-    }
-
-    function getPreferredTheme() {
-      return window.matchMedia &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light";
-    }
-
-    function getStoredTheme() {
-      if (hasPreferenceConsent()) {
-        return getFromLocalStorage(storageKey);
-      }
-
-      return getFromSessionStorage(sessionStorageKey);
-    }
-
-    function storeTheme(theme) {
-      if (theme !== "dark" && theme !== "light") {
-        return;
-      }
-
-      if (hasPreferenceConsent()) {
-        setInLocalStorage(storageKey, theme);
-        removeFromSessionStorage(sessionStorageKey);
-      } else {
-        // Fallback bez trwałego zapisu: motyw utrzymuje się między podstronami
-        // tylko w ramach aktualnej sesji przeglądarki.
-        setInSessionStorage(sessionStorageKey, theme);
-      }
-    }
-
-    function updateToggleUi(theme) {
-      var isDark = theme === "dark";
-      var toggles = document.querySelectorAll(".theme-toggle");
-
-      for (var i = 0; i < toggles.length; i++) {
-        var btn = toggles[i];
-        var icon = btn.querySelector(".theme-toggle-icon");
-        var label = isDark ? "Włącz tryb jasny" : "Włącz tryb ciemny";
-
-        btn.setAttribute("aria-pressed", String(isDark));
-        btn.setAttribute("aria-label", label);
-        btn.setAttribute("title", label);
-
-        if (icon) {
-          icon.textContent = isDark ? "☀️" : "🌙";
-        }
-      }
-    }
-
-    function applyTheme(theme) {
-      root.setAttribute("data-theme", theme);
-      updateToggleUi(theme);
-    }
-
-    function toggleTheme() {
-      var current =
-        root.getAttribute("data-theme") === "dark" ? "dark" : "light";
-      var next = current === "dark" ? "light" : "dark";
-      applyTheme(next);
-      storeTheme(next);
-    }
-
-    var initialTheme = getStoredTheme() || getPreferredTheme();
-    applyTheme(initialTheme);
-
-    document.addEventListener("DOMContentLoaded", function () {
-      var toggles = document.querySelectorAll(".theme-toggle");
-      for (var i = 0; i < toggles.length; i++) {
-        toggles[i].addEventListener("click", toggleTheme);
-      }
-    });
-
-    if (window.matchMedia) {
-      var media = window.matchMedia("(prefers-color-scheme: dark)");
-      var onChange = function (event) {
-        if (!getStoredTheme()) {
-          applyTheme(event.matches ? "dark" : "light");
-        }
-      };
-
-      if (typeof media.addEventListener === "function") {
-        media.addEventListener("change", onChange);
-      } else if (typeof media.addListener === "function") {
-        media.addListener(onChange);
-      }
-    }
-
-    window.addEventListener("tao:consent-updated", function (event) {
-      var consent = event && event.detail ? event.detail : null;
-
-      if (consent && consent.preferences === true) {
-        var sessionTheme = getFromSessionStorage(sessionStorageKey);
-        var activeTheme = root.getAttribute("data-theme");
-        var themeToStore =
-          sessionTheme === "dark" || sessionTheme === "light"
-            ? sessionTheme
-            : activeTheme;
-
-        if (themeToStore === "dark" || themeToStore === "light") {
-          setInLocalStorage(storageKey, themeToStore);
-          applyTheme(themeToStore);
+        function getFromLocalStorage(key) {
+          try {
+            return localStorage.getItem(key);
+          } catch (err) {
+            return null;
+          }
         }
 
-        removeFromSessionStorage(sessionStorageKey);
-        return;
-      }
+        function setInLocalStorage(key, value) {
+          try {
+            localStorage.setItem(key, value);
+          } catch (err) {
+            // Intentionally empty (np. tryb prywatny)
+          }
+        }
 
-      if (!consent || consent.preferences !== true) {
-        removeFromLocalStorage(storageKey);
-        removeFromSessionStorage(sessionStorageKey);
-        applyTheme(getPreferredTheme());
-      }
-    });
-  })();
-</script>
-<!-- ===== MAIN ===== -->
+        function removeFromLocalStorage(key) {
+          try {
+            localStorage.removeItem(key);
+          } catch (err) {
+            // Intentionally empty
+          }
+        }
+
+        function getFromSessionStorage(key) {
+          try {
+            return sessionStorage.getItem(key);
+          } catch (err) {
+            return null;
+          }
+        }
+
+        function setInSessionStorage(key, value) {
+          try {
+            sessionStorage.setItem(key, value);
+          } catch (err) {
+            // Intentionally empty (np. tryb prywatny)
+          }
+        }
+
+        function removeFromSessionStorage(key) {
+          try {
+            sessionStorage.removeItem(key);
+          } catch (err) {
+            // Intentionally empty
+          }
+        }
+
+        function getPreferredTheme() {
+          return window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        }
+
+        function getStoredTheme() {
+          if (hasPreferenceConsent()) {
+            return getFromLocalStorage(storageKey);
+          }
+
+          return getFromSessionStorage(sessionStorageKey);
+        }
+
+        function storeTheme(theme) {
+          if (theme !== "dark" && theme !== "light") {
+            return;
+          }
+
+          if (hasPreferenceConsent()) {
+            setInLocalStorage(storageKey, theme);
+            removeFromSessionStorage(sessionStorageKey);
+          } else {
+            // Fallback bez trwałego zapisu: motyw utrzymuje się między podstronami
+            // tylko w ramach aktualnej sesji przeglądarki.
+            setInSessionStorage(sessionStorageKey, theme);
+          }
+        }
+
+        function updateToggleUi(theme) {
+          var isDark = theme === "dark";
+          var toggles = document.querySelectorAll(".theme-toggle");
+
+          for (var i = 0; i < toggles.length; i++) {
+            var btn = toggles[i];
+            var icon = btn.querySelector(".theme-toggle-icon");
+            var label = isDark ? "Włącz tryb jasny" : "Włącz tryb ciemny";
+
+            btn.setAttribute("aria-pressed", String(isDark));
+            btn.setAttribute("aria-label", label);
+            btn.setAttribute("title", label);
+
+            if (icon) {
+              icon.textContent = isDark ? "☀️" : "🌙";
+            }
+          }
+        }
+
+        function applyTheme(theme) {
+          root.setAttribute("data-theme", theme);
+          updateToggleUi(theme);
+        }
+
+        function toggleTheme() {
+          var current =
+            root.getAttribute("data-theme") === "dark" ? "dark" : "light";
+          var next = current === "dark" ? "light" : "dark";
+          applyTheme(next);
+          storeTheme(next);
+        }
+
+        var initialTheme = getStoredTheme() || getPreferredTheme();
+        applyTheme(initialTheme);
+
+        document.addEventListener("DOMContentLoaded", function () {
+          var toggles = document.querySelectorAll(".theme-toggle");
+          for (var i = 0; i < toggles.length; i++) {
+            toggles[i].addEventListener("click", toggleTheme);
+          }
+        });
+
+        if (window.matchMedia) {
+          var media = window.matchMedia("(prefers-color-scheme: dark)");
+          var onChange = function (event) {
+            if (!getStoredTheme()) {
+              applyTheme(event.matches ? "dark" : "light");
+            }
+          };
+
+          if (typeof media.addEventListener === "function") {
+            media.addEventListener("change", onChange);
+          } else if (typeof media.addListener === "function") {
+            media.addListener(onChange);
+          }
+        }
+
+        window.addEventListener("tao:consent-updated", function (event) {
+          var consent = event && event.detail ? event.detail : null;
+
+          if (consent && consent.preferences === true) {
+            var sessionTheme = getFromSessionStorage(sessionStorageKey);
+            var activeTheme = root.getAttribute("data-theme");
+            var themeToStore =
+              sessionTheme === "dark" || sessionTheme === "light"
+                ? sessionTheme
+                : activeTheme;
+
+            if (themeToStore === "dark" || themeToStore === "light") {
+              setInLocalStorage(storageKey, themeToStore);
+              applyTheme(themeToStore);
+            }
+
+            removeFromSessionStorage(sessionStorageKey);
+            return;
+          }
+
+          if (!consent || consent.preferences !== true) {
+            removeFromLocalStorage(storageKey);
+            removeFromSessionStorage(sessionStorageKey);
+            applyTheme(getPreferredTheme());
+          }
+        });
+      })();
+    </script>
+    <!-- ===== MAIN ===== -->
     <main id="main-content">
       <!-- HERO -->
       <section class="hero section" aria-labelledby="hero-heading">
@@ -1946,6 +1958,19 @@
                 >Zaznacz zgodę, aby wysłać formularz</span
               >
 
+              <div class="form-honeypot" aria-hidden="true">
+                <label for="website">Twoja strona internetowa</label>
+                <input
+                  type="text"
+                  id="website"
+                  name="website"
+                  tabindex="-1"
+                  autocomplete="off"
+                />
+              </div>
+
+              <input type="hidden" id="form-start-ts" name="_form_start_ts" />
+
               <!-- Dodatkowe informacje dla serwisu obsługującego formularz -->
               <input
                 type="hidden"
@@ -1989,238 +2014,242 @@
     </main>
 
     <!-- ===== FOOTER ===== -->
-<footer class="site-footer" role="contentinfo">
-  <div class="container">
-    <div class="footer-inner">
-      <div class="footer-logo">TwojApartament<span>Online</span></div>
-      <p class="footer-text">
-        Tworzymy proste, skuteczne strony internetowe dla właścicieli noclegów w
-        całej Polsce. Jednorazowa opłata, zero prowizji.
-      </p>
-      <p class="footer-text">
-        Kontakt: <a href="tel:+48782312090">+48 782 312 090</a>,
-        <a href="mailto:biuro@twojapartamentonline.pl"
-          >biuro@twojapartamentonline.pl</a
-        >
-      </p>
-      <nav class="footer-links" aria-label="Nawigacja stopki">
-        <a href="/#problem">Dlaczego</a>
-        <a href="/#rozwiazanie">Rozwiązanie</a>
-        <a href="/#jak-to-dziala">Jak to działa</a>
-        <a href="/#cennik">Cennik</a>
-        <a href="/#poradnik">Poradnik</a>
-        <a href="/#faq">FAQ</a>
-        <a href="/#kontakt">Kontakt</a>
-        <a href="/wzor-umowy.html">Wzór umowy</a>
-        <a href="/polityka-prywatnosci.html">Polityka prywatności</a>
-        <button type="button" class="footer-link-button js-cookie-settings">
-          Ustawienia cookies
-        </button>
-      </nav>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 TwojApartamentOnline.pl. Wszelkie prawa zastrzeżone.</p>
-    </div>
-
-    <section
-      id="cookie-consent"
-      class="cookie-consent"
-      aria-label="Ustawienia plików cookies"
-      hidden
-    >
-      <div class="cookie-consent-inner">
-        <h2 class="cookie-consent-title">Ustawienia prywatności</h2>
-        <p class="cookie-consent-text">
-          Używamy niezbędnych technologii do działania strony oraz opcjonalnej
-          pamięci preferencji (motyw jasny/ciemny). Możesz zaakceptować
-          wszystkie lub zapisać własne ustawienia.
-        </p>
-
-        <div class="cookie-option">
-          <label>
-            <input type="checkbox" checked disabled />
-            <span>
-              <strong>Niezbędne</strong> – wymagane do zapisu decyzji o cookies
-              i bezpieczeństwa działania strony.
-            </span>
-          </label>
-        </div>
-
-        <div class="cookie-option">
-          <label for="cookie-pref-preferences">
-            <input type="checkbox" id="cookie-pref-preferences" />
-            <span>
-              <strong>Preferencje</strong> – zapis wybranego motywu
-              (jasny/ciemny) w localStorage.
-            </span>
-          </label>
-        </div>
-
-        <div class="cookie-consent-footer">
-          <p class="cookie-consent-meta">
-            Szczegóły znajdziesz w
-            <a href="/polityka-prywatnosci.html">Polityce prywatności</a>.
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-inner">
+          <div class="footer-logo">TwojApartament<span>Online</span></div>
+          <p class="footer-text">
+            Tworzymy proste, skuteczne strony internetowe dla właścicieli
+            noclegów w całej Polsce. Jednorazowa opłata, zero prowizji.
           </p>
-
-          <div class="cookie-actions">
-            <button
-              type="button"
-              class="btn btn-outline cookie-btn"
-              id="cookie-reject"
+          <p class="footer-text">
+            Kontakt: <a href="tel:+48782312090">+48 782 312 090</a>,
+            <a href="mailto:biuro@twojapartamentonline.pl"
+              >biuro@twojapartamentonline.pl</a
             >
-              Odrzuć opcjonalne
+          </p>
+          <nav class="footer-links" aria-label="Nawigacja stopki">
+            <a href="/#problem">Dlaczego</a>
+            <a href="/#rozwiazanie">Rozwiązanie</a>
+            <a href="/#jak-to-dziala">Jak to działa</a>
+            <a href="/#cennik">Cennik</a>
+            <a href="/#poradnik">Poradnik</a>
+            <a href="/#faq">FAQ</a>
+            <a href="/#kontakt">Kontakt</a>
+            <a href="/wzor-umowy.html">Wzór umowy</a>
+            <a href="/polityka-prywatnosci.html">Polityka prywatności</a>
+            <button type="button" class="footer-link-button js-cookie-settings">
+              Ustawienia cookies
             </button>
-            <button
-              type="button"
-              class="btn btn-outline cookie-btn"
-              id="cookie-save"
-            >
-              Zapisz ustawienia
-            </button>
-            <button
-              type="button"
-              class="btn btn-primary cookie-btn"
-              id="cookie-accept-all"
-            >
-              Akceptuj wszystkie
-            </button>
-          </div>
+          </nav>
         </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2026 TwojApartamentOnline.pl. Wszelkie prawa zastrzeżone.
+          </p>
+        </div>
+
+        <section
+          id="cookie-consent"
+          class="cookie-consent"
+          aria-label="Ustawienia plików cookies"
+          hidden
+        >
+          <div class="cookie-consent-inner">
+            <h2 class="cookie-consent-title">Ustawienia prywatności</h2>
+            <p class="cookie-consent-text">
+              Używamy niezbędnych technologii do działania strony oraz
+              opcjonalnej pamięci preferencji (motyw jasny/ciemny). Możesz
+              zaakceptować wszystkie lub zapisać własne ustawienia.
+            </p>
+
+            <div class="cookie-option">
+              <label>
+                <input type="checkbox" checked disabled />
+                <span>
+                  <strong>Niezbędne</strong> – wymagane do zapisu decyzji o
+                  cookies i bezpieczeństwa działania strony.
+                </span>
+              </label>
+            </div>
+
+            <div class="cookie-option">
+              <label for="cookie-pref-preferences">
+                <input type="checkbox" id="cookie-pref-preferences" />
+                <span>
+                  <strong>Preferencje</strong> – zapis wybranego motywu
+                  (jasny/ciemny) w localStorage.
+                </span>
+              </label>
+            </div>
+
+            <div class="cookie-consent-footer">
+              <p class="cookie-consent-meta">
+                Szczegóły znajdziesz w
+                <a href="/polityka-prywatnosci.html">Polityce prywatności</a>.
+              </p>
+
+              <div class="cookie-actions">
+                <button
+                  type="button"
+                  class="btn btn-outline cookie-btn"
+                  id="cookie-reject"
+                >
+                  Odrzuć opcjonalne
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-outline cookie-btn"
+                  id="cookie-save"
+                >
+                  Zapisz ustawienia
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary cookie-btn"
+                  id="cookie-accept-all"
+                >
+                  Akceptuj wszystkie
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
-    </section>
-  </div>
-</footer>
+    </footer>
 
-<script>
-  (function () {
-    "use strict";
+    <script>
+      (function () {
+        "use strict";
 
-    var consentKey = "tao-cookie-consent";
-    var themeKey = "tao-theme";
-    var consentTtlMs = 365 * 24 * 60 * 60 * 1000;
+        var consentKey = "tao-cookie-consent";
+        var themeKey = "tao-theme";
+        var consentTtlMs = 365 * 24 * 60 * 60 * 1000;
 
-    var banner = document.getElementById("cookie-consent");
-    var preferencesInput = document.getElementById("cookie-pref-preferences");
-    var acceptAllBtn = document.getElementById("cookie-accept-all");
-    var rejectBtn = document.getElementById("cookie-reject");
-    var saveBtn = document.getElementById("cookie-save");
-    var settingsBtns = document.querySelectorAll(".js-cookie-settings");
+        var banner = document.getElementById("cookie-consent");
+        var preferencesInput = document.getElementById(
+          "cookie-pref-preferences",
+        );
+        var acceptAllBtn = document.getElementById("cookie-accept-all");
+        var rejectBtn = document.getElementById("cookie-reject");
+        var saveBtn = document.getElementById("cookie-save");
+        var settingsBtns = document.querySelectorAll(".js-cookie-settings");
 
-    if (
-      !banner ||
-      !preferencesInput ||
-      !acceptAllBtn ||
-      !rejectBtn ||
-      !saveBtn
-    ) {
-      return;
-    }
-
-    function safeGet(key) {
-      try {
-        return localStorage.getItem(key);
-      } catch (err) {
-        return null;
-      }
-    }
-
-    function safeSet(key, value) {
-      try {
-        localStorage.setItem(key, value);
-      } catch (err) {
-        // Intentionally empty
-      }
-    }
-
-    function safeRemove(key) {
-      try {
-        localStorage.removeItem(key);
-      } catch (err) {
-        // Intentionally empty
-      }
-    }
-
-    function readConsent() {
-      var raw = safeGet(consentKey);
-      if (!raw) return null;
-
-      try {
-        var parsed = JSON.parse(raw);
-        if (!parsed || typeof parsed !== "object") {
-          return null;
+        if (
+          !banner ||
+          !preferencesInput ||
+          !acceptAllBtn ||
+          !rejectBtn ||
+          !saveBtn
+        ) {
+          return;
         }
 
-        if (parsed.expiresAt && Number(parsed.expiresAt) < Date.now()) {
-          safeRemove(consentKey);
-          return null;
+        function safeGet(key) {
+          try {
+            return localStorage.getItem(key);
+          } catch (err) {
+            return null;
+          }
         }
 
-        return parsed;
-      } catch (err) {
-        return null;
-      }
-    }
+        function safeSet(key, value) {
+          try {
+            localStorage.setItem(key, value);
+          } catch (err) {
+            // Intentionally empty
+          }
+        }
 
-    function buildConsent(preferencesEnabled) {
-      return {
-        necessary: true,
-        preferences: Boolean(preferencesEnabled),
-        updatedAt: new Date().toISOString(),
-        expiresAt: Date.now() + consentTtlMs,
-      };
-    }
+        function safeRemove(key) {
+          try {
+            localStorage.removeItem(key);
+          } catch (err) {
+            // Intentionally empty
+          }
+        }
 
-    function applyConsent(consent) {
-      safeSet(consentKey, JSON.stringify(consent));
+        function readConsent() {
+          var raw = safeGet(consentKey);
+          if (!raw) return null;
 
-      if (!consent.preferences) {
-        safeRemove(themeKey);
-      }
+          try {
+            var parsed = JSON.parse(raw);
+            if (!parsed || typeof parsed !== "object") {
+              return null;
+            }
 
-      banner.hidden = true;
-      banner.classList.remove("visible");
+            if (parsed.expiresAt && Number(parsed.expiresAt) < Date.now()) {
+              safeRemove(consentKey);
+              return null;
+            }
 
-      window.dispatchEvent(
-        new CustomEvent("tao:consent-updated", {
-          detail: consent,
-        }),
-      );
-    }
+            return parsed;
+          } catch (err) {
+            return null;
+          }
+        }
 
-    function openBanner() {
-      var existing = readConsent();
-      preferencesInput.checked = Boolean(existing && existing.preferences);
-      banner.hidden = false;
-      banner.classList.add("visible");
-    }
+        function buildConsent(preferencesEnabled) {
+          return {
+            necessary: true,
+            preferences: Boolean(preferencesEnabled),
+            updatedAt: new Date().toISOString(),
+            expiresAt: Date.now() + consentTtlMs,
+          };
+        }
 
-    var consent = readConsent();
-    if (!consent) {
-      openBanner();
-    }
+        function applyConsent(consent) {
+          safeSet(consentKey, JSON.stringify(consent));
 
-    acceptAllBtn.addEventListener("click", function () {
-      preferencesInput.checked = true;
-      applyConsent(buildConsent(true));
-    });
+          if (!consent.preferences) {
+            safeRemove(themeKey);
+          }
 
-    rejectBtn.addEventListener("click", function () {
-      preferencesInput.checked = false;
-      applyConsent(buildConsent(false));
-    });
+          banner.hidden = true;
+          banner.classList.remove("visible");
 
-    saveBtn.addEventListener("click", function () {
-      applyConsent(buildConsent(preferencesInput.checked));
-    });
+          window.dispatchEvent(
+            new CustomEvent("tao:consent-updated", {
+              detail: consent,
+            }),
+          );
+        }
 
-    for (var i = 0; i < settingsBtns.length; i++) {
-      settingsBtns[i].addEventListener("click", function () {
-        openBanner();
-      });
-    }
-  })();
-</script>
-<!-- ===== JAVASCRIPT ===== -->
+        function openBanner() {
+          var existing = readConsent();
+          preferencesInput.checked = Boolean(existing && existing.preferences);
+          banner.hidden = false;
+          banner.classList.add("visible");
+        }
+
+        var consent = readConsent();
+        if (!consent) {
+          openBanner();
+        }
+
+        acceptAllBtn.addEventListener("click", function () {
+          preferencesInput.checked = true;
+          applyConsent(buildConsent(true));
+        });
+
+        rejectBtn.addEventListener("click", function () {
+          preferencesInput.checked = false;
+          applyConsent(buildConsent(false));
+        });
+
+        saveBtn.addEventListener("click", function () {
+          applyConsent(buildConsent(preferencesInput.checked));
+        });
+
+        for (var i = 0; i < settingsBtns.length; i++) {
+          settingsBtns[i].addEventListener("click", function () {
+            openBanner();
+          });
+        }
+      })();
+    </script>
+    <!-- ===== JAVASCRIPT ===== -->
     <script>
       (function () {
         "use strict";
@@ -2292,6 +2321,47 @@
         var form = document.getElementById("contact-form");
         var successMsg = document.getElementById("form-success");
         var globalError = document.getElementById("form-global-error");
+        var defaultGlobalErrorHtml = globalError ? globalError.innerHTML : "";
+        var honeypotField = document.getElementById("website");
+        var formStartTsField = document.getElementById("form-start-ts");
+        var antiSpamLastSubmitKey = "tao-contact-last-submit";
+        var minFillTimeMs = 3500;
+        var minIntervalBetweenSubmitsMs = 30000;
+        var maxMessageLinks = 2;
+
+        if (formStartTsField) {
+          formStartTsField.value = String(Date.now());
+        }
+
+        function safeStorageGet(key) {
+          try {
+            return localStorage.getItem(key);
+          } catch (err) {
+            return null;
+          }
+        }
+
+        function safeStorageSet(key, value) {
+          try {
+            localStorage.setItem(key, value);
+          } catch (err) {
+            // Intentionally empty
+          }
+        }
+
+        function hideGlobalError() {
+          if (globalError) {
+            globalError.classList.remove("visible");
+            globalError.innerHTML = defaultGlobalErrorHtml;
+          }
+        }
+
+        function showGlobalError(messageHtml) {
+          if (globalError) {
+            globalError.innerHTML = messageHtml || defaultGlobalErrorHtml;
+            globalError.classList.add("visible");
+          }
+        }
 
         function showError(id) {
           var el = document.getElementById(id);
@@ -2314,6 +2384,54 @@
           var trimmed = value.trim();
           if (!trimmed) return false;
           return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed);
+        }
+
+        function countLinks(text) {
+          var matches = text.match(/(?:https?:\/\/|www\.)/gi);
+          return matches ? matches.length : 0;
+        }
+
+        function containsHtmlTags(text) {
+          return /<[^>]+>/.test(text);
+        }
+
+        function hasSuspiciousRepetition(text) {
+          return /(.)\1{7,}/.test(text);
+        }
+
+        function shouldBlockMessage(text) {
+          var trimmed = text.trim();
+          if (!trimmed) return false;
+          if (trimmed.length > 2000) return true;
+          if (countLinks(trimmed) > maxMessageLinks) return true;
+          if (containsHtmlTags(trimmed)) return true;
+          if (hasSuspiciousRepetition(trimmed)) return true;
+          return false;
+        }
+
+        function getTimeOnFormMs() {
+          if (!formStartTsField || !formStartTsField.value) {
+            return Infinity;
+          }
+
+          var startedAt = Number(formStartTsField.value);
+          if (!startedAt || Number.isNaN(startedAt)) {
+            return Infinity;
+          }
+
+          return Date.now() - startedAt;
+        }
+
+        function resetFormStartTime() {
+          if (formStartTsField) {
+            formStartTsField.value = String(Date.now());
+          }
+        }
+
+        function isSubmittingTooFast() {
+          var lastSubmitRaw = safeStorageGet(antiSpamLastSubmitKey);
+          var lastSubmitAt = Number(lastSubmitRaw || 0);
+          return Date.now() - lastSubmitAt < minIntervalBetweenSubmitsMs;
         }
 
         form.addEventListener("submit", function (e) {
@@ -2361,13 +2479,46 @@
             valid = false;
           }
 
+          if (valid && honeypotField && honeypotField.value.trim()) {
+            // Bot likely filled hidden field; fake success and skip network request.
+            form.reset();
+            form.style.display = "none";
+            successMsg.classList.add("visible");
+            resetFormStartTime();
+            return;
+          }
+
+          if (valid && getTimeOnFormMs() < minFillTimeMs) {
+            showGlobalError(
+              "Wysyłka formularza nastąpiła zbyt szybko. Poczekaj chwilę i spróbuj ponownie.",
+            );
+            resetFormStartTime();
+            return;
+          }
+
+          var messageField = document.getElementById("message");
+          if (valid && messageField && shouldBlockMessage(messageField.value)) {
+            showGlobalError(
+              "Treść wiadomości wygląda na automatyczną. Usuń linki/znaczniki i spróbuj ponownie.",
+            );
+            return;
+          }
+
+          if (valid && isSubmittingTooFast()) {
+            showGlobalError(
+              "Wiadomość została wysłana przed chwilą. Odczekaj około 30 sekund i spróbuj ponownie.",
+            );
+            return;
+          }
+
           if (valid) {
-            if (globalError) {
-              globalError.classList.remove("visible");
-            }
+            hideGlobalError();
+            safeStorageSet(antiSpamLastSubmitKey, String(Date.now()));
 
             // Wysyłka danych formularza do zewnętrznego serwisu (np. Formspree)
             var formData = new FormData(form);
+            formData.set("_form_fill_time_ms", String(getTimeOnFormMs()));
+            formData.set("_spam_check", "client_v1_pass");
 
             fetch(form.action, {
               method: form.method || "POST",
@@ -2381,16 +2532,13 @@
                   form.reset();
                   form.style.display = "none";
                   successMsg.classList.add("visible");
+                  resetFormStartTime();
                 } else {
-                  if (globalError) {
-                    globalError.classList.add("visible");
-                  }
+                  showGlobalError();
                 }
               })
               .catch(function () {
-                if (globalError) {
-                  globalError.classList.add("visible");
-                }
+                showGlobalError();
               });
           }
         });
