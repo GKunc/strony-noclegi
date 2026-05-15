@@ -2356,7 +2356,9 @@
         var jsCheckField = document.getElementById("js-check");
         var formFingerprintField = document.getElementById("form-fingerprint");
         var clientTokenField = document.getElementById("client-token");
-        var submitButton = form ? form.querySelector('button[type="submit"]') : null;
+        var submitButton = form
+          ? form.querySelector('button[type="submit"]')
+          : null;
         var encodedEndpoint = form ? form.getAttribute("data-endpoint") : "";
         var antiSpamLastSubmitKey = "tao-contact-last-submit";
         var minFillTimeMs = 5000;
@@ -2415,18 +2417,14 @@
           var h = 2166136261;
           for (var i = 0; i < input.length; i++) {
             h ^= input.charCodeAt(i);
-            h +=
-              (h << 1) + (h << 4) + (h << 7) + (h << 8) + (h << 24);
+            h += (h << 1) + (h << 4) + (h << 7) + (h << 8) + (h << 24);
           }
 
           return (h >>> 0).toString(36);
         }
 
         function normalizeText(value) {
-          return (value || "")
-            .toLowerCase()
-            .replace(/\s+/g, " ")
-            .trim();
+          return (value || "").toLowerCase().replace(/\s+/g, " ").trim();
         }
 
         function hasBlockedKeywords(value) {
