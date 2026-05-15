@@ -744,6 +744,11 @@
         color: var(--color-text-light);
       }
 
+      .contact-form button[disabled] {
+        opacity: 0.7;
+        cursor: not-allowed;
+      }
+
       /* ===== DESKTOP MEDIA QUERIES ===== */
       @media (min-width: 640px) {
         .hero h1 {
@@ -1874,7 +1879,8 @@
               novalidate
               aria-label="Formularz kontaktowy"
               method="POST"
-              action="https://n8n.osktailor.pl/webhook/5acdfb83-0b31-4228-90ff-cc1e3222250c"
+              action=""
+              data-endpoint="aHR0cHM6Ly9uOG4ub3NrdGFpbG9yLnBsL3dlYmhvb2svNWFjZGZiODMtMGIzMS00MjI4LTkwZmYtY2MxZTMyMjIyNTBj"
             >
               <div class="form-group">
                 <label for="name">Imię i nazwisko</label>
@@ -1967,9 +1973,31 @@
                   tabindex="-1"
                   autocomplete="off"
                 />
+
+                <label for="company">Nazwa firmy</label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  tabindex="-1"
+                  autocomplete="off"
+                />
               </div>
 
               <input type="hidden" id="form-start-ts" name="_form_start_ts" />
+              <input type="hidden" id="js-check" name="_js_check" value="0" />
+              <input
+                type="hidden"
+                id="form-fingerprint"
+                name="_form_fingerprint"
+                value=""
+              />
+              <input
+                type="hidden"
+                id="client-token"
+                name="_client_token"
+                value=""
+              />
 
               <!-- Dodatkowe informacje dla serwisu obsługującego formularz -->
               <input
@@ -2323,14 +2351,142 @@
         var globalError = document.getElementById("form-global-error");
         var defaultGlobalErrorHtml = globalError ? globalError.innerHTML : "";
         var honeypotField = document.getElementById("website");
+        var secondHoneypotField = document.getElementById("company");
         var formStartTsField = document.getElementById("form-start-ts");
+        var jsCheckField = document.getElementById("js-check");
+        var formFingerprintField = document.getElementById("form-fingerprint");
+        var clientTokenField = document.getElementById("client-token");
+        var submitButton = form ? form.querySelector('button[type="submit"]') : null;
+        var encodedEndpoint = form ? form.getAttribute("data-endpoint") : "";
         var antiSpamLastSubmitKey = "tao-contact-last-submit";
-        var minFillTimeMs = 3500;
-        var minIntervalBetweenSubmitsMs = 30000;
-        var maxMessageLinks = 2;
+        var minFillTimeMs = 5000;
+        var minIntervalBetweenSubmitsMs = 90000;
+        var maxMessageLinks = 1;
+        var minInteractionScore = 2;
+        var interactionScore = 0;
+        var blockedEmailDomains = {
+          "mailinator.com": true,
+          "guerrillamail.com": true,
+          "10minutemail.com": true,
+          "tempmail.com": true,
+          "yopmail.com": true,
+          "sharklasers.com": true,
+        };
+
+        function safeBase64Decode(value) {
+          if (!value) return "";
+
+          try {
+            return atob(value);
+          } catch (err) {
+            return "";
+          }
+        }
+
+        function setSubmitEnabled(isEnabled) {
+          if (!submitButton) return;
+
+          submitButton.disabled = !isEnabled;
+          submitButton.setAttribute("aria-disabled", String(!isEnabled));
+        }
+
+        function buildFingerprint() {
+          var tz = "";
+          try {
+            tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+          } catch (err) {
+            tz = "";
+          }
+
+          var nav = window.navigator || {};
+          var screenInfo = window.screen || {};
+
+          return [
+            nav.language || "",
+            nav.platform || "",
+            String(screenInfo.width || ""),
+            String(screenInfo.height || ""),
+            String(new Date().getTimezoneOffset()),
+            tz,
+          ].join("|");
+        }
+
+        function simpleHash(input) {
+          var h = 2166136261;
+          for (var i = 0; i < input.length; i++) {
+            h ^= input.charCodeAt(i);
+            h +=
+              (h << 1) + (h << 4) + (h << 7) + (h << 8) + (h << 24);
+          }
+
+          return (h >>> 0).toString(36);
+        }
+
+        function normalizeText(value) {
+          return (value || "")
+            .toLowerCase()
+            .replace(/\s+/g, " ")
+            .trim();
+        }
+
+        function hasBlockedKeywords(value) {
+          var text = normalizeText(value);
+
+          if (!text) return false;
+
+          return /(casino|viagra|porn|crypto\s*bonus|forex|seo\s*services|backlinks?)/i.test(
+            text,
+          );
+        }
+
+        function isDisposableEmail(email) {
+          var parts = (email || "").trim().toLowerCase().split("@");
+          if (parts.length !== 2) return false;
+          return !!blockedEmailDomains[parts[1]];
+        }
+
+        function markInteraction() {
+          interactionScore = Math.min(interactionScore + 1, 10);
+          if (interactionScore >= minInteractionScore) {
+            setSubmitEnabled(true);
+          }
+        }
+
+        if (form) {
+          form.action = safeBase64Decode(encodedEndpoint);
+        }
 
         if (formStartTsField) {
           formStartTsField.value = String(Date.now());
+        }
+
+        if (jsCheckField) {
+          jsCheckField.value = "1";
+        }
+
+        if (formFingerprintField) {
+          formFingerprintField.value = buildFingerprint();
+        }
+
+        if (clientTokenField) {
+          var seed = [
+            formStartTsField ? formStartTsField.value : "",
+            formFingerprintField ? formFingerprintField.value : "",
+            "tao-contact-v2",
+          ].join("|");
+          clientTokenField.value = simpleHash(seed);
+        }
+
+        setSubmitEnabled(false);
+
+        if (form) {
+          ["pointerdown", "keydown", "touchstart", "input", "change"].forEach(
+            function (eventName) {
+              form.addEventListener(eventName, markInteraction, {
+                passive: true,
+              });
+            },
+          );
         }
 
         function safeStorageGet(key) {
@@ -2399,6 +2555,16 @@
           return /(.)\1{7,}/.test(text);
         }
 
+        function hasSuspiciousName(value) {
+          var trimmed = value.trim();
+
+          if (trimmed.length > 80) return true;
+          if (/https?:\/\//i.test(trimmed)) return true;
+          if (hasBlockedKeywords(trimmed)) return true;
+
+          return false;
+        }
+
         function shouldBlockMessage(text) {
           var trimmed = text.trim();
           if (!trimmed) return false;
@@ -2406,6 +2572,7 @@
           if (countLinks(trimmed) > maxMessageLinks) return true;
           if (containsHtmlTags(trimmed)) return true;
           if (hasSuspiciousRepetition(trimmed)) return true;
+          if (hasBlockedKeywords(trimmed)) return true;
           return false;
         }
 
@@ -2459,10 +2626,23 @@
             valid = false;
           }
 
+          if (valid && hasSuspiciousName(nameField.value)) {
+            showError("name-error");
+            nameField.classList.add("error");
+            valid = false;
+          }
+
           // Email
           if (!validateEmail(emailField.value)) {
             showError("email-error");
             emailField.classList.add("error");
+            valid = false;
+          }
+
+          if (valid && isDisposableEmail(emailField.value)) {
+            showGlobalError(
+              "Użyj proszę standardowego adresu e-mail (nie tymczasowego), abyśmy mogli skutecznie odpowiedzieć.",
+            );
             valid = false;
           }
 
@@ -2479,7 +2659,11 @@
             valid = false;
           }
 
-          if (valid && honeypotField && honeypotField.value.trim()) {
+          if (
+            valid &&
+            ((honeypotField && honeypotField.value.trim()) ||
+              (secondHoneypotField && secondHoneypotField.value.trim()))
+          ) {
             // Bot likely filled hidden field; fake success and skip network request.
             form.reset();
             form.style.display = "none";
@@ -2488,11 +2672,23 @@
             return;
           }
 
+          if (valid && interactionScore < minInteractionScore) {
+            showGlobalError(
+              "Wykryliśmy nietypową próbę wysyłki. Wypełnij formularz ręcznie i spróbuj ponownie.",
+            );
+            return;
+          }
+
           if (valid && getTimeOnFormMs() < minFillTimeMs) {
             showGlobalError(
               "Wysyłka formularza nastąpiła zbyt szybko. Poczekaj chwilę i spróbuj ponownie.",
             );
             resetFormStartTime();
+            return;
+          }
+
+          if (valid && (!form.action || !/^https:\/\//.test(form.action))) {
+            showGlobalError();
             return;
           }
 
@@ -2518,7 +2714,8 @@
             // Wysyłka danych formularza do zewnętrznego serwisu (np. Formspree)
             var formData = new FormData(form);
             formData.set("_form_fill_time_ms", String(getTimeOnFormMs()));
-            formData.set("_spam_check", "client_v1_pass");
+            formData.set("_spam_check", "client_v2_pass");
+            formData.set("_interaction_score", String(interactionScore));
 
             fetch(form.action, {
               method: form.method || "POST",
