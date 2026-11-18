@@ -4,7 +4,7 @@
   var placeholderPattern = /\[[^\]]+\]/g;
 
   function replacePlaceholdersForPrint() {
-    var contractCard = document.querySelector(".legal-card");
+    var contractCard = document.querySelector(".article .prose");
     if (!contractCard) {
       return function () {};
     }
@@ -62,41 +62,5 @@
     exportPdfCleanBtn.addEventListener("click", function () {
       printDocument();
     });
-  }
-
-  var mobileToggle = document.querySelector(".mobile-toggle");
-  var mobileNav = document.getElementById("mobile-nav");
-  var header = document.querySelector(".site-header");
-
-  if (mobileToggle && mobileNav) {
-    mobileToggle.addEventListener("click", function () {
-      var isOpen = mobileNav.classList.toggle("open");
-      mobileToggle.setAttribute("aria-expanded", isOpen);
-      mobileToggle.setAttribute(
-        "aria-label",
-        isOpen ? "Zamknij menu" : "Otwórz menu",
-      );
-    });
-
-    mobileNav.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", function () {
-        mobileNav.classList.remove("open");
-        mobileToggle.setAttribute("aria-expanded", "false");
-        mobileToggle.setAttribute("aria-label", "Otwórz menu");
-      });
-    });
-  }
-
-  if (header) {
-    function onScroll() {
-      if (window.scrollY > 8) {
-        header.classList.add("scrolled");
-      } else {
-        header.classList.remove("scrolled");
-      }
-    }
-
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
   }
 })();

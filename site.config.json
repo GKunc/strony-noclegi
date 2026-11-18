@@ -1,7 +1,7 @@
 {
   "BRAND": "TwojApartamentOnline.pl",
   "BRAND_INITIAL": "T",
-  "THEME_COLOR": "#1a73e8",
+  "THEME_COLOR": "#1558b0",
   "LANG": "pl",
   "LOCALE": "pl_PL",
   "LEGAL_ENTITY": "TwojApartamentOnline.pl",
@@ -26,7 +26,7 @@
   "TURNSTILE_SITE_KEY": "",
   "ANALYTICS": "none",
   "ANALYTICS_ID": "",
-  "PRIVACY_UPDATED": "2026-05-09",
+  "PRIVACY_UPDATED": "2026-11-18",
   "GOOGLE_SITE_VERIFICATION": "",
   "BING_SITE_VERIFICATION": ""
 }

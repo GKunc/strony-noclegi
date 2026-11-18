@@ -52,35 +52,22 @@
   }
   </script>
 </head>
-<body class="page-contract">
+<body>
   <!-- @include header -->
 
-  <main id="main" class="legal-page">
-      <div class="legal-wrap">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-          <ol>
-            <li><a href="">Strona główna</a></li>
+  <main id="main" class="section">
+    <nav class="breadcrumb" aria-label="Ścieżka nawigacji">
+      <ol>
+            <li><a href="./">Strona główna</a></li>
             <li aria-current="page">Wzór umowy</li>
           </ol>
-        </nav>
-
-        <header class="legal-header">
-          <span class="legal-label">Dokument</span>
-          <h1 class="legal-title">
-            Wzór umowy na stworzenie strony internetowej
-          </h1>
-          <p class="legal-meta">
-            Aktualizacja: 9 maja 2026 r. • Dokument informacyjny do dalszego
-            dopasowania pod Twoją działalność.
-          </p>
-          <div class="pdf-export-controls">
-            <button type="button" class="btn btn-outline js-export-pdf-clean">
-              Eksportuj PDF
-            </button>
-          </div>
-        </header>
-
-        <article class="legal-card" aria-labelledby="main-content">
+    </nav>
+    <article class="article">
+      <p class="eyebrow">Dokument</p>
+      <h1>Wzór umowy na stworzenie strony internetowej</h1>
+      <p class="post-meta">Aktualizacja: 9 maja 2026 r. • Dokument informacyjny do dalszego dopasowania pod Twoją działalność.</p>
+      <p class="doc-actions"><button type="button" class="btn btn-ghost js-export-pdf-clean">Eksportuj PDF</button></p>
+      <div class="prose">
           <h2>1. Dane stron</h2>
           <p>
             Umowa zawarta w dniu <strong>[data]</strong> w
@@ -131,7 +118,7 @@
             że Strony wpiszą je wprost do pakietu lub aneksu.
           </p>
 
-          <table class="contract-packages" aria-label="Pakiety usług">
+          <div class="table-wrap"><table class="contract-packages" aria-label="Pakiety usług">
             <thead>
               <tr>
                 <th>Zakres</th>
@@ -172,7 +159,7 @@
                 <td>[kwota]</td>
               </tr>
             </tbody>
-          </table>
+          </table></div>
 
           <p>
             Zmiany wykraczające poza pakiet są wyceniane osobno i realizowane po
@@ -359,8 +346,8 @@
             Twojej działalności (szczególnie gdy obsługujesz konsumentów lub
             klientów zagranicznych).
           </p>
-        </article>
       </div>
+    </article>
   </main>
 
   <!-- @include footer -->

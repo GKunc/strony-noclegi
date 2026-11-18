@@ -1,64 +1,23 @@
-  <a href="#main" class="skip-link">Przejdź do treści</a>
+  <a class="skip-link" href="#main">Przejdź do treści</a>
   <header class="site-header">
-    <div class="container header-inner">
-      <a
-        href="{{ROOT}}"
-        class="logo"
-        aria-label="TwojApartamentOnline.pl – Strona główna"
-        >TwojApartament<span>Online</span></a
-      >
-
-      <nav class="nav-desktop" aria-label="Nawigacja główna">
-        <a href="{{ROOT}}#problem">Dlaczego?</a>
-        <a href="{{ROOT}}#rozwiazanie">Rozwiązanie</a>
-        <a href="{{ROOT}}#jak-to-dziala">Jak to działa</a>
-        <a href="{{ROOT}}#cennik">Cennik</a>
-        <a href="{{ROOT}}#poradnik">Poradnik</a>
-        <a href="{{ROOT}}#faq">FAQ</a>
-      </nav>
-
-      <a href="{{ROOT}}#kontakt" class="btn btn-primary header-cta">Darmowa wycena</a>
-
-      <button
-        class="theme-toggle"
-        type="button"
-        aria-label="Włącz tryb ciemny"
-        aria-pressed="false"
-        title="Włącz tryb ciemny"
-      >
-        <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
-        <span class="sr-only">Przełącz tryb jasny i ciemny</span>
-      </button>
-
-      <button
-        type="button"
-        class="mobile-toggle"
-        aria-label="Otwórz menu"
-        aria-expanded="false"
-        aria-controls="mobile-nav"
-      >
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          aria-hidden="true"
-        >
-          <line x1="3" y1="6" x2="21" y2="6" />
-          <line x1="3" y1="12" x2="21" y2="12" />
-          <line x1="3" y1="18" x2="21" y2="18" />
-        </svg>
-      </button>
-    </div>
-
-    <nav id="mobile-nav" class="mobile-nav" aria-label="Menu mobilne">
+    <a class="brand" href="{{ROOT}}" aria-label="TwojApartamentOnline.pl – strona główna">TwojApartament<span>Online</span></a>
+    <!-- One nav for every page. Remove a link here when its section is removed from index.html. -->
+    <nav id="site-nav" aria-label="Menu główne">
       <a href="{{ROOT}}#problem">Dlaczego?</a>
-      <a href="{{ROOT}}#rozwiazanie">Rozwiązanie</a>
       <a href="{{ROOT}}#jak-to-dziala">Jak to działa</a>
       <a href="{{ROOT}}#cennik">Cennik</a>
       <a href="{{ROOT}}#poradnik">Poradnik</a>
       <a href="{{ROOT}}#faq">FAQ</a>
-      <a href="{{ROOT}}#kontakt" class="btn btn-primary">Darmowa wycena</a>
+      <a class="btn btn-small" href="{{ROOT}}#kontakt">{{CTA_LABEL}}</a>
     </nav>
+    <!-- Light/dark switch and the mobile menu button (js/ui.js). Both need JS, so they stay hidden without it. -->
+    <div class="header-actions">
+      <button type="button" class="icon-btn theme-toggle" aria-label="Tryb ciemny" aria-pressed="false">
+        <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></g></svg>
+      </button>
+      <button type="button" class="icon-btn menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
   </header>

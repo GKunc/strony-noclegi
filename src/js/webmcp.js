@@ -22,10 +22,10 @@
 
     ctx.registerTool({
       name: 'scroll_to_section',
-      description: 'Scrolls the page to a section by id (benefits, proof, faq, contact).',
+      description: 'Scrolls the page to a section by id (problem, rozwiazanie, jak-to-dziala, dla-kogo, cennik, poradnik, faq, kontakt).',
       inputSchema: {
         type: 'object',
-        properties: { id: { type: 'string', enum: ['benefits', 'proof', 'faq', 'contact'] } },
+        properties: { id: { type: 'string', enum: ['problem', 'rozwiazanie', 'jak-to-dziala', 'dla-kogo', 'cennik', 'poradnik', 'faq', 'kontakt'] } },
         required: ['id'],
       },
       execute: async ({ id }) => {

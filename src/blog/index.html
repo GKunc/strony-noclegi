@@ -40,30 +40,24 @@
   }
   </script>
 </head>
-<body class="page-home">
+<body>
   <!-- @include header -->
-  <main id="main">
+  <main id="main" class="section">
     <nav class="breadcrumb" aria-label="Ścieżka nawigacji">
-      <div class="container">
-        <ol>
-          <li><a href="../">Strona główna</a></li>
-          <li aria-current="page">Poradnik</li>
-        </ol>
-      </div>
+      <ol>
+        <li><a href="../">Strona główna</a></li>
+        <li aria-current="page">Poradnik</li>
+      </ol>
     </nav>
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label">Poradnik</span>
-          <h1 class="section-title">{{BLOG_TITLE}}</h1>
-          <p class="section-subtitle">Krótkie, konkretne artykuły dla właścicieli apartamentów, domków i pensjonatów, którzy chcą lepiej wykorzystać swoją stronę internetową i zdobywać więcej rezerwacji bez prowizji.</p>
-        </div>
-        <!-- The list is generated at build time from the @vars of each post in this folder, newest first. -->
-        <ul class="post-list" id="post-list">
-          <!-- @posts -->
-        </ul>
-      </div>
-    </section>
+    <div class="article">
+      <p class="eyebrow">Poradnik</p>
+      <h1>{{BLOG_TITLE}}</h1>
+      <p class="section-lead">Krótkie, konkretne artykuły dla właścicieli apartamentów, domków i pensjonatów, którzy chcą lepiej wykorzystać swoją stronę internetową i zdobywać więcej rezerwacji bez prowizji.</p>
+      <!-- The list is generated at build time from the @vars of each post in this folder, newest first. -->
+      <ul class="post-list" id="post-list">
+        <!-- @posts -->
+      </ul>
+    </div>
   </main>
   <!-- @include footer -->
 </body>
