@@ -1,0 +1,17 @@
+.DS_Store
+node_modules/
+_site/
+.lighthouseci/
+.claude/settings.local.json
+.preview/
+*service-account*.json
+.worker/
+.worker-test/
+# Secrets: never in the repo (tools/secrets.mjs also blocks them at commit and push)
+.env
+.env.*
+!.env.example
+.dev.vars
+*.pem
+*.key
+form-secrets.json

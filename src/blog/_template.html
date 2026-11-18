@@ -1,0 +1,91 @@
+<!-- @vars
+{
+  "POST_TITLE": "",
+  "POST_DESCRIPTION": "",
+  "DATE": "",
+  "DATE_MODIFIED": "",
+  "POST_IMAGE": "",
+  "CTA_HEADING": "",
+  "CTA_TEXT": ""
+}
+-->
+<!DOCTYPE html>
+<html lang="{{LANG}}">
+<head>
+  <!-- @include head -->
+  <title>{{POST_TITLE}} | {{BRAND}}</title>
+  <meta name="description" content="{{POST_DESCRIPTION}}">
+  <link rel="canonical" href="{{PAGE_URL}}">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="author" content="{{AUTHOR_NAME}}">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="{{BRAND}}">
+  <meta property="og:locale" content="{{LOCALE}}">
+  <meta property="og:title" content="{{POST_TITLE}}">
+  <meta property="og:description" content="{{POST_DESCRIPTION}}">
+  <meta property="og:url" content="{{PAGE_URL}}">
+  <meta property="og:image" content="{{POST_IMAGE}}">
+  <meta property="article:published_time" content="{{DATE}}">
+  <meta property="article:modified_time" content="{{DATE_MODIFIED}}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{POST_TITLE}}">
+  <meta name="twitter:description" content="{{POST_DESCRIPTION}}">
+  <meta name="twitter:image" content="{{POST_IMAGE}}">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": "{{PAGE_URL}}#article",
+        "headline": "{{POST_TITLE}}",
+        "description": "{{POST_DESCRIPTION}}",
+        "image": "{{POST_IMAGE}}",
+        "datePublished": "{{DATE}}",
+        "dateModified": "{{DATE_MODIFIED}}",
+        "inLanguage": "{{LANG}}",
+        "mainEntityOfPage": "{{PAGE_URL}}",
+        "author": { "@type": "Person", "name": "{{AUTHOR_NAME}}", "url": "{{AUTHOR_URL}}" },
+        "publisher": { "@id": "{{SITE_URL}}/#organization" },
+        "isPartOf": { "@id": "{{SITE_URL}}/blog/#blog" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "{{BRAND}}", "item": "{{SITE_URL}}/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "{{SITE_URL}}/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "{{POST_TITLE}}", "item": "{{PAGE_URL}}" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- @include header -->
+  <main id="main" class="section">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../">{{BRAND}}</a></li>
+        <li><a href="./">Blog</a></li>
+        <li aria-current="page">{{POST_TITLE}}</li>
+      </ol>
+    </nav>
+    <article>
+      <h1>{{POST_TITLE}}</h1>
+      <p class="post-meta">
+        By {{AUTHOR_NAME}} · Published <time datetime="{{DATE}}">{{DATE}}</time>
+        · Updated <time datetime="{{DATE_MODIFIED}}">{{DATE_MODIFIED}}</time>
+      </p>
+      <!-- Post body goes here: h2/h3, paragraphs, lists. The title above is the only h1. -->
+      {{POST_BODY}}
+      <aside class="cta-box">
+        <h2>{{CTA_HEADING}}</h2>
+        <p>{{CTA_TEXT}}</p>
+        <a class="btn" href="../#contact">{{CTA_LABEL}}</a>
+      </aside>
+    </article>
+  </main>
+  <!-- @include footer -->
+</body>
+</html>

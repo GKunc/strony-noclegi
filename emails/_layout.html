@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="{{LANG}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="supported-color-schemes" content="light dark">
+  <title>{{SUBJECT}}</title>
+  <!-- Colours, font and radius come from src/css/styles.css (STYLE_* / DARK_* tokens), like the website.
+       Inline styles carry the light look everywhere; this block switches to dark mode where the email app supports it. -->
+  <style>
+    @media (prefers-color-scheme: dark) {
+      .e-bg { background:{{DARK_BG}} !important; }
+      .e-text, .e-text p, .e-brand { color:{{DARK_TEXT}} !important; }
+      .e-muted, .e-muted a { color:{{DARK_MUTED}} !important; }
+      .e-link { color:{{DARK_ACCENT}} !important; }
+      .e-card { background:{{DARK_CARD}} !important; color:{{DARK_TEXT}} !important; }
+      .e-btn { background:{{DARK_ACCENT}} !important; color:{{DARK_ACCENT_TEXT}} !important; }
+    }
+  </style>
+</head>
+<body class="e-bg" style="margin:0;padding:0;background:{{STYLE_BG}};">
+  <table role="presentation" class="e-bg" width="100%" cellpadding="0" cellspacing="0" style="background:{{STYLE_BG}};">
+    <tr>
+      <td align="center" style="padding:16px 20px 32px;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;">
+          <tr>
+            <td style="padding:0 0 24px;font:700 16px/1.6 {{STYLE_FONT}};">
+              <a class="e-brand" href="{{SITE_URL}}/" style="color:{{STYLE_TEXT}};text-decoration:none;">{{BRAND}}</a>
+            </td>
+          </tr>
+          <tr>
+            <td class="e-text" style="font:16px/1.6 {{STYLE_FONT}};color:{{STYLE_TEXT}};">
+<!-- @content -->
+            </td>
+          </tr>
+          <tr>
+            <td class="e-muted" align="center" style="padding:32px 0 0;font:14px/1.6 {{STYLE_FONT}};color:{{STYLE_MUTED}};">
+              &copy; {{YEAR}} {{BRAND}} · <a href="{{SITE_URL}}/privacy.html" style="color:{{STYLE_MUTED}};">Privacy</a>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- Render target for tools/make-assets.mjs. Not deployed.
+     ?type=og&brand=..&headline=..&color=#hex   -> 1200x630 social image
+     ?type=icon&size=N&color=#hex               -> square icon from src/favicon.svg -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  html, body { margin:0; height:100%; overflow:hidden; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .og { box-sizing:border-box; width:1200px; height:630px; padding:80px; display:flex; flex-direction:column; justify-content:space-between; color:#fff; }
+  .og .brand { font-size:40px; font-weight:700; display:flex; align-items:center; gap:24px; }
+  .og .brand img { width:72px; height:72px; border-radius:16px; box-shadow:0 0 0 3px rgba(255,255,255,.7); }
+  .og h1 { font-size:68px; line-height:1.1; margin:0; max-width:1000px; }
+  .icon { display:block; }
+</style>
+</head>
+<body>
+<script>
+  const q = new URLSearchParams(location.search);
+  const color = q.get('color') || '#3b5bfd';
+  document.body.style.background = color;
+  const svg = q.get('svg') || '../src/favicon.svg';
+  if (q.get('type') === 'og') {
+    const el = document.createElement('div');
+    el.className = 'og';
+    el.innerHTML = '<div class="brand"><img alt=""><span></span></div><h1></h1>';
+    el.querySelector('img').src = svg;
+    el.querySelector('span').textContent = q.get('brand') || '';
+    el.querySelector('h1').textContent = q.get('headline') || '';
+    document.body.append(el);
+  } else {
+    const size = Number(q.get('size')) || 512;
+    document.body.innerHTML = '<img class="icon" alt="">';
+    const img = document.querySelector('img');
+    img.width = img.height = size;
+    img.src = svg;
+  }
+</script>
+</body>
+</html>

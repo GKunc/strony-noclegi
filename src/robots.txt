@@ -1,0 +1,22 @@
+# Search engines and AI assistants are welcome. AI policy is set in brief/landing.md (AI_CRAWLERS).
+User-agent: *
+Allow: /
+
+# AI search and assistant crawlers (cite and link to the site in answers)
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+Allow: /
+
+# AI model-training crawlers. To opt out, change "Allow" to "Disallow" (AI_CRAWLERS: search-only).
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: CCBot
+Allow: /
+
+Sitemap: {{SITE_URL}}/sitemap.xml

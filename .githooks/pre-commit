@@ -1,0 +1,15 @@
+#!/bin/sh
+# Release checks before each commit that touches the site. Skip once with: git commit --no-verify
+# The secret check always runs (template too, every file); the site checks only when site files change
+# and the template is configured (BRAND set in site.config.json).
+node tools/secrets.mjs --staged || {
+  echo ""
+  echo "Commit stopped: a key or token was about to be committed. Never skip this check."
+  exit 1
+}
+git diff --cached --name-only | grep -qE '^(src/|emails/|worker/|site\.config\.json$)' || exit 0
+node tools/check.mjs --if-configured || {
+  echo ""
+  echo "Commit stopped: fix the errors above (or ask Claude to). Details: node tools/check.mjs"
+  exit 1
+}

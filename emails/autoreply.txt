@@ -1,0 +1,10 @@
+{{#name}}Hi {{name}},{{/name}}{{^name}}Hello,{{/name}}
+
+Thanks for your message. It reached us and a real person will read it.
+
+We will get back to you by email. If anything is urgent, just reply to this email.
+
+Best regards,
+{{BRAND}}
+
+Visit our website: {{SITE_URL}}/

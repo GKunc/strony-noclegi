@@ -1,0 +1,33 @@
+name: Site monitor
+# Weekly check of the live site (tools/monitor.mjs). Problems open a GitHub issue, which emails the
+# repo owner; the issue closes itself when everything passes again.
+on:
+  schedule:
+    - cron: '17 6 * * 1' # Mondays 06:17 UTC
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+  actions: write
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - id: mode
+        run: node -e 'const c=require("./site.config.json");console.log("configured="+Boolean(String(c.BRAND||"").trim() && c.SITE_URL))' >> "$GITHUB_OUTPUT"
+      - name: Check the live site
+        if: steps.mode.outputs.configured == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node tools/monitor.mjs --lighthouse --issue
+      # GitHub switches off scheduled workflows after 60 days without commits; re-enabling keeps the monitor running.
+      - name: Keep the schedule alive
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow enable monitor.yml || true

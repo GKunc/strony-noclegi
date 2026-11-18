@@ -1,0 +1,8 @@
+New enquiry from the {{BRAND}} website. Reply to this email to answer the sender directly.
+
+Name:  {{#name}}{{name}}{{/name}}{{^name}}(not given){{/name}}
+Email: {{email}}
+Date:  {{date}}
+Page:  {{page}}
+
+{{#message}}{{message}}{{/message}}{{^message}}(no message){{/message}}

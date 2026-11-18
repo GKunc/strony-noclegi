@@ -1,0 +1,15 @@
+#!/bin/sh
+# Same checks as CI (offline part) before pushing, so a broken site never reaches the deploy.
+# Skip once with: git push --no-verify
+# The secret check covers every commit being pushed (also ones made with --no-verify).
+# The site checks do nothing in the untouched template (BRAND empty in site.config.json).
+node tools/secrets.mjs --push || {
+  echo ""
+  echo "Push stopped: a commit being pushed contains a key or token. Never skip this check."
+  exit 1
+}
+node tools/verify.mjs --quick --if-configured || {
+  echo ""
+  echo "Push stopped: the site would fail CI. Fix the errors above (or ask Claude to)."
+  exit 1
+}

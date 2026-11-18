@@ -1,0 +1,20 @@
+# {{BRAND}}
+
+> {{META_DESCRIPTION}}
+
+{{LLMS_SUMMARY}}
+
+## Strony
+
+- [Strona główna]({{SITE_URL}}/): {{PAGE_TITLE}} – problem, rozwiązanie, jak to działa, dla kogo, cennik, FAQ i formularz darmowej wyceny
+- [Cennik]({{SITE_URL}}/#cennik): Pakiet Start 2 000 zł netto, Pakiet Plus 2 900 zł netto, Pakiet Premium 4 900 zł netto; opcjonalnie pakiet utrzymania strony od 99 zł/mies.
+- [Kontakt]({{SITE_URL}}/#kontakt): telefon +48 782 312 090, e-mail {{CONTACT_EMAIL}}; odpowiedź w ciągu 24 godzin
+- [Wzór umowy]({{SITE_URL}}/wzor-umowy.html): wzór umowy na wykonanie strony internetowej dla noclegu
+- [Polityka prywatności]({{SITE_URL}}/privacy.html): jak przetwarzamy dane osobowe
+
+<!-- @if HAS_POSTS -->
+## Poradnik
+
+- [Wszystkie poradniki]({{SITE_URL}}/blog/): lista artykułów
+<!-- @posts -->
+<!-- @endif -->

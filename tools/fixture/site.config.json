@@ -1,0 +1,37 @@
+{
+  "BRAND": "Tom & Jerry's \"Green\" Office",
+  "BRAND_INITIAL": "T",
+  "THEME_COLOR": "#3b5bfd",
+  "LANG": "en",
+  "LOCALE": "en_US",
+  "LEGAL_ENTITY": "Example Fixture Ltd",
+  "CONTACT_EMAIL": "hello@example.com",
+
+  "SITE_URL": "https://example.github.io/fixture",
+  "INDEXNOW_KEY": "0123456789abcdef0123456789abcdef",
+
+  "PAGE_TITLE": "Office plant care in Example City",
+  "H1_HEADLINE": "Healthy office plants <without> the effort",
+  "SUBHEADLINE": "We water, prune and replace the plants in your office every week.",
+  "META_DESCRIPTION": "Fixture text for the template self-test: weekly watering, pruning and free replacements for office plants, with a quote in one business day.",
+  "CTA_LABEL": "Get a quote",
+  "LLMS_SUMMARY": "This is the fixture site used to test the landing page template. It is not a real business.",
+
+  "BLOG_TITLE": "Office plant care guides",
+  "BLOG_DESCRIPTION": "Fixture guides on keeping office plants alive: watering schedules, light, pests and species that survive air conditioning.",
+  "AUTHOR_NAME": "Fixture Author",
+  "AUTHOR_URL": "https://example.com/about",
+
+  "FORM_ENDPOINT": "https://example-github-io-fixture-form.example.workers.dev",
+  "FORM_PROVIDER": "Cloudflare and Resend",
+  "FORM_ACCESS_KEY": "",
+  "EMAIL_FROM": "hello@example.com",
+  "FORM_NOTIFY_TO": "",
+  "TURNSTILE_SITE_KEY": "1x00000000000000000000AA",
+  "ANALYTICS": "ga4",
+  "ANALYTICS_ID": "G-TEST123456",
+  "PRIVACY_UPDATED": "2026-01-01",
+
+  "GOOGLE_SITE_VERIFICATION": "fixture-google-code",
+  "BING_SITE_VERIFICATION": ""
+}

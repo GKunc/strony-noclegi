@@ -1,0 +1,24 @@
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <!-- Marks JS as on (animations only then hide sections until they scroll in) and sets the light/dark theme before the page paints. -->
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="{{ROOT}}js/theme.js"></script>
+  <meta name="theme-color" content="{{THEME_COLOR}}">
+  <link rel="icon" href="{{ROOT}}favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="{{ROOT}}apple-touch-icon.png">
+  <link rel="manifest" href="{{ROOT}}site.webmanifest">
+  <!-- @if HAS_POSTS -->
+  <link rel="alternate" type="application/rss+xml" title="{{BRAND}} blog" href="{{ROOT}}blog/feed.xml">
+  <!-- @endif -->
+  <link rel="stylesheet" href="{{ROOT}}css/styles.css">
+  <!-- Analytics: chosen with ANALYTICS / ANALYTICS_ID in site.config.json. GA4 loads only after consent (js/consent.js). -->
+  <!-- @if ANALYTICS=plausible -->
+  <script defer data-domain="{{ANALYTICS_ID}}" src="https://plausible.io/js/script.js"></script>
+  <!-- @endif -->
+  <!-- @if ANALYTICS=goatcounter -->
+  <script async data-goatcounter="https://{{ANALYTICS_ID}}.goatcounter.com/count" src="https://gc.zgo.at/count.js"></script>
+  <!-- @endif -->
+  <!-- @if ANALYTICS=cloudflare -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;{{ANALYTICS_ID}}&quot;}"></script>
+  <!-- @endif -->

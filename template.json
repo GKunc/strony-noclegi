@@ -1,0 +1,24 @@
+{
+  "repo": "GKunc/landing-template",
+  "branch": "main",
+  "owned": [
+    "tools/",
+    "worker/",
+    ".github/",
+    ".githooks/",
+    ".claude/skills/",
+    ".claude/settings.json",
+    ".editorconfig",
+    ".gitignore",
+    ".htmlvalidate.json",
+    ".mcp.json",
+    "lighthouserc.json",
+    "CLAUDE.md",
+    "README.md",
+    "template.json",
+    "emails/STYLE.md",
+    "src/js/main.js",
+    "src/js/consent.js"
+  ],
+  "_comment": "owned = belongs to the template: replaced on every update, never edited in a site repo (change it in the template instead). Everything else belongs to the site; template changes to those files are merged in (3-way), and new keys are added to site.config.json."
+}
