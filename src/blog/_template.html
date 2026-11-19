@@ -10,7 +10,7 @@
 }
 -->
 <!DOCTYPE html>
-<html lang="{{LANG}}">
+<html lang="{{LANG}}" data-type="service" data-radius="soft" data-buttons="block" data-motion>
 <head>
   <!-- @include head -->
   <title>{{POST_TITLE}} | {{BRAND}}</title>
@@ -63,28 +63,30 @@
 </head>
 <body>
   <!-- @include header -->
-  <main id="main" class="section">
-    <nav class="breadcrumb" aria-label="Breadcrumb">
+  <main id="top" class="page">
+    <div class="wrap">
+    <nav class="breadcrumb" aria-label="Ścieżka nawigacji">
       <ol>
-        <li><a href="../">{{BRAND}}</a></li>
-        <li><a href="./">Blog</a></li>
+        <li><a href="../">Strona główna</a></li>
+        <li><a href="./">Poradnik</a></li>
         <li aria-current="page">{{POST_TITLE}}</li>
       </ol>
     </nav>
-    <article>
+    <article class="article">
+      <p class="eyebrow">Poradnik</p>
       <h1>{{POST_TITLE}}</h1>
-      <p class="post-meta">
-        By {{AUTHOR_NAME}} · Published <time datetime="{{DATE}}">{{DATE}}</time>
-        · Updated <time datetime="{{DATE_MODIFIED}}">{{DATE_MODIFIED}}</time>
-      </p>
+      <p class="post-meta"><span>{{AUTHOR_NAME}}</span><span>Aktualizacja: <time datetime="{{DATE_MODIFIED}}">{{DATE_MODIFIED}}</time></span></p>
       <!-- Post body goes here: h2/h3, paragraphs, lists. The title above is the only h1. -->
+      <div class="prose">
       {{POST_BODY}}
-      <aside class="cta-box">
+      <div class="cta-box">
         <h2>{{CTA_HEADING}}</h2>
         <p>{{CTA_TEXT}}</p>
-        <a class="btn" href="../#contact">{{CTA_LABEL}}</a>
-      </aside>
+        <a class="btn btn--primary" href="../#kontakt">{{CTA_LABEL}}</a>
+      </div>
+      </div>
     </article>
+    </div>
   </main>
   <!-- @include footer -->
 </body>

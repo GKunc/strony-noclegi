@@ -1,39 +1,43 @@
-  <footer class="site-footer">
-    <div>
-      <p class="footer-brand">TwojApartament<span>Online</span></p>
-      <p>Tworzymy proste, skuteczne strony internetowe dla właścicieli noclegów w całej Polsce. Jednorazowa opłata, zero prowizji.</p>
-      <p>Kontakt: <a href="tel:+48782312090">+48&nbsp;782&nbsp;312&nbsp;090</a>, <a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a></p>
-      <p>&copy; <span id="year">{{YEAR}}</span> {{BRAND}}. Wszelkie prawa zastrzeżone.</p>
+<!-- deal (taste-skill): footer-columns; close-photo dealt, re-dealt as the close-word head row (no unused photograph left; sections.md 2) -->
+<!-- @if IS_HOME -->
+<footer class="footer closing" id="contact" aria-labelledby="close-h">
+  <div class="wrap">
+    <div class="closing__cta close--word">
+      <div class="section-head--split">
+        <div><h2 id="close-h">Porozmawiajmy o stronie dla Twojego noclegu</h2><p class="t-lead">Bez zobowiązań. Odezwiemy się w ciągu 24 godzin.</p></div>
+        <a class="btn btn--primary" href="#kontakt">Darmowa wycena<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+      </div>
     </div>
-    <nav class="footer-links" aria-label="Linki w stopce">
-      <a href="{{ROOT}}#problem">Dlaczego</a>
-      <a href="{{ROOT}}#rozwiazanie">Rozwiązanie</a>
-      <a href="{{ROOT}}#jak-to-dziala">Jak to działa</a>
-      <a href="{{ROOT}}#cennik">Cennik</a>
-      <a href="{{ROOT}}#poradnik">Poradnik</a>
-      <a href="{{ROOT}}#faq">FAQ</a>
-      <a href="{{ROOT}}#kontakt">Kontakt</a>
-      <!-- @if HAS_POSTS -->
-      <a href="{{ROOT}}blog/">Wszystkie poradniki</a>
-      <a href="{{ROOT}}blog/feed.xml">RSS</a>
-      <!-- @endif -->
-      <a href="{{ROOT}}wzor-umowy.html">Wzór umowy</a>
-      <a href="{{ROOT}}privacy.html">Polityka prywatności</a>
-      <!-- @if ANALYTICS=ga4 -->
-      <button type="button" class="linklike" data-consent-open>Ustawienia cookies</button>
-      <!-- @endif -->
-    </nav>
-  </footer>
-  <!-- @if ANALYTICS=ga4 -->
-  <!-- Cookie consent for Google Analytics (Consent Mode v2, nothing loads before "Accept"). -->
-  <section id="consent" class="consent" aria-label="Zgoda na cookies" data-ga="{{ANALYTICS_ID}}" hidden>
-    <p>Chcielibyśmy używać plików cookies Google Analytics, by wiedzieć, jak odwiedzający korzystają ze strony. Ustawimy je tylko za Twoją zgodą. <a href="{{ROOT}}privacy.html">Polityka prywatności</a></p>
-    <div class="consent-actions">
-      <button type="button" class="btn" data-consent="granted">Akceptuję</button>
-      <button type="button" class="btn btn-ghost" data-consent="denied">Odrzucam</button>
+<!-- @endif -->
+<!-- @if !IS_HOME -->
+<footer class="footer" id="contact">
+  <div class="wrap">
+<!-- @endif -->
+    <div class="closing__links">
+      <div class="grid">
+        <div class="span-4 stack-4">
+          <a class="nav__logo" href="{{ROOT}}#top"><img class="nav__mark" src="{{ROOT}}logo.svg" alt="" width="28" height="28" loading="lazy">TwojApartamentOnline</a>
+          <p class="footer__lede">Strony dla noclegów. Jednorazowa opłata, zero prowizji.</p>
+          <p class="t-small">Kontakt: <a href="tel:+48782312090">+48&nbsp;782&nbsp;312&nbsp;090</a>, <a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a></p>
+        </div>
+        <div class="span-2 footer__col"><h3>Dlaczego</h3><ul><li><a href="{{ROOT}}#problem">Problem</a></li><li><a href="{{ROOT}}#rozwiazanie">Rozwiązanie</a></li><li><a href="{{ROOT}}#dla-kogo">Dla kogo</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Proces</h3><ul><li><a href="{{ROOT}}#jak-to-dziala">Jak to działa</a></li><li><a href="{{ROOT}}#cennik">Cennik</a></li><li><a href="{{ROOT}}wzor-umowy.html">Wzór umowy</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Poradnik</h3><ul><li><a href="{{ROOT}}#poradnik">Artykuły</a></li><!-- @if HAS_POSTS --><li><a href="{{ROOT}}blog/">Wszystkie poradniki</a></li><li><a href="{{ROOT}}blog/feed.xml">RSS</a></li><!-- @endif --></ul></div>
+        <div class="span-2 footer__col"><h3>Kontakt</h3><ul><li><a href="{{ROOT}}#faq">FAQ</a></li><li><a href="{{ROOT}}#kontakt">Darmowa wycena</a></li><li><a href="{{ROOT}}privacy.html">Polityka prywatności</a></li></ul></div>
+      </div>
+      <div class="footer__legal">
+        <span>&copy; <span id="year">{{YEAR}}</span> {{BRAND}} &nbsp; <a href="{{ROOT}}privacy.html">Polityka prywatności</a></span>
+        <div class="socials"></div>
+        <a class="credits" href="{{ROOT}}zdjecia.html">Zdjęcia: Wikimedia Commons</a>
+      </div>
     </div>
-  </section>
-  <script src="{{ROOT}}js/consent.js" defer></script>
-  <!-- @endif -->
-  <script src="{{ROOT}}js/ui.js" defer></script>
-  <script src="{{ROOT}}js/main.js" defer></script>
+  </div>
+</footer>
+<!-- @if IS_HOME -->
+<nav class="actionbar" aria-label="Szybkie akcje">
+  <a class="btn btn--primary" href="#kontakt">Darmowa wycena</a>
+</nav>
+<!-- @endif -->
+<script type="module" src="{{ROOT}}assets/system.js"></script>
+<script type="module" src="{{ROOT}}assets/motion/motion.js"></script>
+<script type="module" src="{{ROOT}}assets/layout/layout.js"></script>

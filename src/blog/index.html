@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{LANG}}">
+<html lang="{{LANG}}" data-type="service" data-radius="soft" data-buttons="block" data-motion>
 <head>
   <!-- @include head -->
   <title>{{BLOG_TITLE}} | {{BRAND}}</title>
@@ -42,7 +42,8 @@
 </head>
 <body>
   <!-- @include header -->
-  <main id="main" class="section">
+  <main id="top" class="page">
+    <div class="wrap">
     <nav class="breadcrumb" aria-label="Ścieżka nawigacji">
       <ol>
         <li><a href="../">Strona główna</a></li>
@@ -52,12 +53,13 @@
     <div class="article">
       <p class="eyebrow">Poradnik</p>
       <h1>{{BLOG_TITLE}}</h1>
-      <p class="section-lead">Krótkie, konkretne artykuły dla właścicieli apartamentów, domków i pensjonatów, którzy chcą lepiej wykorzystać swoją stronę internetową i zdobywać więcej rezerwacji bez prowizji.</p>
+      <p class="page-lead">Krótkie, konkretne artykuły dla właścicieli apartamentów, domków i pensjonatów, którzy chcą lepiej wykorzystać swoją stronę internetową i zdobywać więcej rezerwacji bez prowizji.</p>
       <!-- The list is generated at build time from the @vars of each post in this folder, newest first. -->
       <ul class="post-list" id="post-list">
         <!-- @posts -->
       </ul>
     </div>
+      </div>
   </main>
   <!-- @include footer -->
 </body>

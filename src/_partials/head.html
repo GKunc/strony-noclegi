@@ -1,16 +1,23 @@
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light dark">
-  <!-- Before the stylesheet: applies the saved light/dark choice and marks JS as on, so nothing flashes or shifts. -->
-  <script>(function(d){d.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t)}catch(e){}})(document.documentElement)</script>
-  <meta name="theme-color" content="{{THEME_COLOR}}">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#e6dbc7">
+  <meta name="site-kind" content="other">
+  <meta name="page-type" content="service">
   <link rel="icon" href="{{ROOT}}favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="{{ROOT}}apple-touch-icon.png">
   <link rel="manifest" href="{{ROOT}}site.webmanifest">
   <!-- @if HAS_POSTS -->
-  <link rel="alternate" type="application/rss+xml" title="{{BRAND}} blog" href="{{ROOT}}blog/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="{{BRAND}} – poradnik" href="{{ROOT}}blog/feed.xml">
   <!-- @endif -->
+  <!-- Host Grotesk is served from this site (src/fonts), not from Google, so no visitor data goes to Google. -->
+  <link rel="preload" href="{{ROOT}}fonts/host-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- taste-skill kit (src/assets): order matters; css/styles.css holds the dealt palette and page CSS last. -->
+  <link rel="stylesheet" href="{{ROOT}}assets/system.css">
+  <link rel="stylesheet" href="{{ROOT}}assets/ui/cards.css">
+  <link rel="stylesheet" href="{{ROOT}}assets/motion/motion.css">
+  <link rel="stylesheet" href="{{ROOT}}assets/layout/layout.css">
   <link rel="stylesheet" href="{{ROOT}}css/styles.css">
+  <script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
   <!-- Analytics: chosen with ANALYTICS / ANALYTICS_ID in site.config.json. GA4 loads only after consent (js/consent.js). -->
   <!-- @if ANALYTICS=plausible -->
   <script defer data-domain="{{ANALYTICS_ID}}" src="https://plausible.io/js/script.js"></script>

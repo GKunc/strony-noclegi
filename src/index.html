@@ -1,5 +1,6 @@
+<!-- @vars {"IS_HOME": "1"} -->
 <!DOCTYPE html>
-<html lang="{{LANG}}">
+<html lang="{{LANG}}" data-type="service" data-radius="soft" data-buttons="block" data-motion>
 <head>
   <!-- @include head -->
   <title>{{PAGE_TITLE}} | {{BRAND}}</title>
@@ -142,243 +143,286 @@
   </script>
 </head>
 <body>
+<!-- type: service (an agency that builds websites for holiday-let owners)
+     deal: hero photo (data-calm left, words in the box), nav-mega, close-photo, footer-columns, rhythm surface-pairs (dla-kogo + cennik),
+     buttons block, mark: the client's TAO logo, palette cobalt-on-sand (dealt first: swap-pastels' teal clashed with the blue TAO logo),
+     type host (Host Grotesk, self-hosted), grounds none (kind other)
+     moments: word-highlight (#zmiana, the statement), photo-chapters (#jak-to-dziala, the three steps) -->
   <!-- @include header -->
 
-  <main id="main">
-    <section class="hero">
-      <p class="eyebrow">Dla właścicieli noclegów, apartamentów i domków</p>
-      <h1>Więcej rezerwacji <em>bez prowizji</em> Booking i&nbsp;Airbnb</h1>
-      <p class="lead">{{SUBHEADLINE}}</p>
-      <div class="hero-actions">
-        <a class="btn" href="#kontakt">Darmowa wycena →</a>
-        <a class="btn btn-ghost" href="#jak-to-dziala">Jak to działa?</a>
-      </div>
-      <p class="trust"><span class="stars" role="img" aria-label="Ocena 5 na 5 gwiazdek">★★★★★</span> <span>Zaufali nam właściciele ponad <strong>50 obiektów noclegowych</strong></span></p>
-      <ul class="facts" aria-label="Najważniejsze liczby">
-        <li><strong>15–20%</strong> tyle zabiera prowizja Booking</li>
-        <li><strong>0 zł</strong> prowizji za rezerwacje z własnej strony</li>
-        <li><strong>5 dni</strong> czas realizacji strony</li>
-      </ul>
+  <main id="top">
+    <section class="hero hero--photo" data-enter data-calm="left" aria-labelledby="hero-h">
+      <picture class="hero__bg" data-phone-fill><source media="(max-width: 639px)" srcset="assets/img/photo-f186238324-780x975.webp 780w" sizes="100vw"><img src="assets/img/photo-f186238324-1920.webp" srcset="assets/img/photo-f186238324-500.webp 500w, assets/img/photo-f186238324-960.webp 960w, assets/img/photo-f186238324-1280.webp 1280w, assets/img/photo-f186238324-1920.webp 1920w" sizes="100vw" width="1920" height="1280" alt="Drewniany dom wakacyjny wśród drzew" style="--ly-pos: 60% 50%; --ly-pos-phone: 65% 50%" fetchpriority="high" decoding="async" data-source="stand-in" data-subject="dom wakacyjny"></picture>
+      <div class="wrap"><div class="hero-text">
+        <div class="hero__text">
+          <p class="hero-notice">Zaufali nam właściciele ponad 50 obiektów noclegowych</p>
+          <h1 id="hero-h">Więcej rezerwacji bez prowizji Booking i&nbsp;Airbnb</h1>
+          <p class="hero__lead">{{SUBHEADLINE}}</p>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="#kontakt">Darmowa wycena<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+            <a class="btn btn--secondary" href="#jak-to-dziala">Jak to działa?</a>
+          </div>
+        </div>
+      </div></div>
     </section>
 
-    <section id="problem" class="section band">
-      <div class="inner">
-        <p class="eyebrow">Problem</p>
-        <h2>Booking i Airbnb zarabiają na Twoich rezerwacjach z noclegów</h2>
-        <p class="section-lead">Portale rezerwacyjne są wygodne, ale ich prowizje zjadają Twój zysk z noclegów. Oto największe problemy, z którymi mierzą się właściciele apartamentów, domków i pensjonatów.</p>
+    <section class="section" id="problem" aria-labelledby="problem-h">
+      <div class="wrap">
+        <div class="grid fill">
+          <div class="span-6">
+            <div class="section-head">
+              <h2 id="problem-h">Booking i Airbnb zarabiają na Twoich rezerwacjach z noclegów</h2>
+              <p>Portale rezerwacyjne są wygodne, ale ich prowizje zjadają Twój zysk z noclegów. Oto największe problemy, z którymi mierzą się właściciele apartamentów, domków i pensjonatów.</p>
+            </div>
+            <ul class="rows">
+              <li><span class="rows__name">Wysoka prowizja za każdą rezerwację</span><span class="rows__value">15–20%</span><p>Booking pobiera od 15% do 20% prowizji od każdej rezerwacji. Przy 100&nbsp;000 zł obrotu rocznie tracisz nawet 20&nbsp;000 zł na samych prowizjach. Bez własnej strony internetowej dla noclegu jesteś skazany na wysokie prowizje pośredników.</p></li>
+              <li><span class="rows__name">Brak kontroli nad danymi gości</span><p>Portale nie udostępniają Ci pełnych danych kontaktowych gości. Nie możesz budować relacji ani wysyłać ofert na kolejny sezon.</p></li>
+              <li><span class="rows__name">Brak powracających gości</span><p>Goście rezerwują przez Booking za każdym razem od nowa – a Ty za każdym razem płacisz prowizję. Bez własnej strony www goście nie mają jak wracać do Ciebie bezpośrednio – znowu szukają w Booking i znowu płacisz prowizję.</p></li>
+            </ul>
+          </div>
+          <div class="frame frame--photo span-6 start-7">
+            <img class="frame__img" src="assets/img/photo-m61856012-1280.webp" width="1280" height="853" srcset="assets/img/photo-m61856012-500.webp 500w, assets/img/photo-m61856012-960.webp 960w, assets/img/photo-m61856012-1280.webp 1280w, assets/img/photo-m61856012-1920.webp 1920w" sizes="(max-width: 639px) 100vw, 75vw" alt="Lniana poduszka w paski na białym łóżku przy oknie" loading="lazy" data-source="stand-in" data-subject="pokój gościnny">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section statement" id="zmiana" data-moment="word-highlight" aria-label="Rozwiązanie">
+      <div class="wrap">
+        <p class="t-label">Rozwiązanie</p>
+        <p class="mo-wh__text">Nie musisz rezygnować z Booking. Wystarczy, że dodasz własną stronę internetową dla swojego noclegu, apartamentów lub domków jako dodatkowy kanał rezerwacji – i zaczniesz <strong>zarabiać więcej</strong>.</p>
+      </div>
+    </section>
+
+    <section class="section" id="rozwiazanie" aria-labelledby="rozwiazanie-h">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="rozwiazanie-h">Własna strona internetowa dla noclegu to Twój kanał rezerwacji bez&nbsp;prowizji</h2>
+          <p>0 zł prowizji za rezerwacje z własnej strony. Czas realizacji strony: 5 dni.</p>
+        </div>
         <div class="grid">
-          <article class="card">
-            <h3>Wysoka prowizja za każdą rezerwację</h3>
-            <p>Booking pobiera od 15% do 20% prowizji od każdej rezerwacji. Przy 100&nbsp;000 zł obrotu rocznie tracisz nawet 20&nbsp;000 zł na samych prowizjach. Bez własnej strony internetowej dla noclegu jesteś skazany na wysokie prowizje pośredników.</p>
+          <article class="card card--open span-4">
+            <div class="panel"><img class="frame__img" src="assets/img/photo-m61777177-960.webp" width="960" height="624" srcset="assets/img/photo-m61777177-500.webp 500w, assets/img/photo-m61777177-960.webp 960w" sizes="(max-width: 639px) 100vw, 50vw" alt="Złożone wełniane koce na drewnianym stole" loading="lazy" data-source="library" data-subject="koce w pokoju gościnnym"></div>
+            <h3>Profesjonalna strona www dla Twojego obiektu</h3>
+            <p>Strona prezentuje Twój obiekt, zdjęcia, cennik i dane kontaktowe. To kompletna strona internetowa dla noclegu, dzięki której goście mogą rezerwować bezpośrednio – bez pośredników.</p>
           </article>
-          <article class="card">
-            <h3>Brak kontroli nad danymi gości</h3>
-            <p>Portale nie udostępniają Ci pełnych danych kontaktowych gości. Nie możesz budować relacji ani wysyłać ofert na kolejny sezon.</p>
+          <article class="card card--open span-4">
+            <div class="panel"><img class="frame__img" src="assets/img/photo-m61665613-960.webp" width="960" height="1440" srcset="assets/img/photo-m61665613-500.webp 500w, assets/img/photo-m61665613-960.webp 960w" sizes="(max-width: 639px) 100vw, 50vw" alt="Dzbanek mleka i miska owoców z granolą przy jasnym oknie" loading="lazy" data-source="library" data-subject="śniadanie dla gości"></div>
+            <h3>Bezpośredni kontakt z gośćmi</h3>
+            <p>Masz pełną kontrolę nad kontaktem. Telefon, e-mail, formularz – gość pisze bezpośrednio do Ciebie, a rezerwacje nie generują prowizji dla Booking.</p>
           </article>
-          <article class="card">
-            <h3>Brak powracających gości</h3>
-            <p>Goście rezerwują przez Booking za każdym razem od nowa – a Ty za każdym razem płacisz prowizję. Bez własnej strony www goście nie mają jak wracać do Ciebie bezpośrednio – znowu szukają w Booking i znowu płacisz prowizję.</p>
+          <article class="card card--open span-4">
+            <div class="panel"><img class="frame__img" src="assets/img/photo-m61847874-960.webp" width="960" height="768" srcset="assets/img/photo-m61847874-500.webp 500w, assets/img/photo-m61847874-960.webp 960w" sizes="(max-width: 639px) 100vw, 50vw" alt="Szara pościel na łóżku przy białej ścianie z desek" loading="lazy" data-source="library" data-subject="pościel w pokoju gościnnym"></div>
+            <h3>Więcej zysku z każdej rezerwacji</h3>
+            <p>Bez prowizji 15–20% zostawiasz więcej pieniędzy w kieszeni. Przy 50 rezerwacjach rocznie to dodatkowe kilka tysięcy złotych.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="rozwiazanie" class="section">
-      <p class="eyebrow">Rozwiązanie</p>
-      <h2>Własna strona internetowa dla noclegu to Twój kanał rezerwacji bez&nbsp;prowizji</h2>
-      <p class="section-lead">Nie musisz rezygnować z Booking. Wystarczy, że dodasz własną stronę internetową dla swojego noclegu, apartamentów lub domków jako dodatkowy kanał rezerwacji – i zaczniesz zarabiać więcej.</p>
-      <div class="grid">
-        <article class="card">
-          <h3>Profesjonalna strona www dla Twojego obiektu</h3>
-          <p>Strona prezentuje Twój obiekt, zdjęcia, cennik i dane kontaktowe. To kompletna strona internetowa dla noclegu, dzięki której goście mogą rezerwować bezpośrednio – bez pośredników.</p>
-        </article>
-        <article class="card">
-          <h3>Bezpośredni kontakt z gośćmi</h3>
-          <p>Masz pełną kontrolę nad kontaktem. Telefon, e-mail, formularz – gość pisze bezpośrednio do Ciebie, a rezerwacje nie generują prowizji dla Booking.</p>
-        </article>
-        <article class="card">
-          <h3>Więcej zysku z każdej rezerwacji</h3>
-          <p>Bez prowizji 15–20% zostawiasz więcej pieniędzy w kieszeni. Przy 50 rezerwacjach rocznie to dodatkowe kilka tysięcy złotych.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="jak-to-dziala" class="section band">
-      <div class="inner">
-        <p class="eyebrow">Jak to działa</p>
-        <h2>3 proste kroki do własnej strony</h2>
-        <p class="section-lead">Nie musisz znać się na technologii. My zajmiemy się wszystkim – Ty dostarczasz tylko materiały.</p>
-        <ol class="steps">
-          <li><h3>Napisz do nas</h3><p>Wypełnij formularz lub zadzwoń. Porozmawiamy o Twoim obiekcie i ustalmy, czego potrzebujesz.</p></li>
-          <li><h3>Budujemy Twoją stronę</h3><p>Na podstawie zdjęć i opisów tworzymy profesjonalną, szybką stronę internetową dla noclegu, zoptymalizowaną pod Google.</p></li>
-          <li><h3>Przyjmujesz rezerwacje</h3><p>Twoja strona jest gotowa. Goście znajdują Cię w Google i rezerwują bezpośrednio – bez prowizji.</p></li>
+    <section class="section" id="jak-to-dziala" data-moment="photo-chapters" aria-labelledby="kroki-h">
+      <div class="wrap mo-ph">
+        <div class="mo-ph__head"><h2 id="kroki-h">3 proste kroki do własnej strony</h2><p>Nie musisz znać się na technologii. My zajmiemy się wszystkim – Ty dostarczasz tylko materiały.</p></div>
+        <ol class="mo-ph__list">
+          <li class="mo-ph__ch">
+            <figure class="mo-ph__pic"><img loading="lazy" src="assets/img/photo-f53140727-1920.webp" width="1920" height="1285" srcset="assets/img/photo-f53140727-500.webp 500w, assets/img/photo-f53140727-960.webp 960w, assets/img/photo-f53140727-1280.webp 1280w, assets/img/photo-f53140727-1920.webp 1920w" sizes="(max-width: 639px) 250vw, 100vw" alt="Kuchnia z wyspą i hokerami w domu wakacyjnym" data-source="stand-in" data-subject="wnętrze domu wakacyjnego"></figure>
+            <h3>Napisz do nas</h3>
+            <p>Wypełnij formularz lub zadzwoń. Porozmawiamy o Twoim obiekcie i ustalmy, czego potrzebujesz.</p>
+          </li>
+          <li class="mo-ph__ch">
+            <figure class="mo-ph__pic"><img loading="lazy" src="assets/img/photo-f134851895-1920.webp" width="1920" height="1440" srcset="assets/img/photo-f134851895-500.webp 500w, assets/img/photo-f134851895-960.webp 960w, assets/img/photo-f134851895-1280.webp 1280w, assets/img/photo-f134851895-1920.webp 1920w" sizes="(max-width: 639px) 250vw, 100vw" alt="Pokój dzienny apartamentu z oknem i telewizorem" data-source="stand-in" data-subject="wnętrze apartamentu"></figure>
+            <h3>Budujemy Twoją stronę</h3>
+            <p>Na podstawie zdjęć i opisów tworzymy profesjonalną, szybką stronę internetową dla noclegu, zoptymalizowaną pod Google.</p>
+          </li>
+          <li class="mo-ph__ch">
+            <figure class="mo-ph__pic"><img loading="lazy" src="assets/img/photo-f59466255-1920.webp" width="1920" height="1280" srcset="assets/img/photo-f59466255-500.webp 500w, assets/img/photo-f59466255-960.webp 960w, assets/img/photo-f59466255-1280.webp 1280w, assets/img/photo-f59466255-1920.webp 1920w" sizes="(max-width: 639px) 250vw, 100vw" alt="Pokój z dwuosobowym łóżkiem i lampkami nocnymi" data-source="stand-in" data-subject="wnętrze domku"></figure>
+            <h3>Przyjmujesz rezerwacje</h3>
+            <p>Twoja strona jest gotowa. Goście znajdują Cię w Google i rezerwują bezpośrednio – bez prowizji.</p>
+          </li>
         </ol>
       </div>
     </section>
 
-    <section id="dla-kogo" class="section">
-      <p class="eyebrow">Dla kogo</p>
-      <h2>Dla małych właścicieli noclegów, którzy chcą mieć własną stronę i zarabiać więcej</h2>
-      <p class="section-lead">Nasza oferta jest stworzona z myślą o właścicielach niewielkich obiektów noclegowych w całej Polsce.</p>
-      <ul class="checklist">
-        <li><strong>Właściciele apartamentów</strong> – masz 2–5 apartamentów i chcesz mieć własną stronę dla apartamentów, żeby przyjmować gości bez prowizji Booking.</li>
-        <li><strong>Właściciele domków letniskowych</strong> – Twoje domki są w atrakcyjnej lokalizacji, ale brakuje Ci prostej strony internetowej, która pokaże ofertę i pozwoli na bezpośredni kontakt.</li>
-        <li><strong>Właściciele pensjonatów i pokoi</strong> – chcesz mieć prostą, czytelną stronę www dla pensjonatu lub pokoi gościnnych, zamiast polegać wyłącznie na portalach.</li>
-        <li><strong>Właściciele agroturystyk</strong> – Twoi goście wracają co roku, ale rezerwują przez Booking i płacisz prowizję od stałych klientów, zamiast przyjmować zgłoszenia przez własną stronę.</li>
-        <li><strong>Każdy, kto chce być niezależny</strong> – nie chcesz zależeć od jednego portalu i jego zmiennych zasad</li>
-      </ul>
-    </section>
-
-    <section id="cennik" class="section band">
-      <div class="inner">
-        <p class="eyebrow">Cennik</p>
-        <h2>Prosta, uczciwa cena za stronę dla noclegu</h2>
-        <p class="section-lead">Jednorazowa opłata, bez ukrytych kosztów i abonamentów. Płacisz raz za stronę internetową dla swojego noclegu – strona jest Twoja na zawsze.</p>
-        <div class="pricing">
-          <article class="plan">
-            <h3>Pakiet Start</h3>
-            <p class="price">2 000 <span>zł netto</span></p>
-            <p class="for">Dla małych obiektów, które potrzebują prostej, ale profesjonalnej strony wizytówki</p>
-            <ul>
-              <li>Prosta strona wizytówka dla jednego obiektu (opis, zdjęcia, podstawowy cennik)</li>
-              <li>Responsywna (mobilna) wersja</li>
-              <li>Podstawowa optymalizacja SEO pod Google (tytuły, meta opisy, nagłówki)</li>
-              <li>Formularz kontaktowy i dane kontaktowe</li>
-              <li>Mapa dojazdu i opis lokalizacji</li>
-            </ul>
-            <a class="btn btn-ghost" href="#kontakt">Wybierz pakiet Start →</a>
-          </article>
-          <article class="plan plan-featured">
-            <p class="badge">Najczęściej wybierany</p>
-            <h3>Pakiet Plus</h3>
-            <p class="price">2 900 <span>zł netto</span></p>
-            <p class="for">Najlepszy stosunek ceny do wartości dla apartamentów, domków i pensjonatów</p>
-            <ul>
-              <li>Wszystko z pakietu Start</li>
-              <li>Rozszerzona liczba sekcji/podstron (np. osobne sekcje dla pokoi/apartamentów i atrakcji w okolicy)</li>
-              <li>Pełniejsza optymalizacja SEO pod Google (struktura strony, treści pod lokalne frazy)</li>
-              <li>Propozycja tekstów pod SEO dla Twojej lokalizacji</li>
-              <li>Prosta sekcja z opiniami gości lub atrakcjami w okolicy</li>
-              <li>Integracja kalendarza dostępności z Booking.com i Airbnb (synchronizacja iCal)</li>
-            </ul>
-            <a class="btn" href="#kontakt">Wybierz pakiet Plus →</a>
-            <p class="plan-extra"><strong>Opcjonalnie:</strong> Pakiet utrzymania strony (aktualizacje, zmiany treści, hosting) – od <strong>99 zł/mies.</strong></p>
-          </article>
-          <article class="plan">
-            <h3>Pakiet Premium</h3>
-            <p class="price">4 900 <span>zł netto</span></p>
-            <p class="for">Dla obiektów, które chcą pełen system rezerwacji online i integrację z Booking.com oraz Airbnb</p>
-            <ul>
-              <li>Wszystko z pakietu Plus</li>
-              <li>Moduł rezerwacji online z kalendarzem dostępności na stronie</li>
-              <li>Integracja z bramką płatności (zaliczki online, płatność kartą/BLIK)</li>
-              <li>Konfiguracja Google Analytics 4 i podstawowych zdarzeń (wysłanie formularza, kliknięcia w kontakt)</li>
-              <li>Rozbudowany formularz kontaktowy/rezerwacyjny (np. liczba osób, termin, dodatkowe pytania)</li>
-              <li>Własny e-mail w Twojej domenie (np. rezerwacje@twojapartamentonline.pl) i konfiguracja skrzynki</li>
-              <li>Konsultacja jak samodzielnie zlecać lub wprowadzać zmiany na stronie (omówienie krok po kroku, co i jak przekazywać)</li>
-              <li>Pakiet drobnych zmian po starcie (np. korekty treści/zdjęć w ciągu 30 dni)</li>
-            </ul>
-            <a class="btn btn-ghost" href="#kontakt">Porozmawiaj o pakiecie Premium →</a>
-          </article>
+    <section class="section ground-surface" id="dla-kogo" aria-labelledby="dla-kogo-h">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="dla-kogo-h">Dla małych właścicieli noclegów, którzy chcą mieć własną stronę i zarabiać więcej</h2>
+          <p>Nasza oferta jest stworzona z myślą o właścicielach niewielkich obiektów noclegowych w całej Polsce.</p>
         </div>
-      </div>
-    </section>
-
-    <section id="poradnik" class="section">
-      <p class="eyebrow">Poradnik</p>
-      <h2>Poradnik dla właścicieli noclegów</h2>
-      <p class="section-lead">Krótkie, konkretne artykuły dla właścicieli apartamentów, domków i pensjonatów, którzy chcą lepiej wykorzystać swoją stronę internetową i zdobywać więcej rezerwacji bez prowizji.</p>
-      <div class="grid grid-4">
-        <article class="card card-link">
-          <h3>Ile kosztuje strona dla noclegu?</h3>
-          <p>Jakie są realne koszty stworzenia prostej strony internetowej dla noclegu, od czego zależy cena i kiedy inwestycja w stronę zwraca się na prowizjach z Booking.</p>
-          <a class="more" href="blog/ile-kosztuje-strona-dla-noclegu.html">Przeczytaj poradnik →</a>
-        </article>
-        <article class="card card-link">
-          <h3>Jak opisać nocleg na stronie?</h3>
-          <p>Prosty schemat opisu noclegu, który zwiększa liczbę zapytań: nagłówek, korzyści dla gości, przejrzyste sekcje i wezwanie do działania.</p>
-          <a class="more" href="blog/jak-opisac-nocleg-na-stronie.html">Zobacz, jak napisać opis →</a>
-        </article>
-        <article class="card card-link">
-          <h3>Jak przygotować zdjęcia noclegu?</h3>
-          <p>Jak samodzielnie zrobić zdjęcia apartamentu, domku lub pensjonatu, które dobrze wyglądają na stronie i w serwisach rezerwacyjnych.</p>
-          <a class="more" href="blog/jak-przygotowac-zdjecia-noclegu.html">Sprawdź checklistę ujęć →</a>
-        </article>
-        <article class="card card-link">
-          <h3>Jak promować stronę noclegu?</h3>
-          <p>Co zrobić po uruchomieniu strony: wizytówka Google, linki z portali, proste SEO i social media, które pomagają zdobywać rezerwacje bez prowizji.</p>
-          <a class="more" href="blog/jak-promowac-strone-noclegu.html">Zobacz plan promocji →</a>
-        </article>
-      </div>
-    </section>
-
-    <!-- Every <summary> here must match a Question "name" in the FAQPage JSON-LD above (tools/check.mjs enforces it). -->
-    <section id="faq" class="section band">
-      <div class="inner">
-        <p class="eyebrow">FAQ</p>
-        <h2>Najczęściej zadawane pytania</h2>
-        <p class="section-lead">Odpowiedzi na pytania, które najczęściej słyszymy od właścicieli noclegów.</p>
-        <div class="faq">
-          <details>
-            <summary>Czy potrzebuję strony jeśli mam Booking?</summary>
-            <p>Tak. Booking pobiera prowizję 15–20% od każdej rezerwacji. Własna strona pozwala przyjmować rezerwacje bezpośrednio, bez prowizji. To nie zamiennik Booking, ale dodatkowy kanał, który zwiększa Twój zysk. Własna strona internetowa dla noclegu daje Ci niezależność – portale traktuj jako dodatek, a nie jedyne źródło rezerwacji.</p>
-          </details>
-          <details>
-            <summary>Ile kosztuje strona dla noclegu?</summary>
-            <p>Strona www dla noclegu kosztuje jednorazowo 1 500 zł netto. Nie ma żadnych ukrytych opłat ani abonamentów. Opcjonalnie możesz wykupić pakiet utrzymania strony od 99 zł miesięcznie. Więcej szczegółów znajdziesz w poradniku <a href="blog/ile-kosztuje-strona-dla-noclegu.html">ile kosztuje strona dla noclegu</a>.</p>
-          </details>
-          <details>
-            <summary>Czy strona pomoże zdobyć więcej rezerwacji?</summary>
-            <p>Tak. Strona zoptymalizowana pod SEO pozwala dotrzeć do gości szukających noclegu w Twojej okolicy w Google. Dodatkowo goście, którzy raz u Ciebie byli, mogą wracać bezpośrednio na Twoją stronę zamiast rezerwować przez Booking, dzięki czemu zyskujesz więcej rezerwacji bez prowizji. Zobacz też poradnik <a href="blog/jak-promowac-strone-noclegu.html">jak promować stronę noclegu</a>, w którym pokazujemy konkretne sposoby na zwiększenie liczby zapytań z Twojej strony.</p>
-          </details>
-          <details>
-            <summary>Jak długo trwa realizacja strony?</summary>
-            <p>Gotową stronę dostarczamy w ciągu 5–7 dni roboczych od momentu otrzymania materiałów (zdjęcia, opisy, dane kontaktowe). Jeśli masz wszystko przygotowane, może być jeszcze szybciej.</p>
-          </details>
-          <details>
-            <summary>Czy mogę sam edytować stronę?</summary>
-            <p>Strona jest zaprojektowana tak, aby nie wymagała częstych zmian. Jeśli jednak potrzebujesz aktualizacji (np. zmiana cen, dodanie zdjęć), możesz skorzystać z naszego pakietu utrzymania lub zlecić jednorazową zmianę.</p>
-          </details>
-          <details>
-            <summary>Czy strona będzie widoczna w Google?</summary>
-            <p>Tak. Każda strona jest zoptymalizowana pod SEO – poprawna struktura HTML, szybkie ładowanie, odpowiednie meta tagi i treści dopasowane do fraz, których szukają Twoi potencjalni goście w Google.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <section id="kontakt" class="section">
-      <div class="contact">
-        <div>
-          <p class="eyebrow">Kontakt</p>
-          <h2>Zamów darmową wycenę</h2>
-          <p class="section-lead">Wypełnij formularz, a odezwiemy się w ciągu 24 godzin. Bez zobowiązań – porozmawiajmy o stronie internetowej dla Twojego noclegu i sposobach na więcej rezerwacji bez prowizji.</p>
-          <p>Możesz też skontaktować się bezpośrednio:</p>
-          <ul class="contact-details">
-            <li><span>Telefon</span><a href="tel:+48782312090">+48&nbsp;782&nbsp;312&nbsp;090</a></li>
-            <li><span>E-mail</span><a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a></li>
+        <div class="grid grid--top fill">
+          <ul class="rows span-6">
+            <li><span class="rows__name">Właściciele apartamentów</span><p>Masz 2–5 apartamentów i chcesz mieć własną stronę dla apartamentów, żeby przyjmować gości bez prowizji Booking.</p></li>
+            <li><span class="rows__name">Właściciele domków letniskowych</span><p>Twoje domki są w atrakcyjnej lokalizacji, ale brakuje Ci prostej strony internetowej, która pokaże ofertę i pozwoli na bezpośredni kontakt.</p></li>
+            <li><span class="rows__name">Właściciele pensjonatów i pokoi</span><p>Chcesz mieć prostą, czytelną stronę www dla pensjonatu lub pokoi gościnnych, zamiast polegać wyłącznie na portalach.</p></li>
+            <li><span class="rows__name">Właściciele agroturystyk</span><p>Twoi goście wracają co roku, ale rezerwują przez Booking i płacisz prowizję od stałych klientów, zamiast przyjmować zgłoszenia przez własną stronę.</p></li>
+            <li><span class="rows__name">Każdy, kto chce być niezależny</span><p>Nie chcesz zależeć od jednego portalu i jego zmiennych zasad.</p></li>
           </ul>
+          <div class="frame frame--photo span-6 start-7"><img class="frame__img" src="assets/img/photo-f2898176-960.webp" width="960" height="600" srcset="assets/img/photo-f2898176-500.webp 500w, assets/img/photo-f2898176-960.webp 960w" sizes="(max-width: 639px) 100vw, 50vw" alt="Czerwony drewniany dom letniskowy nad jeziorem" loading="lazy" data-source="stand-in" data-subject="domek letniskowy"></div>
         </div>
-        <form id="lead-form" action="{{FORM_ENDPOINT}}" method="post"
-              data-msg-sending="Wysyłanie…"
-              data-msg-success="Dziękujemy za wiadomość! Odezwiemy się w ciągu 24 godzin. W międzyczasie możesz przygotować zdjęcia swojego obiektu."
-              data-msg-error="Wystąpił błąd podczas wysyłki formularza. Spróbuj ponownie za chwilę lub napisz bezpośrednio na adres {{CONTACT_EMAIL}}.">
-          <!-- Sends to the n8n webhook (FORM_ENDPOINT); field names are the ones the old form used. -->
-          <label>Imię i nazwisko <input type="text" name="name" autocomplete="name" required placeholder="np. Jan Kowalski"></label>
-          <label>Numer telefonu <input type="tel" name="phone" autocomplete="tel" required placeholder="np. 600 123 456"></label>
-          <label class="full">Adres e-mail <input type="email" name="email" autocomplete="email" required placeholder="np. jan.kowalski@example.com"></label>
-          <label class="full"><span>Wiadomość <span class="opt">(opcjonalnie)</span></span> <textarea name="message" rows="4" placeholder="Opisz swój obiekt – ile pokoi/apartamentów, lokalizacja, czego oczekujesz od strony..."></textarea></label>
-          <label class="full consent-field"><input type="checkbox" name="consent" value="on" required> <span>Wyrażam zgodę na przetwarzanie moich danych osobowych w celu udzielenia odpowiedzi na zapytanie. <a href="privacy.html">Polityka prywatności</a>.</span></label>
-          <input type="hidden" name="_subject" value="Nowe zapytanie ze TwojApartamentOnline.pl">
-          <input type="hidden" name="_page" value="Formularz na stronie głównej">
-          <!-- honeypots: real visitors never see or fill these; bots do (same names as on the old form) -->
-          <div class="hp" aria-hidden="true">
-            <label>Twoja strona internetowa <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
-            <label>Nazwa firmy <input type="text" name="company" tabindex="-1" autocomplete="off"></label>
+      </div>
+    </section>
+
+    <section class="section ground-surface" id="cennik" style="--h: 2" aria-labelledby="cennik-h">
+      <div class="wrap">
+        <div class="group">
+          <div class="section-head">
+            <h2 id="cennik-h">Prosta, uczciwa cena za stronę dla noclegu</h2>
+            <p>Jednorazowa opłata, bez ukrytych kosztów i abonamentów. Płacisz raz za stronę internetową dla swojego noclegu – strona jest Twoja na zawsze.</p>
           </div>
-          <button class="btn full" type="submit">Wyślij zapytanie →</button>
-          <p id="form-status" class="full" role="status" aria-live="polite"></p>
-        </form>
+          <div class="grid">
+            <article class="card card--plan span-4">
+              <h3>Pakiet Start</h3>
+              <p class="t-small muted">Dla małych obiektów, które potrzebują prostej, ale profesjonalnej strony wizytówki</p>
+              <p class="price"><span class="t-stat">2 000 zł</span><span class="t-small muted">netto</span></p>
+              <a class="btn btn--secondary" href="#kontakt">Wybierz pakiet Start</a>
+              <ul class="checks">
+                <li>Prosta strona wizytówka dla jednego obiektu (opis, zdjęcia, podstawowy cennik)</li>
+                <li>Responsywna (mobilna) wersja</li>
+                <li>Podstawowa optymalizacja SEO pod Google (tytuły, meta opisy, nagłówki)</li>
+                <li>Formularz kontaktowy i dane kontaktowe</li>
+                <li>Mapa dojazdu i opis lokalizacji</li>
+              </ul>
+            </article>
+            <article class="card card--plan is-featured span-4">
+              <span class="badge">Najczęściej wybierany</span>
+              <h3>Pakiet Plus</h3>
+              <p class="t-small muted">Najlepszy stosunek ceny do wartości dla apartamentów, domków i pensjonatów</p>
+              <p class="price"><span class="t-stat">2 900 zł</span><span class="t-small muted">netto</span></p>
+              <a class="btn btn--primary" href="#kontakt">Wybierz pakiet Plus</a>
+              <ul class="checks">
+                <li>Wszystko z pakietu Start</li>
+                <li>Rozszerzona liczba sekcji/podstron (np. osobne sekcje dla pokoi/apartamentów i atrakcji w okolicy)</li>
+                <li>Pełniejsza optymalizacja SEO pod Google (struktura strony, treści pod lokalne frazy)</li>
+                <li>Propozycja tekstów pod SEO dla Twojej lokalizacji</li>
+                <li>Prosta sekcja z opiniami gości lub atrakcjami w okolicy</li>
+                <li>Integracja kalendarza dostępności z Booking.com i Airbnb (synchronizacja iCal)</li>
+              </ul>
+            </article>
+            <article class="card card--plan span-4">
+              <h3>Pakiet Premium</h3>
+              <p class="t-small muted">Dla obiektów, które chcą pełen system rezerwacji online i integrację z Booking.com oraz Airbnb</p>
+              <p class="price"><span class="t-stat">4 900 zł</span><span class="t-small muted">netto</span></p>
+              <a class="btn btn--secondary" href="#kontakt">Porozmawiaj o pakiecie Premium</a>
+              <ul class="checks">
+                <li>Wszystko z pakietu Plus</li>
+                <li>Moduł rezerwacji online z kalendarzem dostępności na stronie</li>
+                <li>Integracja z bramką płatności (zaliczki online, płatność kartą/BLIK)</li>
+                <li>Konfiguracja Google Analytics 4 i podstawowych zdarzeń (wysłanie formularza, kliknięcia w kontakt)</li>
+                <li>Rozbudowany formularz kontaktowy/rezerwacyjny (np. liczba osób, termin, dodatkowe pytania)</li>
+                <li>Własny e-mail w Twojej domenie (np. rezerwacje@twojapartamentonline.pl) i konfiguracja skrzynki</li>
+                <li>Konsultacja jak samodzielnie zlecać lub wprowadzać zmiany na stronie (omówienie krok po kroku, co i jak przekazywać)</li>
+                <li>Pakiet drobnych zmian po starcie (np. korekty treści/zdjęć w ciągu 30 dni)</li>
+              </ul>
+            </article>
+          </div>
+          <p class="pricing-extra t-lead"><strong>Opcjonalnie:</strong> pakiet utrzymania strony (aktualizacje, zmiany treści, hosting) – od 99 zł/mies.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="poradnik" aria-labelledby="poradnik-h">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="poradnik-h">Poradnik dla właścicieli noclegów</h2>
+          <p>Krótkie, konkretne artykuły dla właścicieli apartamentów, domków i pensjonatów, którzy chcą lepiej wykorzystać swoją stronę internetową i zdobywać więcej rezerwacji bez prowizji.</p>
+        </div>
+        <div class="grid">
+          <a class="card card--link span-3" href="blog/ile-kosztuje-strona-dla-noclegu.html">
+            <h3>Ile kosztuje strona dla noclegu?</h3>
+            <p>Jakie są realne koszty stworzenia prostej strony internetowej dla noclegu, od czego zależy cena i kiedy inwestycja w stronę zwraca się na prowizjach z Booking.</p>
+            <span class="link">Przeczytaj poradnik</span>
+          </a>
+          <a class="card card--link span-3" href="blog/jak-opisac-nocleg-na-stronie.html">
+            <h3>Jak opisać nocleg na stronie?</h3>
+            <p>Prosty schemat opisu noclegu, który zwiększa liczbę zapytań: nagłówek, korzyści dla gości, przejrzyste sekcje i wezwanie do działania.</p>
+            <span class="link">Zobacz, jak napisać opis</span>
+          </a>
+          <a class="card card--link span-3" href="blog/jak-przygotowac-zdjecia-noclegu.html">
+            <h3>Jak przygotować zdjęcia noclegu?</h3>
+            <p>Jak samodzielnie zrobić zdjęcia apartamentu, domku lub pensjonatu, które dobrze wyglądają na stronie i w serwisach rezerwacyjnych.</p>
+            <span class="link">Sprawdź checklistę ujęć</span>
+          </a>
+          <a class="card card--link span-3" href="blog/jak-promowac-strone-noclegu.html">
+            <h3>Jak promować stronę noclegu?</h3>
+            <p>Co zrobić po uruchomieniu strony: wizytówka Google, linki z portali, proste SEO i social media, które pomagają zdobywać rezerwacje bez prowizji.</p>
+            <span class="link">Zobacz plan promocji</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Every <summary> here must match a Question "name" in the FAQPage JSON-LD above (tools/check.mjs enforces it); all open (no accordion). -->
+    <section class="section" id="faq" aria-labelledby="faq-h">
+      <div class="wrap">
+        <div class="section-head">
+            <h2 id="faq-h">Najczęściej zadawane pytania</h2>
+            <p>Odpowiedzi na pytania, które najczęściej słyszymy od właścicieli noclegów.</p>
+            <a class="link" href="#kontakt">Zadaj własne pytanie</a>
+          </div>
+          <div class="faq faq--cols">
+            <details class="faq__item" open>
+              <summary><h3>Czy potrzebuję strony jeśli mam Booking?</h3></summary>
+              <p>Tak. Booking pobiera prowizję 15–20% od każdej rezerwacji. Własna strona pozwala przyjmować rezerwacje bezpośrednio, bez prowizji. To nie zamiennik Booking, ale dodatkowy kanał, który zwiększa Twój zysk. Własna strona internetowa dla noclegu daje Ci niezależność – portale traktuj jako dodatek, a nie jedyne źródło rezerwacji.</p>
+            </details>
+            <details class="faq__item" open>
+              <summary><h3>Ile kosztuje strona dla noclegu?</h3></summary>
+              <p>Strona www dla noclegu kosztuje jednorazowo 1 500 zł netto. Nie ma żadnych ukrytych opłat ani abonamentów. Opcjonalnie możesz wykupić pakiet utrzymania strony od 99 zł miesięcznie. Więcej szczegółów znajdziesz w poradniku <a href="blog/ile-kosztuje-strona-dla-noclegu.html">ile kosztuje strona dla noclegu</a>.</p>
+            </details>
+            <details class="faq__item" open>
+              <summary><h3>Czy strona pomoże zdobyć więcej rezerwacji?</h3></summary>
+              <p>Tak. Strona zoptymalizowana pod SEO pozwala dotrzeć do gości szukających noclegu w Twojej okolicy w Google. Dodatkowo goście, którzy raz u Ciebie byli, mogą wracać bezpośrednio na Twoją stronę zamiast rezerwować przez Booking, dzięki czemu zyskujesz więcej rezerwacji bez prowizji. Zobacz też poradnik <a href="blog/jak-promowac-strone-noclegu.html">jak promować stronę noclegu</a>, w którym pokazujemy konkretne sposoby na zwiększenie liczby zapytań z Twojej strony.</p>
+            </details>
+            <details class="faq__item" open>
+              <summary><h3>Jak długo trwa realizacja strony?</h3></summary>
+              <p>Gotową stronę dostarczamy w ciągu 5–7 dni roboczych od momentu otrzymania materiałów (zdjęcia, opisy, dane kontaktowe). Jeśli masz wszystko przygotowane, może być jeszcze szybciej.</p>
+            </details>
+            <details class="faq__item" open>
+              <summary><h3>Czy mogę sam edytować stronę?</h3></summary>
+              <p>Strona jest zaprojektowana tak, aby nie wymagała częstych zmian. Jeśli jednak potrzebujesz aktualizacji (np. zmiana cen, dodanie zdjęć), możesz skorzystać z naszego pakietu utrzymania lub zlecić jednorazową zmianę.</p>
+            </details>
+            <details class="faq__item" open>
+              <summary><h3>Czy strona będzie widoczna w Google?</h3></summary>
+              <p>Tak. Każda strona jest zoptymalizowana pod SEO – poprawna struktura HTML, szybkie ładowanie, odpowiednie meta tagi i treści dopasowane do fraz, których szukają Twoi potencjalni goście w Google.</p>
+            </details>
+          </div>
+      </div>
+    </section>
+
+    <section class="section" id="kontakt" aria-labelledby="kontakt-h">
+      <div class="wrap">
+        <div class="grid grid--top">
+          <div class="span-5 stack-4">
+            <h2 id="kontakt-h">Zamów darmową wycenę</h2>
+            <p class="t-lead">Wypełnij formularz, a odezwiemy się w ciągu 24 godzin. Bez zobowiązań – porozmawiajmy o stronie internetowej dla Twojego noclegu i sposobach na więcej rezerwacji bez prowizji.</p>
+            <p>Możesz też skontaktować się bezpośrednio: telefonicznie pod numerem <a class="link" href="tel:+48782312090">+48&nbsp;782&nbsp;312&nbsp;090</a> lub mailowo na adres <a class="link" href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a>.</p>
+          </div>
+          <form id="lead-form" class="form form--panel span-6 start-7" action="{{FORM_ENDPOINT}}" method="post" data-endpoint="{{FORM_ENDPOINT}}"
+                data-sending="Wysyłanie…" data-fix="Pola do poprawienia: {n}."
+                data-sent="Dziękujemy za wiadomość! Odezwiemy się w ciągu 24 godzin. W międzyczasie możesz przygotować zdjęcia swojego obiektu."
+                data-failed="Wystąpił błąd podczas wysyłki formularza. Spróbuj ponownie za chwilę lub napisz na adres {{CONTACT_EMAIL}}.">
+            <div class="field"><label for="f-name">Imię i nazwisko</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" required minlength="2" aria-describedby="f-name-err">
+              <p class="field__error" id="f-name-err" hidden>Podaj swoje imię i nazwisko.</p></div>
+            <div class="field"><label for="f-phone">Numer telefonu</label>
+              <input id="f-phone" name="phone" type="tel" autocomplete="tel" required aria-describedby="f-phone-err">
+              <p class="field__error" id="f-phone-err" hidden>Podaj numer telefonu, np. 600 123 456.</p></div>
+            <div class="field"><label for="f-email">Adres e-mail</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="f-email-err">
+              <p class="field__error" id="f-email-err" hidden>Podaj adres e-mail ze znakiem @, np. jan@poczta.pl.</p></div>
+            <div class="field"><label for="f-message">Wiadomość (opcjonalnie)</label>
+              <textarea id="f-message" name="message" rows="3"></textarea></div>
+            <div class="field field--check">
+              <input id="f-consent" name="consent" type="checkbox" value="on" required aria-describedby="f-consent-err">
+              <label for="f-consent">Wyrażam zgodę na przetwarzanie moich danych osobowych w celu udzielenia odpowiedzi na zapytanie. <a href="privacy.html">Polityka prywatności</a>.</label>
+              <p class="field__error" id="f-consent-err" hidden>Zaznacz zgodę, aby wysłać formularz.</p></div>
+            <input type="hidden" name="_subject" value="Nowe zapytanie ze TwojApartamentOnline.pl">
+            <input type="hidden" name="_page" value="Formularz na stronie głównej">
+            <div class="hp" aria-hidden="true"><label>Twoja strona internetowa <input type="text" name="website" tabindex="-1" autocomplete="off"></label><label>Nazwa firmy <input type="text" name="company" tabindex="-1" autocomplete="off"></label></div>
+            <div class="btn-row"><button class="btn btn--primary" type="submit">Darmowa wycena</button></div>
+            <p class="form__status" role="status" data-form-status></p>
+            <p class="t-small muted">Odpowiadamy w ciągu 24 godzin.</p>
+          </form>
+        </div>
       </div>
     </section>
   </main>
