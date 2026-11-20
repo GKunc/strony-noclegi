@@ -8,7 +8,7 @@
     "assert": {
       "assertMatrix": [
         {
-          "matchingUrlPattern": "^(?!.*/(404|thanks)\\.html$).*$",
+          "matchingUrlPattern": "^(?!.*/((404|thanks)\\.html|templates/[^/]*\\.html)$).*$",
           "assertions": {
             "categories:performance": [
               "error",
