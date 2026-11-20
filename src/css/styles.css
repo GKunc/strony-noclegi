@@ -41,6 +41,12 @@
 .form .field--check input { width: 20px; height: 20px; min-height: 0; margin: 2px 0 0; accent-color: var(--action); }
 .form .field--check .field__error { grid-column: 1 / -1; }
 .form .field:has(textarea) { grid-column: 1 / -1; }
+/* no jumping when errors show: a hidden reason still takes its own height (invisible, and out of the accessibility tree),
+   and the error border is the same 1px border plus an inset ring instead of a thicker border */
+.form .field__error[hidden]:not(:empty) { display: block !important; visibility: hidden; }
+/* one field per row in the side panel: two columns there were ~150px wide and the reasons wrapped to three lines */
+.form--panel { grid-template-columns: minmax(0, 1fr); }
+.form .field :is(input, select, textarea)[aria-invalid="true"] { border: 1px solid var(--error); box-shadow: inset 0 0 0 1px var(--error); }
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 
 /* guides: linked text cards */
