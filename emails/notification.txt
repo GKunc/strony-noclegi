@@ -1,8 +1,8 @@
-New enquiry from the {{BRAND}} website. Reply to this email to answer the sender directly.
+Nowe zapytanie ze strony {{BRAND}}. Kliknij „Odpowiedz”, a Twoja odpowiedź trafi prosto do nadawcy.
 
-Name:  {{#name}}{{name}}{{/name}}{{^name}}(not given){{/name}}
-Email: {{email}}
-Date:  {{date}}
-Page:  {{page}}
+Imię:   {{#name}}{{name}}{{/name}}{{^name}}(nie podano){{/name}}
+E-mail: {{email}}
+Data:   {{date}}
+Strona: {{page}}
 
-{{#message}}{{message}}{{/message}}{{^message}}(no message){{/message}}
+{{#message}}{{message}}{{/message}}{{^message}}(brak treści){{/message}}

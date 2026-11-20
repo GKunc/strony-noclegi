@@ -403,9 +403,6 @@
             <div class="field"><label for="f-name">Imię i nazwisko</label>
               <input id="f-name" name="name" type="text" autocomplete="name" required minlength="2" aria-describedby="f-name-err">
               <p class="field__error" id="f-name-err" hidden>Podaj swoje imię i nazwisko.</p></div>
-            <div class="field"><label for="f-phone">Numer telefonu</label>
-              <input id="f-phone" name="phone" type="tel" autocomplete="tel" required aria-describedby="f-phone-err">
-              <p class="field__error" id="f-phone-err" hidden>Podaj numer telefonu, np. 600 123 456.</p></div>
             <div class="field"><label for="f-email">Adres e-mail</label>
               <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="f-email-err">
               <p class="field__error" id="f-email-err" hidden>Podaj adres e-mail ze znakiem @, np. jan@poczta.pl.</p></div>
@@ -415,9 +412,13 @@
               <input id="f-consent" name="consent" type="checkbox" value="on" required aria-describedby="f-consent-err">
               <label for="f-consent">Wyrażam zgodę na przetwarzanie moich danych osobowych w celu udzielenia odpowiedzi na zapytanie. <a href="privacy.html">Polityka prywatności</a>.</label>
               <p class="field__error" id="f-consent-err" hidden>Zaznacz zgodę, aby wysłać formularz.</p></div>
-            <input type="hidden" name="_subject" value="Nowe zapytanie ze TwojApartamentOnline.pl">
-            <input type="hidden" name="_page" value="Formularz na stronie głównej">
-            <div class="hp" aria-hidden="true"><label>Twoja strona internetowa <input type="text" name="website" tabindex="-1" autocomplete="off"></label><label>Nazwa firmy <input type="text" name="company" tabindex="-1" autocomplete="off"></label></div>
+            <input type="hidden" name="page" value="{{PAGE_URL}}">
+            <!-- @if TURNSTILE_SITE_KEY -->
+            <!-- Anti-bot check (Cloudflare Turnstile): loaded on first use of the form, usually invisible; needed for the autoreply. -->
+            <div class="turnstile" data-turnstile="{{TURNSTILE_SITE_KEY}}"></div>
+            <!-- @endif -->
+            <!-- honeypot: real visitors never see or fill this; bots do -->
+            <div class="hp" aria-hidden="true"><label>Zostaw puste <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
             <div class="btn-row"><button class="btn btn--primary" type="submit">Darmowa wycena</button></div>
             <p class="form__status" role="status" data-form-status></p>
             <p class="t-small muted">Odpowiadamy w ciągu 24 godzin.</p>
@@ -429,5 +430,6 @@
 
   <!-- @include footer -->
   <script src="js/webmcp.js" defer></script>
+  <!-- @if TURNSTILE_SITE_KEY --><script src="js/turnstile.js" defer></script><!-- @endif -->
 </body>
 </html>

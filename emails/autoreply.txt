@@ -1,10 +1,12 @@
-{{#name}}Hi {{name}},{{/name}}{{^name}}Hello,{{/name}}
+{{#name}}Dzień dobry, {{name}}!{{/name}}{{^name}}Dzień dobry!{{/name}}
 
-Thanks for your message. It reached us and a real person will read it.
+Dziękujemy za zapytanie. Twoja wiadomość do nas dotarła i przeczyta ją człowiek, nie automat.
 
-We will get back to you by email. If anything is urgent, just reply to this email.
+Odezwiemy się w ciągu 24 godzin. Jeśli sprawa jest pilna, po prostu odpisz na tę wiadomość albo zadzwoń: +48 782 312 090.
 
-Best regards,
+W międzyczasie możesz przygotować zdjęcia swojego obiektu.
+
+Pozdrawiamy,
 {{BRAND}}
 
-Visit our website: {{SITE_URL}}/
+Zajrzyj na naszą stronę: {{SITE_URL}}/
