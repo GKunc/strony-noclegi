@@ -128,3 +128,19 @@ main.page > .wrap { max-width: 760px; }
 /* No rounded corners anywhere (owner's choice): the sharp scale taken to zero for buttons, cards, frames, fields and badges */
 :root, html[data-radius] { --r-sm: 0px; --r-md: 0px; --r-lg: 0px; --r-btn: 0px; --radius: 0px; }
 .badge, .form--panel, .cta-box, .note, .contract-highlight, .contract-note { border-radius: 0; }
+
+/* Sections as tall as their content, not a full screen each (owner: too much empty space between sections).
+   Placed last so it outranks the per-section screen counts above. */
+main > :is(section, .section):not(.hero, .section--hero), footer.closing {
+  height: auto !important; min-height: 0 !important;
+  padding: clamp(56px, 4vw + 40px, 96px) 0;
+}
+footer.closing { padding-bottom: calc(clamp(56px, 4vw + 40px, 96px) + var(--bar)); }
+main > :is(section, .section):not(.hero, .section--hero) > :is(.wrap, .container), footer.closing > .wrap { height: auto; }
+main > :is(section, .section) > .wrap > .fill, .group > .fill { flex: 0 0 auto; }
+main > :is(section, .section):is(.g2, .g2m) > :is(.wrap, .container), footer.closing:is(.g2, .g2m) > .wrap {
+  display: flex !important; flex-direction: column; row-gap: var(--s-8) !important;
+}
+#cennik .group + * { margin-block: 0 !important; }
+/* without a screen-tall section the photo beside the words keeps its own shape (3:2) */
+main > .section > .wrap > .fill > .frame--photo { --ratio: 66%; }
