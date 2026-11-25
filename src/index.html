@@ -21,7 +21,7 @@
   <meta property="og:locale" content="{{LOCALE}}">
   <meta property="og:site_name" content="{{BRAND}}">
   <meta property="og:title" content="Strona internetowa dla noclegów – Więcej rezerwacji bez prowizji">
-  <meta property="og:description" content="Prosta strona internetowa dla Twojego noclegu – jednorazowo, bez abonamentu. Zdobądź więcej rezerwacji bez prowizji Booking i Airbnb.">
+  <meta property="og:description" content="Prosta strona internetowa dla Twojego noclegu w abonamencie od 149 zł/mies., bez opłaty na start. Zdobądź więcej rezerwacji bez prowizji Booking i Airbnb.">
   <meta property="og:url" content="{{PAGE_URL}}">
   <meta property="og:image" content="{{SITE_URL}}/og.png">
   <meta property="og:image:width" content="1200">
@@ -29,7 +29,7 @@
   <meta property="og:image:alt" content="Strona internetowa dla noclegów – więcej rezerwacji bez prowizji">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Strona internetowa dla noclegów – Więcej rezerwacji bez prowizji">
-  <meta name="twitter:description" content="Prosta strona dla właścicieli noclegów. Jednorazowa opłata, bez abonamentu.">
+  <meta name="twitter:description" content="Prosta strona dla właścicieli noclegów. Abonament od 149 zł/mies., 0 zł na start.">
   <meta name="twitter:image" content="{{SITE_URL}}/og.png">
 
   <script type="application/ld+json">
@@ -59,7 +59,7 @@
       {
         "@type": "Service",
         "name": "TwojApartamentOnline.pl – Strony internetowe dla noclegów",
-        "description": "Tworzymy proste, skuteczne strony internetowe dla właścicieli noclegów, apartamentów i domków wypoczynkowych. Jednorazowa opłata, bez abonamentu.",
+        "description": "Tworzymy proste, skuteczne strony internetowe dla właścicieli noclegów, apartamentów i domków wypoczynkowych. Abonament miesięczny z hostingiem i zmianami treści, bez opłaty na start.",
         "provider": {
           "@type": "LocalBusiness",
           "name": "TwojApartamentOnline.pl",
@@ -75,12 +75,47 @@
           "name": "Polska"
         },
         "serviceType": "Tworzenie stron internetowych dla noclegów",
-        "offers": {
-          "@type": "Offer",
-          "price": "1500",
-          "priceCurrency": "PLN",
-          "description": "Jednorazowa opłata za stronę internetową dla noclegu"
-        }
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Pakiet Start",
+            "description": "Strona wizytówka dla noclegu w abonamencie miesięcznym",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "149",
+              "priceCurrency": "PLN",
+              "valueAddedTaxIncluded": false,
+              "unitCode": "MON",
+              "referenceQuantity": { "@type": "QuantitativeValue", "value": 1, "unitCode": "MON" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Pakiet Plus",
+            "description": "Rozbudowana strona z kalendarzem dostępności w abonamencie miesięcznym",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "249",
+              "priceCurrency": "PLN",
+              "valueAddedTaxIncluded": false,
+              "unitCode": "MON",
+              "referenceQuantity": { "@type": "QuantitativeValue", "value": 1, "unitCode": "MON" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Pakiet Premium",
+            "description": "Strona z rezerwacjami online i płatnościami w abonamencie miesięcznym",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "449",
+              "priceCurrency": "PLN",
+              "valueAddedTaxIncluded": false,
+              "unitCode": "MON",
+              "referenceQuantity": { "@type": "QuantitativeValue", "value": 1, "unitCode": "MON" }
+            }
+          }
+        ]
       }
     ]
   }
@@ -103,7 +138,7 @@
         "name": "Ile kosztuje strona dla noclegu?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Strona www dla noclegu kosztuje jednorazowo 1 500 zł netto. Nie ma żadnych ukrytych opłat ani abonamentów. Opcjonalnie możesz wykupić pakiet utrzymania strony od 99 zł miesięcznie. Więcej szczegółów znajdziesz w poradniku ile kosztuje strona dla noclegu."
+          "text": "Stronę dla noclegu prowadzimy w abonamencie: od 149 zł netto miesięcznie (pakiet Start), 249 zł (Plus) lub 449 zł (Premium), bez opłaty na start. W cenie są hosting, kopie zapasowe, aktualizacje i zmiany treści w ramach pakietu. Płacąc za rok z góry, dostajesz 2 miesiące gratis. Więcej szczegółów znajdziesz w poradniku ile kosztuje strona dla noclegu."
         }
       },
       {
@@ -112,6 +147,14 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Tak. Strona zoptymalizowana pod SEO pozwala dotrzeć do gości szukających noclegu w Twojej okolicy w Google. Dodatkowo goście, którzy raz u Ciebie byli, mogą wracać bezpośrednio na Twoją stronę zamiast rezerwować przez Booking, dzięki czemu zyskujesz więcej rezerwacji bez prowizji. Zobacz też poradnik jak promować stronę noclegu, w którym pokazujemy konkretne sposoby na zwiększenie liczby zapytań z Twojej strony."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Na jak długo podpisuję umowę?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Umowa obowiązuje minimum 12 miesięcy. Jeśli zrezygnujesz wcześniej, płacisz za pozostałe miesiące do końca tego okresu. Potem umowa trwa dalej bez określonego terminu i możesz ją wypowiedzieć z miesięcznym wyprzedzeniem. Po zakończeniu umowy strona zostaje wyłączona, a domena zawsze pozostaje Twoja."
         }
       },
       {
@@ -127,7 +170,7 @@
         "name": "Czy mogę sam edytować stronę?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Strona jest zaprojektowana tak, aby nie wymagała częstych zmian. Jeśli jednak potrzebujesz aktualizacji (np. zmiana cen, dodanie zdjęć), możesz skorzystać z naszego pakietu utrzymania lub zlecić jednorazową zmianę."
+          "text": "Nie musisz. Jeśli potrzebujesz aktualizacji (np. zmiana cen, dodanie zdjęć), zrobimy to za Ciebie w ramach abonamentu: każdy pakiet ma miesięczny czas na zmiany (30 minut, 1 godzina lub 2 godziny). Większe zmiany wyceniamy osobno."
         }
       },
       {
@@ -266,14 +309,15 @@
       <div class="wrap">
         <div class="group">
           <div class="section-head">
-            <h2 id="cennik-h">Prosta, uczciwa cena za stronę dla noclegu</h2>
-            <p>Jednorazowa opłata, bez ukrytych kosztów i abonamentów. Płacisz raz za stronę internetową dla swojego noclegu – strona jest Twoja na zawsze.</p>
+            <h2 id="cennik-h">Prosty abonament za stronę dla noclegu</h2>
+            <p>0&nbsp;zł na start. Płacisz co miesiąc stałą kwotę, a my dbamy o stronę: hosting, bezpieczeństwo, kopie zapasowe, aktualizacje i zmiany treści w ramach pakietu.</p>
           </div>
           <div class="grid">
             <article class="card card--plan span-4">
               <h3>Pakiet Start</h3>
               <p class="t-small muted">Dla małych obiektów, które potrzebują prostej, ale profesjonalnej strony wizytówki</p>
-              <p class="price"><span class="t-stat">2 000 zł</span><span class="t-small muted">netto</span></p>
+              <p class="price"><span class="t-stat">149 zł</span><span class="t-small muted">netto / mies.</span></p>
+              <p class="t-small muted">lub 1&nbsp;490&nbsp;zł netto za rok z góry (2 miesiące gratis)</p>
               <a class="btn btn--secondary" href="#kontakt">Wybierz pakiet Start</a>
               <ul class="checks">
                 <li>Prosta strona wizytówka dla jednego obiektu (opis, zdjęcia, podstawowy cennik)</li>
@@ -281,13 +325,16 @@
                 <li>Podstawowa optymalizacja SEO pod Google (tytuły, meta opisy, nagłówki)</li>
                 <li>Formularz kontaktowy i dane kontaktowe</li>
                 <li>Mapa dojazdu i opis lokalizacji</li>
+                <li>Hosting, certyfikat SSL, kopie zapasowe i aktualizacje</li>
+                <li>Zmiany treści i zdjęć do 30 minut w miesiącu</li>
               </ul>
             </article>
             <article class="card card--plan is-featured span-4">
               <span class="badge">Najczęściej wybierany</span>
               <h3>Pakiet Plus</h3>
               <p class="t-small muted">Najlepszy stosunek ceny do wartości dla apartamentów, domków i pensjonatów</p>
-              <p class="price"><span class="t-stat">2 900 zł</span><span class="t-small muted">netto</span></p>
+              <p class="price"><span class="t-stat">249 zł</span><span class="t-small muted">netto / mies.</span></p>
+              <p class="t-small muted">lub 2&nbsp;490&nbsp;zł netto za rok z góry (2 miesiące gratis)</p>
               <a class="btn btn--primary" href="#kontakt">Wybierz pakiet Plus</a>
               <ul class="checks">
                 <li>Wszystko z pakietu Start</li>
@@ -296,12 +343,14 @@
                 <li>Propozycja tekstów pod SEO dla Twojej lokalizacji</li>
                 <li>Prosta sekcja z opiniami gości lub atrakcjami w okolicy</li>
                 <li>Integracja kalendarza dostępności z Booking.com i Airbnb (synchronizacja iCal)</li>
+                <li>Zmiany treści i zdjęć do 1 godziny w miesiącu</li>
               </ul>
             </article>
             <article class="card card--plan span-4">
               <h3>Pakiet Premium</h3>
               <p class="t-small muted">Dla obiektów, które chcą pełen system rezerwacji online i integrację z Booking.com oraz Airbnb</p>
-              <p class="price"><span class="t-stat">4 900 zł</span><span class="t-small muted">netto</span></p>
+              <p class="price"><span class="t-stat">449 zł</span><span class="t-small muted">netto / mies.</span></p>
+              <p class="t-small muted">lub 4&nbsp;490&nbsp;zł netto za rok z góry (2 miesiące gratis)</p>
               <a class="btn btn--secondary" href="#kontakt">Porozmawiaj o pakiecie Premium</a>
               <ul class="checks">
                 <li>Wszystko z pakietu Plus</li>
@@ -310,12 +359,12 @@
                 <li>Konfiguracja Google Analytics 4 i podstawowych zdarzeń (wysłanie formularza, kliknięcia w kontakt)</li>
                 <li>Rozbudowany formularz kontaktowy/rezerwacyjny (np. liczba osób, termin, dodatkowe pytania)</li>
                 <li>Własny e-mail w Twojej domenie (np. rezerwacje@twojapartamentonline.pl) i konfiguracja skrzynki</li>
-                <li>Konsultacja jak samodzielnie zlecać lub wprowadzać zmiany na stronie (omówienie krok po kroku, co i jak przekazywać)</li>
-                <li>Pakiet drobnych zmian po starcie (np. korekty treści/zdjęć w ciągu 30 dni)</li>
+                <li>Konsultacja na start: omówienie krok po kroku, jak zgłaszać zmiany na stronie i co przekazywać</li>
+                <li>Zmiany treści i zdjęć do 2 godzin w miesiącu, obsługa w pierwszej kolejności</li>
               </ul>
             </article>
           </div>
-          <p class="pricing-extra t-lead"><strong>Opcjonalnie:</strong> pakiet utrzymania strony (aktualizacje, zmiany treści, hosting) – od 99 zł/mies.</p>
+          <p class="pricing-extra t-lead"><strong>Warunki:</strong> umowa na minimum 12 miesięcy, potem z miesięcznym okresem wypowiedzenia. Domena zawsze jest Twoja. Czas na zmiany nie przechodzi na kolejny miesiąc. Opłaty za bramkę płatności pobiera jej operator.</p>
         </div>
       </div>
     </section>
@@ -366,11 +415,15 @@
             </details>
             <details class="faq__item" open>
               <summary><h3>Ile kosztuje strona dla noclegu?</h3></summary>
-              <p>Strona www dla noclegu kosztuje jednorazowo 1 500 zł netto. Nie ma żadnych ukrytych opłat ani abonamentów. Opcjonalnie możesz wykupić pakiet utrzymania strony od 99 zł miesięcznie. Więcej szczegółów znajdziesz w poradniku <a href="blog/ile-kosztuje-strona-dla-noclegu.html">ile kosztuje strona dla noclegu</a>.</p>
+              <p>Stronę dla noclegu prowadzimy w abonamencie: od 149 zł netto miesięcznie (pakiet Start), 249 zł (Plus) lub 449 zł (Premium), bez opłaty na start. W cenie są hosting, kopie zapasowe, aktualizacje i zmiany treści w ramach pakietu. Płacąc za rok z góry, dostajesz 2 miesiące gratis. Więcej szczegółów znajdziesz w poradniku <a href="blog/ile-kosztuje-strona-dla-noclegu.html">ile kosztuje strona dla noclegu</a>.</p>
             </details>
             <details class="faq__item" open>
               <summary><h3>Czy strona pomoże zdobyć więcej rezerwacji?</h3></summary>
               <p>Tak. Strona zoptymalizowana pod SEO pozwala dotrzeć do gości szukających noclegu w Twojej okolicy w Google. Dodatkowo goście, którzy raz u Ciebie byli, mogą wracać bezpośrednio na Twoją stronę zamiast rezerwować przez Booking, dzięki czemu zyskujesz więcej rezerwacji bez prowizji. Zobacz też poradnik <a href="blog/jak-promowac-strone-noclegu.html">jak promować stronę noclegu</a>, w którym pokazujemy konkretne sposoby na zwiększenie liczby zapytań z Twojej strony.</p>
+            </details>
+            <details class="faq__item" open>
+              <summary><h3>Na jak długo podpisuję umowę?</h3></summary>
+              <p>Umowa obowiązuje minimum 12 miesięcy. Jeśli zrezygnujesz wcześniej, płacisz za pozostałe miesiące do końca tego okresu. Potem umowa trwa dalej bez określonego terminu i możesz ją wypowiedzieć z miesięcznym wyprzedzeniem. Po zakończeniu umowy strona zostaje wyłączona, a domena zawsze pozostaje Twoja.</p>
             </details>
             <details class="faq__item" open>
               <summary><h3>Jak długo trwa realizacja strony?</h3></summary>
@@ -378,7 +431,7 @@
             </details>
             <details class="faq__item" open>
               <summary><h3>Czy mogę sam edytować stronę?</h3></summary>
-              <p>Strona jest zaprojektowana tak, aby nie wymagała częstych zmian. Jeśli jednak potrzebujesz aktualizacji (np. zmiana cen, dodanie zdjęć), możesz skorzystać z naszego pakietu utrzymania lub zlecić jednorazową zmianę.</p>
+              <p>Nie musisz. Jeśli potrzebujesz aktualizacji (np. zmiana cen, dodanie zdjęć), zrobimy to za Ciebie w ramach abonamentu: każdy pakiet ma miesięczny czas na zmiany (30 minut, 1 godzina lub 2 godziny). Większe zmiany wyceniamy osobno.</p>
             </details>
             <details class="faq__item" open>
               <summary><h3>Czy strona będzie widoczna w Google?</h3></summary>

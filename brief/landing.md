@@ -20,7 +20,14 @@ live in `site.config.json`, not here: the build puts them into every page. This 
 - Target audience: mali właściciele obiektów noclegowych w całej Polsce (np. 2–5 apartamentów)
 - Main problem solved: prowizje 15–20% Booking/Airbnb, brak danych gości i powracających gości bez pośrednika
 - Unique selling points:
-- Price / offer: Pakiet Start 2 000 zł netto, Plus 2 900 zł netto, Premium 4 900 zł netto; utrzymanie od 99 zł/mies. (FAQ i poradnik mówią 1 500 zł netto: niespójność do wyjaśnienia, patrz README)
+- Price / offer (od 2026-11-25, abonament):
+  - Start 149 zł, Plus 249 zł, Premium 449 zł netto/mies.; za rok z góry 1 490 / 2 490 / 4 490 zł (2 miesiące gratis); 0 zł na start.
+  - W cenie: hosting, SSL, kopie zapasowe, aktualizacje; zmiany treści 30 min / 1 h / 2 h miesięcznie (Premium: obsługa w pierwszej kolejności); niewykorzystany czas nie przechodzi na kolejny miesiąc.
+  - Umowa minimum 12 miesięcy; wcześniejsza rezygnacja = zapłata za pozostałe miesiące do 12. Po 12 miesiącach umowa trwa dalej bezterminowo, z miesięcznym okresem wypowiedzenia. Po zakończeniu umowy strona jest wyłączana. Domena zawsze jest zarejestrowana na klienta.
+  - Jednorazowa płatność za stronę tylko na prośbę klienta, nie pokazujemy jej na stronie.
+  - Nieustalone: wzór umowy abonamentowej (wzor-umowy.html opisuje jeszcze jednorazowe wykonanie).
+  - Kalendarz dostępności (Plus) i rezerwacje online (Premium) zostaną zbudowane dopiero dla pierwszego klienta, który je zamówi.
+  - Plan (nie wdrożone): własny moduł rezerwacji na Cloudflare w szablonie stron. Etap 1 kalendarz dostępności z iCal Booking/Airbnb (Plus), etap 2 rezerwacja z zaliczką Przelewy24/Stripe na konto właściciela + eksport iCal (Premium), etap 3 panel właściciela. Ryzyko: portale czytają iCal co 1–3 h, więc regulamin musi opisać podwójną rezerwację.
 - Location / service area: cała Polska. Kontakt: +48 782 312 090, biuro@twojapartamentonline.pl
 
 ## Proof (real only)
