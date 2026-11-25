@@ -1,5 +1,5 @@
 /* TwojApartamentOnline.pl on the taste-skill system (src/assets/system.css and friends, loaded before this file).
-   Dealt (taste-skill start.mjs): palette cobalt-on-sand (warm stone ground, navy ink and action; the first deal,
+   Dealt (taste-skill start.mjs): palette cobalt-on-paper (light warm paper ground, lightened from sand, navy ink and action; the first deal,
    swap-pastels, put a teal accent beside the blue TAO logo), type host (Host Grotesk). Keep the :root block as printed.
    Below it: only page CSS the kit lacks. */
 
@@ -11,17 +11,17 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 
 :root {
-  --p-bg: #e6dbc7; --p-surface: #ddd0b9; --p-ink: #062b8a; --p-muted: #3253a4;
-  --p-accent: #062b8a; --p-accent-ink: #e6dbc7; --p-action: #062b8a; --p-action-ink: #e6dbc7;
-  --p-inv-bg: #062b8a; --p-inv-surface: #153a90; --p-inv-ink: #e6dbc7; --p-inv-muted: #aab0bc;
-  --p-inv-accent: #e6dbc7; --p-inv-accent-ink: #062b8a; --p-inv-action: #e6dbc7; --p-inv-action-ink: #062b8a;
+  --p-bg: #f6f3ee; --p-surface: #ece6dc; --p-ink: #062b8a; --p-muted: #3253a4;
+  --p-accent: #062b8a; --p-accent-ink: #f6f3ee; --p-action: #062b8a; --p-action-ink: #f6f3ee;
+  --p-inv-bg: #062b8a; --p-inv-surface: #153a90; --p-inv-ink: #f6f3ee; --p-inv-muted: #aab0bc;
+  --p-inv-accent: #f6f3ee; --p-inv-accent-ink: #062b8a; --p-inv-action: #f6f3ee; --p-inv-action-ink: #062b8a;
   --font-display: "Host Grotesk", system-ui, sans-serif;
   --font-text: "Host Grotesk", system-ui, sans-serif;
   --display-weight: 400;
   --display-tracking: -0.035em;
   --display-tracking-xl: -0.04em;
   /* aliases read by tools/emails.mjs (the template's email look) */
-  --bg: #e6dbc7; --text: #062b8a; --muted: #3253a4; --accent: #062b8a; --accent-text: #e6dbc7; --card: #ddd0b9; --radius: 12px;
+  --bg: #f6f3ee; --text: #062b8a; --muted: #3253a4; --accent: #062b8a; --accent-text: #f6f3ee; --card: #ece6dc; --radius: 12px;
 }
 
 /* the client's logo beside the name (in place of the dealt mark) */
